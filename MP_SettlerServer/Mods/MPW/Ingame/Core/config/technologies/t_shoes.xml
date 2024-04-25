@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<root>
+	<TecCategoryType>TC_Technologies</TecCategoryType>
+	<TimeToResearch>30</TimeToResearch>
+	
+	<ResourceCosts>
+		<Gold>300</Gold>
+		<Clay/>
+		<Wood/>
+		<Stone/>
+		<Iron/>
+		<Sulfur/>
+	</ResourceCosts>
+	
+	<UseForStatisticsFlag>true</UseForStatisticsFlag>
+	
+	<SpeedModifier>
+		<Value>40</Value>
+		<Operation>+</Operation>
+	</SpeedModifier>
+	
+	<Conditions>
+		<EntityCondition>
+			<EntityType>PB_VillageCenter3</EntityType>
+			<Amount>1</Amount>
+		</EntityCondition>
+	</Conditions>
+</root>

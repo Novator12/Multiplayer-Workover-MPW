@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<root>
+	<TecCategoryType>TC_Technologies</TecCategoryType>
+	<TimeToResearch>25</TimeToResearch>
+	
+	<ResourceCosts>
+		<Gold>400</Gold>
+	</ResourceCosts>
+	
+	<ExplorationModifier>
+		<Value>5</Value>
+		<Operation>+</Operation>
+	</ExplorationModifier>
+	
+	<UseForStatisticsFlag>true</UseForStatisticsFlag>
+	
+	<Conditions>	
+		<RequiredEntityConditions>1</RequiredEntityConditions>
+		
+		<EntityCondition>
+			<EntityType>PB_VillageCenter2</EntityType>
+			<Amount>1</Amount>
+		</EntityCondition>	
+		
+		<EntityCondition>
+			<EntityType>PB_VillageCenter3</EntityType>
+			<Amount>1</Amount>
+		</EntityCondition>	
+	</Conditions>
+</root>

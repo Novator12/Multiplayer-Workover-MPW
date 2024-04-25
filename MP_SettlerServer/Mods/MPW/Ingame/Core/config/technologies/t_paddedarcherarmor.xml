@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<root>
+	<TecCategoryType>TC_Technologies</TecCategoryType>
+	<TimeToResearch>20</TimeToResearch>
+	
+	<ResourceCosts>
+		<Gold>300</Gold>
+		<Clay/>
+		<Wood/>
+		<Stone/>
+		<Iron>200</Iron>
+		<Sulfur/>
+	</ResourceCosts>
+	
+	<AutomaticResearch>false</AutomaticResearch>
+	<UseForStatisticsFlag>true</UseForStatisticsFlag>
+	
+	<ArmorModifier>
+		<Value>2</Value>
+		<Operation>+</Operation>
+	</ArmorModifier>
+	
+	<Conditions>
+		<TecCondition>
+			<TecType>T_SoftArcherArmor</TecType>
+			<TecCategoryType/>
+		</TecCondition>
+		
+		<RequiredEntityConditions>1</RequiredEntityConditions>
+		
+		<EntityCondition>
+			<EntityType>PB_Blacksmith2</EntityType>
+			<Amount>1</Amount>
+		</EntityCondition>
+		
+		<EntityCondition>
+			<EntityType>PB_Blacksmith3</EntityType>
+			<Amount>1</Amount>
+		</EntityCondition>
+	</Conditions>
+</root>

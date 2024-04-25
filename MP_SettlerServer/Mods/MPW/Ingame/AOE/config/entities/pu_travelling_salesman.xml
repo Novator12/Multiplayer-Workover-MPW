@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		<Class>GD::CDisplaySettler</Class>
+		<Model>PU_Travelling_Salesman</Model>		<!-- must be changed when proper model available -->
+		<Model2>PU_TraderHammer</Model2>
+		<DrawPlayerColor>True</DrawPlayerColor>
+		<Anim>PU_Travelling_Salesman_Walk</Anim>
+		<Anim>PU_Travelling_Salesman_Idle1</Anim>
+		<Anim>PU_Travelling_Salesman_Dying</Anim>
+
+		<Anim>PU_TraderHammer_Work1</Anim>
+		<Anim>PU_TraderHammer_Work2</Anim>
+
+	</Display>
+	<Logic classname="GGL::CGLSettlerProps">
+		<Class>GGL::CSettler</Class>
+		<AccessCategory>AccessCategorySettler</AccessCategory>
+		<MaxHealth> 150 </MaxHealth>
+		<NeedsPlayer>true</NeedsPlayer>
+		<ForceNoPlayer>false</ForceNoPlayer>
+		<Hat></Hat>
+		<Cost>
+			<Gold>50</Gold>
+		</Cost>
+		<Category>Serf</Category>
+		<AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
+		<RepairFactor>0.3</RepairFactor>
+		<Exploration>20</Exploration>
+
+		<ModifyExploration>
+			<Technology>T_Tracking</Technology>
+		</ModifyExploration>
+
+		<!--Armor modifier-->
+		<ModifyArmor>
+			<Technology>T_Loom</Technology>
+		</ModifyArmor>
+		<!-- Speed Modifier-->
+		<ModifySpeed>
+			<Technology>T_Shoes</Technology>
+		</ModifySpeed>
+
+		<IdleTaskList>TL_NPC_IDLE</IdleTaskList>
+		<ArmorClass>ArmorClassNone</ArmorClass>
+		<ArmorAmount>0</ArmorAmount>
+
+	</Logic>
+	<Behavior>
+		<Logic classname="GGL::CGLAnimationBehaviorExProps">
+			<Class>GGL::CGLBehaviorAnimationEx</Class>
+			<SuspensionAnimation>PU_Travelling_Salesman_Idle1</SuspensionAnimation>
+			<AnimSet>SET_TRAVELING_SALESMAN</AnimSet>
+		</Logic>
+		<Display classname="ED::CBehaviorProps">
+			<Class>ED::CDisplayBehaviorAnimation</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		<Logic classname="EGL::CMovementBehaviorProps">
+			<Class>GGL::CLeaderMovement</Class>
+			<Speed>400</Speed>
+			<RotationSpeed>30</RotationSpeed>
+			<MoveTaskList>TL_SALESMAN_WALK</MoveTaskList>
+			<MoveIdleAnim>PU_Travelling_Salesman_Idle1</MoveIdleAnim>
+			<!-- used when buying a serf! -->
+		</Logic>
+		<Display classname="ED::CBehaviorProps">
+			<Class>ED::CDisplayBehaviorMovement</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		<!-- this is required so the serf can be told to move around -->
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>GGL::CBehaviorWalkCommand</Class>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CSerfBehaviorProps">
+			<Class>GGL::CSerfBehavior</Class>
+			<ApproachConstructionSiteTaskList>TL_SALESMAN_GO_TO_CONSTRUCTION_SITE</ApproachConstructionSiteTaskList>
+		
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CCamperBehaviorProperties">
+			<Class>GGL::CCamperBehavior</Class>
+			<Range>5000</Range>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CGLBehaviorPropsDying">
+			<Class>GGL::CGLBehaviorDying</Class>
+			<DyingTaskList>TL_DIE</DyingTaskList>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>GGL::CWorkerEvadeBehavior</Class>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CEvadeExecutionBehaviorProps">
+			<Class>GGL::CEvadeExecutionBehavior</Class>
+			<BasePriority>200</BasePriority>
+		</Logic>
+	</Behavior>
+	<Behavior>
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>EGL::CParticleEffectAttachmentBehavior</Class>
+		</Logic>
+		<Display classname="ED::CBehaviorProps">
+			<Class>ED::CParticleEffectAttachmentBehavior</Class>
+		</Display>
+	</Behavior>
+</root>

@@ -1,0 +1,40 @@
+<root>
+	<Table>Cannon</Table>
+	
+	<!--Level 1-->
+	<Level>		
+		<DamageBonus>5</DamageBonus>	
+	</Level>
+	
+	<!--Level 2 + MissChance -->
+	<Level>
+		<DamageBonus>5</DamageBonus>
+		<MissChance>-2</MissChance>
+	</Level>
+	
+	<!--Level 3 + HealingPoints -->
+	<Level>
+		<DamageBonus>5</DamageBonus>
+		<MissChance>-2</MissChance>
+		<HealingPoints>4</HealingPoints>		
+	</Level>
+	
+	<!--Level 4 + DamageAmount -->
+	<Level>
+		<DamageBonus>5</DamageBonus>
+		<MissChance>-2</MissChance>
+		<HealingPoints>4</HealingPoints>
+		<DamageAmount>10</DamageAmount>
+	</Level>
+	
+	<!--Level 5 + Exploration + AutoAttackRange + MaxRange (Towers can be outranged)-->
+	<Level>
+		<DamageBonus>5</DamageBonus>
+		<MissChance>-2</MissChance>
+		<HealingPoints>4</HealingPoints>
+		<DamageAmount>10</DamageAmount>
+		<Exploration>5</Exploration>		
+		<AutoAttackRange>500</AutoAttackRange>	
+		<MaxRange>500</MaxRange>
+	</Level>
+</root>

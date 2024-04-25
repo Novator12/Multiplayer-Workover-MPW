@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<root>
+	<TecCategoryType>TC_Technologies</TecCategoryType>
+	<TimeToResearch>35</TimeToResearch>
+	
+	<ResourceCosts>
+		<Gold>600</Gold>
+		<Clay/>
+		<Wood/>
+		<Stone/>
+		<Iron>0</Iron>
+		<Sulfur>400</Sulfur>
+	</ResourceCosts>
+	
+	<AutomaticResearch>false</AutomaticResearch>
+	<UseForStatisticsFlag>true</UseForStatisticsFlag>
+	
+	<ArmorModifier>
+		<Value>3</Value>
+		<Operation>+</Operation>
+	</ArmorModifier>
+	
+	<Conditions>
+		<TecCondition>
+			<TecType>T_ReinforcedChassis</TecType>
+		</TecCondition>
+
+		<TecCondition>
+			<TecType>GT_Chemistry</TecType>
+		</TecCondition>
+		
+		<RequiredEntityConditions>1</RequiredEntityConditions>
+		
+		<EntityCondition>
+			<EntityType>PB_Alchemist2</EntityType>
+			<Amount>1</Amount>
+		</EntityCondition>
+	</Conditions>
+</root>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?><root>
+	<TecCategoryType>TC_Technologies</TecCategoryType>
+	<TimeToResearch>50</TimeToResearch>
+	
+	<ResourceCosts>
+		<Gold>200</Gold>
+		<Clay/>
+		<Wood/>
+		<Stone/>
+		<Iron>200</Iron>
+		<Sulfur/>
+	</ResourceCosts>
+	
+	<UseForStatisticsFlag>true</UseForStatisticsFlag>
+	
+	<SpeedModifier>
+		<Value>30</Value>
+		<Operation>+</Operation>
+	</SpeedModifier>
+
+	<Conditions>
+		<EntityCondition>
+			<EntityType>PB_Barracks2</EntityType>
+			<Amount>1</Amount>
+		</EntityCondition>
+	</Conditions>
+</root>

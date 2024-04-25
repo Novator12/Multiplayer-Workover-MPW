@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		<Class>ED::CDisplayBuilding</Class>
+		<Model>PB_Foundry2</Model>
+	</Display>
+	<Logic classname="GGL::CGLBuildingProps">
+		<Class>GGL::CBuilding</Class>
+		<AccessCategory>AccessCategoryBuilding</AccessCategory>
+		<NeedsPlayer>true</NeedsPlayer>
+		<ForceNoPlayer>false</ForceNoPlayer>  
+		<Category>Barracks</Category>
+		<Category>MilitaryBuilding</Category>
+		<Category>SerfConversionBuilding</Category>
+	
+		<MaxHealth>2000</MaxHealth>
+		<ArmorClass>ArmorClassFortification</ArmorClass>
+		<ArmorAmount>4</ArmorAmount>
+		<Exploration>30</Exploration>
+		  
+	<!-- Armor -->
+		<ModifyArmor>
+		  	<Technology>T_Masonry</Technology>  
+		</ModifyArmor> 
+				
+	<!-- Exploration-->
+		<ModifyExploration>
+			<Technology>T_CityGuard</Technology>
+		</ModifyExploration>
+		
+		<Upgrade>
+			<Category>Foundry</Category>
+		</Upgrade>
+		
+		<ConstructionInfo>
+            <BuilderSlot>
+                <Position>
+                    <X>600</X>
+                    <Y>-800</Y>
+                </Position>
+                <Orientation>90</Orientation>
+            </BuilderSlot>
+            <BuilderSlot>
+                <Position>
+                    <X>100</X>
+                    <Y>-800</Y>
+                </Position>
+                <Orientation>90</Orientation>
+            </BuilderSlot>
+            <BuilderSlot>
+                <Position>
+                    <X>-200</X>
+                    <Y>-800</Y>
+                </Position>
+                <Orientation>90</Orientation>
+            </BuilderSlot>
+            <BuilderSlot>
+                <Position>
+                    <X>-800</X>
+                    <Y>-100</Y>
+                </Position>
+                <Orientation>0</Orientation>
+            </BuilderSlot>
+            <BuilderSlot>
+                <Position>
+                    <X>-800</X>
+                    <Y>200</Y>
+                </Position>
+                <Orientation>0</Orientation>
+            </BuilderSlot>
+            <BuilderSlot>
+                <Position>
+                    <X>-800</X>
+                    <Y>500</Y>
+                </Position>
+                <Orientation>0</Orientation>
+            </BuilderSlot>
+            <ConstructionSite>ZB_ConstructionSiteMarket1</ConstructionSite>
+        </ConstructionInfo>
+		
+        <ApproachPos>
+            <X>600</X>
+            <Y>-800</Y>
+        </ApproachPos>
+		  <ApproachR>0</ApproachR>
+        <DoorPos>
+            <X>600</X>
+            <Y>-100</Y>
+        </DoorPos>
+		
+        <Blocked1>
+            <X>-700</X>
+            <Y>600</Y>
+        </Blocked1>
+        <Blocked2>
+            <X>800</X>
+            <Y>-700</Y>
+        </Blocked2>
+        <TerrainPos1>
+            <X>-800</X>
+            <Y>700</Y>
+        </TerrainPos1>
+        <TerrainPos2>
+            <X>900</X>
+            <Y>-800</Y>
+        </TerrainPos2>
+	</Logic>
+	
+	<Behavior>
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>EGL::GLEBehaviorMultiSubAnims</Class>
+		</Logic>
+		<Display classname="ED::CBehaviorProps">
+			<Class>ED::CDisplayBehaviorBuildingAnimation</Class>
+		</Display>
+	</Behavior>
+	
+	<Behavior>
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>GGL::CBuildingBehavior</Class>
+		</Logic>
+		<Display classname="GD::CBuildingBehaviorProps">
+			<Class>GD::CBuildingBehavior</Class>
+			<Banner>Default</Banner>
+			<NumDamageEffects>21</NumDamageEffects>
+			<NumDestroyEffects>21</NumDestroyEffects>
+		</Display>
+	</Behavior>
+	
+	<Behavior>
+		<Logic classname="GGL::CBarrackBehaviorProperties">
+			<Class>GGL::CBarrackBehavior</Class>
+			<LeaveTaskList>TL_LEAVE_FOUNDRY</LeaveTaskList>
+			<TrainingTime>20</TrainingTime>
+			<TrainingTaskList>TL_TRAIN1_FOUNDRY2</TrainingTaskList>
+			<TrainingTaskList>TL_TRAIN2_FOUNDRY2</TrainingTaskList>
+			<TrainingTaskList>TL_TRAIN3_FOUNDRY2</TrainingTaskList>
+		</Logic>
+	</Behavior>
+</root>

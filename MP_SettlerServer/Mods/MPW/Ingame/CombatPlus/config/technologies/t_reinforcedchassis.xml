@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<root>
+	<TecCategoryType>TC_Technologies</TecCategoryType>
+	<TimeToResearch>25</TimeToResearch>
+	
+	<ResourceCosts>
+		<Gold>350</Gold>
+		<Clay/>
+		<Wood/>
+		<Stone/>
+		<Iron></Iron>
+		<Sulfur>250</Sulfur>
+	</ResourceCosts>
+	
+	<AutomaticResearch>false</AutomaticResearch>
+	<UseForStatisticsFlag>true</UseForStatisticsFlag>
+	
+	<ArmorModifier>
+		<Value>3</Value>
+		<Operation>+</Operation>
+	</ArmorModifier>
+
+	<Conditions>
+		<EntityCondition>
+			<EntityType>PB_Alchemist2</EntityType>
+			<Amount>1</Amount>
+		</EntityCondition>
+	</Conditions>
+</root>

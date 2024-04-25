@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?><root>
+	<Display classname="ED::CDisplayEntityProps">
+		<Class>GD::CDisplaySettler</Class>
+		<Model>CU_Evil_Queen</Model>
+		<DrawPlayerColor>True</DrawPlayerColor>
+		<Anim>CU_Evil_Queen_Walk</Anim>
+		<Anim>CU_Evil_Queen_Idle1</Anim>
+		<Anim>CU_Evil_Queen_IdleAttack1</Anim>
+		<Anim>CU_Evil_Queen_Attack1</Anim>
+		<Anim>CU_Evil_Queen_Attack2</Anim>
+		<Anim>CU_Evil_Queen_Finish</Anim>
+		<Anim>CU_Evil_Queen_Dying1</Anim>
+		<Anim>CU_Evil_Queen_Run1</Anim>
+		<Anim>CU_Evil_Queen_Hit</Anim>
+		<Anim>CU_Evil_Queen_PoisonAttack</Anim> 
+		<Anim>CU_Evil_Queen_PoisonDart</Anim> 
+  		<Anim>CU_Evil_Queen_Dead</Anim>
+	</Display>
+	
+	<Logic classname="GGL::CGLSettlerProps">
+		<Class>GGL::CSettler</Class>
+		<AccessCategory>AccessCategorySettler</AccessCategory>
+		<NeedsPlayer>true</NeedsPlayer>
+		<ForceNoPlayer>false</ForceNoPlayer>
+		<Category>Military</Category>
+		<Category>Melee</Category>
+		<Category>Hero</Category>
+		<AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
+		<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
+		<Fearless>true</Fearless>
+		<Convertible>false</Convertible>
+		<Hat/>
+
+	<!--Armormodifier-->
+		<ModifyArmor>
+			<Technology>T_SoftArcherArmor</Technology>
+		</ModifyArmor>
+		
+		<ModifyArmor>
+			<Technology>T_PaddedArcherArmor</Technology>
+		</ModifyArmor>
+		
+		<ModifyArmor>
+			<Technology>T_LeatherArcherArmor</Technology>
+		</ModifyArmor>
+
+	<!--DamageModifier-->
+		<ModifyDamage>
+			<Technology>T_WoodAging</Technology>
+		</ModifyDamage>
+		<ModifyDamage>
+			<Technology>T_Turnery</Technology>
+		</ModifyDamage>
+
+	<!--SpeedModifier-->
+		<ModifySpeed>
+			<Technology>T_BetterTrainingBarracks</Technology>
+		</ModifySpeed>
+		
+		<Cost>
+			<Gold>1</Gold>
+		</Cost>
+		
+		<MaxHealth>600</MaxHealth>
+		<Exploration>22</Exploration>
+		
+		<ArmorClass>ArmorClassHero</ArmorClass>
+		<ArmorAmount>5</ArmorAmount>
+		<DodgeChance>0</DodgeChance>
+		
+		<ExperiencePoints>20</ExperiencePoints>
+	</Logic>
+	
+	<Behavior>
+		<Logic classname="GGL::CLeaderBehaviorProps">
+			<Class>GGL::CLeaderBehavior</Class>
+
+			<SoldierType>CU_Evil_SoldierBearman1</SoldierType>
+			
+			<BattleTaskList>TL_BATTLE_CLAW</BattleTaskList>
+			
+			<NormalAttackAnim1>CU_Evil_Queen_Attack1</NormalAttackAnim1>
+			<NormalAttackAnim2>CU_Evil_Queen_Attack2</NormalAttackAnim2>
+			<CounterAttackAnim>CU_Evil_Queen_Attack1</CounterAttackAnim>
+			<FinishingMoveAnim>CU_Evil_Queen_Finish</FinishingMoveAnim>
+			<MissAttackAnim>CU_Evil_Queen_Attack1</MissAttackAnim>
+			<BattleIdleAnim>CU_Evil_Queen_Attack1</BattleIdleAnim>
+			<BattleWalkAnim>CU_Evil_Queen_Run1</BattleWalkAnim>
+			<HitAnim>CU_Evil_Queen_Hit</HitAnim>
+			
+			<DamageClass>DC_Hero</DamageClass>
+			<DamageAmount>22</DamageAmount>
+			<MaxRandomDamageBonus>4</MaxRandomDamageBonus>
+			
+			<BattleWaitUntil>2000</BattleWaitUntil>
+			
+			<MaxRange>300.0</MaxRange>
+			<MinRange>0.0</MinRange>
+			<AutoAttackRange>2200</AutoAttackRange>
+			
+			<HealingPoints>8</HealingPoints>
+			<HealingSeconds>2</HealingSeconds>
+		</Logic>
+	</Behavior>
+	
+	<Behavior>
+		<Logic classname="EGL::CMovementBehaviorProps">
+			<Class>GGL::CSettlerMovement</Class>
+			<Speed>400</Speed>
+			<RotationSpeed>30</RotationSpeed>
+			<MoveTaskList>TL_LEADER_WALK</MoveTaskList>
+		</Logic>
+		<Display classname="ED::CBehaviorProps">
+			<Class>ED::CDisplayBehaviorMovement</Class>
+		</Display>
+	</Behavior>
+	
+	<Behavior>
+		<Logic classname="GGL::CShurikenAbilityProps">
+			<Class>GGL::CShurikenAbility</Class>
+			<RechargeTimeSeconds>90</RechargeTimeSeconds>
+			<TaskList>TL_SHURIKEN_SPECIAL</TaskList>
+			<Animation>CU_Evil_Queen_PoisonDart</Animation>
+			<Range>3000.0</Range>
+			<MaxArcDegree>90</MaxArcDegree>
+			<NumberShuriken>6</NumberShuriken>
+			<ProjectileType>FXKalaArrow</ProjectileType>
+			<ProjectileOffsetHeight>120.0</ProjectileOffsetHeight>
+			<DamageClass>DC_Hero</DamageClass>
+			<DamageAmount>47</DamageAmount>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CCircularAttackProps">
+			<Class>GGL::CCircularAttack</Class>
+			<RechargeTimeSeconds>120</RechargeTimeSeconds>
+			<TaskList>TL_BATTLE_SPECIAL</TaskList>
+			<Animation>CU_Evil_Queen_PoisonAttack</Animation>
+			<DamageClass>DC_Hero</DamageClass>
+			<DamageAmount>45</DamageAmount>
+			<Range>1500.0</Range>
+	  		<Effect>FXKalaPoison</Effect>
+		</Logic>
+	</Behavior>
+	
+	<Behavior>
+		<Logic classname="GGL::CGLAnimationBehaviorExProps">
+			<Class>GGL::CGLBehaviorAnimationEx</Class>
+			<AnimSet>SET_CU_EVIL_QUEEN</AnimSet>
+		</Logic>
+		<Display classname="ED::CBehaviorProps">
+			<Class>ED::CDisplayBehaviorAnimation</Class>
+		</Display>
+	</Behavior>
+	
+	<Behavior>
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>GGL::CBehaviorWalkCommand</Class>
+		</Logic>
+	</Behavior>
+	
+	<Behavior>
+		<Logic classname="GGL::CGLBehaviorPropsDying">
+			<Class>GGL::CGLBehaviorDying</Class>
+			<DyingTaskList>TL_DIE_HERO</DyingTaskList>
+		</Logic>
+	</Behavior>
+	
+	<Behavior>
+		<Logic classname="GGL::CHeroBehaviorProps">
+			<Class>GGL::CHeroBehavior</Class>
+		</Logic>
+	</Behavior>
+</root>

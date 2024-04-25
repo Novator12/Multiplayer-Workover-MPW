@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CTaskList>
+<!--
+    <Task classname="EGL::CGLETaskArgsAnimation" classid="0x4d90ecb8">
+        <TaskType>TASK_SET_ANIM</TaskType>
+        <AnimID>PU_Serf_Run</AnimID>
+        <PlayBackwards>false</PlayBackwards>
+    </Task>
+
+    <Task classname="EGL::CGLETaskArgs" classid="7ce66308">
+        <TaskType>TASK_GO_TO_CAMP</TaskType>
+    </Task>
+     <Task classname="EGL::CGLETaskArgs" classid="7ce66308">
+        <TaskType>TASK_TURN_TO_TARGET_ORIENTATION</TaskType>
+    </Task>
+-->
+
+ 		<Task classname="EGL::CTaskArgsModelID" classid="0x3d17c8cd">
+    		<TaskType>TASK_SET_MODEL</TaskType>
+      		<Model>PU_Travelling_Salesman</Model>
+      	</Task>	
+    <Task classname="EGL::CGLETaskArgsAnimation" classid="0x4d90ecb8">
+        <TaskType>TASK_SET_ANIM</TaskType>
+        <AnimID>PU_Travelling_Salesman_Idle1</AnimID>
+        <PlayBackwards>false</PlayBackwards>
+    </Task>
+
+    <Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+        <TaskType>TASK_LIST_DONE</TaskType>
+    </Task>
+</CTaskList>

@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		<Class>GD::CDisplaySettler</Class>
+		<Model>PU_Hero9_LeaderWolf</Model>
+		<Anim>XA_Wolf_Run</Anim>
+		<Anim>XA_Wolf_Wait</Anim>
+		<Anim>XA_Wolf_Attack1</Anim>
+		<Anim>XA_Wolf_Dying1</Anim>
+		<Anim>XA_Wolf_IdleAttack1</Anim>
+	</Display>
+
+	<Logic classname="GGL::CGLSettlerProps">
+		<Class>GGL::CSettler</Class>
+		<AccessCategory>AccessCategorySettler</AccessCategory>
+		<NeedsPlayer>true</NeedsPlayer>
+		<ForceNoPlayer>false</ForceNoPlayer>
+		<Category>Military</Category>
+		<Category>Leader</Category>
+		<!--Category>CavalryLight</Category-->
+		<Category>EvilLeader</Category>
+		<Category>Melee</Category>
+		<AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
+		<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
+		<Hat/>
+
+		<Cost>
+			<Gold>100</Gold>
+			<Iron>50</Iron>
+			<Wood/>
+		</Cost>
+
+		<Upgrade>
+			<!-- <Type></Type> for level 2-->
+			<Category>LeaderWolf</Category>
+		</Upgrade>
+
+		<MaxHealth>200</MaxHealth>
+		<Exploration>30</Exploration>
+
+		<ArmorClass>ArmorClassHero</ArmorClass>
+		<ArmorAmount>3</ArmorAmount>
+		<DodgeChance>0</DodgeChance>
+
+		<ExperiencePoints>30</ExperiencePoints>
+		<AttractionSlots>0</AttractionSlots>
+	</Logic>
+
+	<Behavior>
+		<Logic classname="GGL::CLeaderBehaviorProps">
+			<Class>GGL::CLeaderBehavior</Class>
+
+			<SoldierType>PU_Hero9_SoldierWolf</SoldierType>
+
+			<BattleTaskList>TL_BATTLE_MACE</BattleTaskList>
+
+			<NormalAttackAnim1>XA_Wolf_Attack1</NormalAttackAnim1>
+			<NormalAttackAnim2>XA_Wolf_Attack1</NormalAttackAnim2>
+			<CounterAttackAnim>XA_Wolf_Attack1</CounterAttackAnim>
+			<FinishingMoveAnim>XA_Wolf_Attack1</FinishingMoveAnim>
+			<MissAttackAnim>XA_Wolf_Attack1</MissAttackAnim>
+			<BattleIdleAnim>XA_Wolf_IdleAttack1</BattleIdleAnim>
+			<BattleWalkAnim>XA_Wolf_Run</BattleWalkAnim>
+			<HitAnim>XA_Wolf_IdleAttack1</HitAnim>
+
+			<DamageClass>DC_Hero</DamageClass>
+			<DamageAmount>14</DamageAmount>
+			<MaxRandomDamageBonus>2</MaxRandomDamageBonus>
+
+			<BattleWaitUntil>1500</BattleWaitUntil>
+
+			<MaxRange>300</MaxRange>
+			<MinRange>0.0f</MinRange>
+			<AutoAttackRange>2000</AutoAttackRange>
+
+			<HealingPoints>4</HealingPoints>
+			<HealingSeconds>3</HealingSeconds>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CLimitedAttachmentBehaviorProperties">
+			<Class>GGL::CLimitedAttachmentBehavior</Class>
+			<Attachment>
+				<Type>ATTACHMENT_LEADER_SOLDIER</Type>
+				<Limit>6</Limit>
+			</Attachment>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CGLAnimationBehaviorExProps">
+			<Class>GGL::CGLBehaviorAnimationEx</Class>
+			<SuspensionAnimation>XA_Wolf_Wait</SuspensionAnimation>
+			<AnimSet>SET_CU_AGGRESSIVE_WOLF</AnimSet>
+		</Logic>
+		<Display classname="ED::CBehaviorProps">
+			<Class>ED::CDisplayBehaviorAnimation</Class>
+		</Display>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="EGL::CMovementBehaviorProps">
+			<Class>GGL::CLeaderMovement</Class>
+			<Speed>440</Speed>
+			<RotationSpeed>40</RotationSpeed>
+			<MoveTaskList>TL_LEADER_WALK</MoveTaskList>
+			<MoveIdleAnim>XA_Wolf_Wait</MoveIdleAnim>
+		</Logic>
+		<Display classname="ED::CBehaviorProps">
+			<Class>ED::CDisplayBehaviorMovement</Class>
+		</Display>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>GGL::CBehaviorWalkCommand</Class>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CGLBehaviorPropsDying">
+			<Class>GGL::CGLBehaviorDying</Class>
+			<DyingTaskList>TL_DIE</DyingTaskList>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>GGL::CLeaderEvadeBehavior</Class>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CEvadeExecutionBehaviorProps">
+			<Class>GGL::CEvadeExecutionBehavior</Class>
+			<BasePriority>400</BasePriority>
+		</Logic>
+	</Behavior>
+</root>

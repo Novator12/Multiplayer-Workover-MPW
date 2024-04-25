@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		<Class>GD::CDisplaySettler</Class>
+		<Model>PU_LeaderCavalry2</Model>
+		<DrawPlayerColor>True</DrawPlayerColor>
+		<Anim>PU_LeaderCavalry2_Run1</Anim>
+		<Anim>PU_LeaderCavalry2_Idle1</Anim>
+		<Anim>PU_LeaderCavalry2_Idle2</Anim>
+		<Anim>PU_LeaderCavalry2_Idle3</Anim>
+		<Anim>PU_LeaderCavalry2_Idle4</Anim>
+		<Anim>PU_LeaderCavalry2_Idle5</Anim>
+		<Anim>PU_LeaderCavalry2_Idle6</Anim>
+		<Anim>PU_LeaderCavalry2_Attack1</Anim>
+		<Anim>PU_LeaderCavalry2_Dying1</Anim>
+		<Anim>PU_LeaderCavalry2_Walk</Anim>
+		<Anim>PU_LeaderCavalry2_Hit</Anim>
+	</Display>
+	
+	<Logic classname="GGL::CGLSettlerProps">
+		<Class>GGL::CSettler</Class>
+		<AccessCategory>AccessCategorySettler</AccessCategory>
+		<NeedsPlayer>true</NeedsPlayer>
+		<ForceNoPlayer>false</ForceNoPlayer>
+		<Category>Military</Category>
+		<Category>Leader</Category>
+		<Category>CavalryLight</Category>
+		<Category>LongRange</Category>
+		<AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
+		<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
+		<Hat/>
+		
+	<!--Armormodifier-->
+		<ModifyArmor>
+			<Technology>T_SoftArcherArmor</Technology>
+		</ModifyArmor>
+		
+		<ModifyArmor>
+			<Technology>T_PaddedArcherArmor</Technology>
+		</ModifyArmor>
+		
+		<ModifyArmor>
+			<Technology>T_LeatherArcherArmor</Technology>
+		</ModifyArmor>
+		
+	<!--DamageModifier-->
+		<ModifyDamage>
+			<Technology>T_Fletching</Technology>
+		</ModifyDamage>
+		
+		<ModifyExploration>
+			<Technology>T_Fletching</Technology>
+		</ModifyExploration>
+		
+		<ModifyMaxRange>
+			<Technology>T_Fletching</Technology>
+		</ModifyMaxRange>
+		
+		<ModifyDamage>
+			<Technology>T_BodkinArrow</Technology>
+		</ModifyDamage>
+		
+		<ModifyExploration>
+			<Technology>T_BodkinArrow</Technology>
+		</ModifyExploration>
+		
+		<ModifyMaxRange>
+			<Technology>T_BodkinArrow</Technology>
+		</ModifyMaxRange>
+		
+	<!--SpeedModifier-->
+		<ModifySpeed>
+			<Technology>T_Shoeing</Technology>
+		</ModifySpeed>
+		
+		<Cost>
+			<Gold>630</Gold>
+			<Iron>0</Iron>
+			<Wood>260</Wood>
+		</Cost>
+		
+		<MaxHealth>350</MaxHealth>
+		<Exploration>29</Exploration>
+		
+		<ArmorClass>ArmorClassFur</ArmorClass>
+		<ArmorAmount>3</ArmorAmount>
+		<DodgeChance>0</DodgeChance>
+		
+		<ExperiencePoints>30</ExperiencePoints>
+		<AttractionSlots>2</AttractionSlots>
+	</Logic>
+	
+	<Behavior>
+		<Logic classname="GGL::CLeaderBehaviorProps">
+			<Class>GGL::CLeaderBehavior</Class>
+			<BarrackUpgradeCategory>Stable</BarrackUpgradeCategory>
+			<HomeRadius>2000</HomeRadius>
+			<SoldierType>PU_SoldierCavalry2</SoldierType>
+			
+			<BattleTaskList>TL_BATTLE_CROSSBOW</BattleTaskList>
+			
+			<NormalAttackAnim1>PU_LeaderCavalry2_Attack1</NormalAttackAnim1>
+			<NormalAttackAnim2>PU_LeaderCavalry2_Attack1</NormalAttackAnim2>
+			<CounterAttackAnim>PU_LeaderCavalry2_Attack1</CounterAttackAnim>
+			<FinishingMoveAnim>PU_LeaderCavalry2_Attack1</FinishingMoveAnim>
+			<MissAttackAnim>PU_LeaderCavalry2_Idle1</MissAttackAnim>
+			<BattleIdleAnim>PU_LeaderCavalry2_Idle1</BattleIdleAnim>
+			<BattleWalkAnim>PU_LeaderCavalry2_Run1</BattleWalkAnim>
+			<HitAnim>PU_LeaderCavalry2_Hit</HitAnim>
+
+			<DamageClass>DC_LightCavalry</DamageClass>
+			<DamageAmount>32</DamageAmount>
+			<MaxRandomDamageBonus>2</MaxRandomDamageBonus>
+			
+			<BattleWaitUntil>1600</BattleWaitUntil>
+			
+			<MissChance>2</MissChance>
+			
+			<ProjectileEffectID>FXCrossBowArrow</ProjectileEffectID>
+			<MaxRange>2900</MaxRange>
+			<MinRange>500.0f</MinRange>
+			<AutoAttackRange>2900</AutoAttackRange>
+			
+			<HealingPoints>6</HealingPoints>
+			<HealingSeconds>3</HealingSeconds>
+			
+			<UpkeepCost>20</UpkeepCost>
+		</Logic>
+	</Behavior>
+	
+	<Behavior>
+		<Logic classname="GGL::CLimitedAttachmentBehaviorProperties">
+			<Class>GGL::CLimitedAttachmentBehavior</Class>
+			<Attachment>
+				<Type>ATTACHMENT_LEADER_SOLDIER</Type>
+				<Limit>4</Limit>
+			</Attachment>
+		</Logic>
+	</Behavior>
+	
+	<Behavior>
+		<Logic classname="GGL::CGLAnimationBehaviorExProps">
+			<Class>GGL::CGLBehaviorAnimationEx</Class>
+			<SuspensionAnimation>PU_LeaderCavalry2_Idle1</SuspensionAnimation>
+			<AnimSet>SET_LEADERCAVALRY2</AnimSet>
+		</Logic>
+		
+		<Display classname="ED::CBehaviorProps">
+			<Class>ED::CDisplayBehaviorAnimation</Class>
+		</Display>
+	</Behavior>
+	
+	<Behavior>
+		<Logic classname="EGL::CMovementBehaviorProps">
+			<Class>GGL::CLeaderMovement</Class>
+			<Speed>500</Speed>
+			<RotationSpeed>30</RotationSpeed>
+			<MoveTaskList>TL_LEADER_WALK</MoveTaskList>
+			<MoveIdleAnim>PU_LeaderCavalry2_Idle1</MoveIdleAnim>
+		</Logic>
+		
+		<Display classname="ED::CBehaviorProps">
+			<Class>ED::CDisplayBehaviorMovement</Class>
+		</Display>
+	</Behavior>
+	
+	<Behavior>
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>GGL::CBehaviorWalkCommand</Class>
+		</Logic>
+	</Behavior>
+	
+	<Behavior>
+		<Logic classname="GGL::CGLBehaviorPropsDying">
+			<Class>GGL::CGLBehaviorDying</Class>
+			<DyingTaskList>TL_DIE</DyingTaskList>
+		</Logic>
+	</Behavior>
+	
+	<Behavior>
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>GGL::CLeaderEvadeBehavior</Class>
+		</Logic>
+	</Behavior>
+	
+	<Behavior>
+		<Logic classname="GGL::CEvadeExecutionBehaviorProps">
+			<Class>GGL::CEvadeExecutionBehavior</Class>
+			<BasePriority>400</BasePriority>
+		</Logic>
+	</Behavior>
+	
+	<Behavior>
+		<Logic classname="GGL::CReplaceableEntityBehaviorProperties">
+			<Class>GGL::CReplaceableEntityBehavior</Class>
+			<EntityType>XD_DroppedBow</EntityType>
+		</Logic>
+	</Behavior>
+</root>

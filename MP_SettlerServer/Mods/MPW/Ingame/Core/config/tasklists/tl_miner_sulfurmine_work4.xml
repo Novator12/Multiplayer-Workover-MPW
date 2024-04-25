@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CGLETaskList>
+	<PrincipalTask>Work</PrincipalTask>
+
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+		<TaskType>TASK_CHECK_FEAR</TaskType>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+		<TaskType>TASK_CHECK_FEAR</TaskType>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+		<TaskType>TASK_RESET_TASK_LIST_TIMER</TaskType>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsAnimation" classid="0x4d90ecb8">
+		<TaskType>TASK_SET_ANIM</TaskType>
+		<AnimID>PU_Miner_Walk</AnimID>
+		<Category></Category>
+		<PlayBackwards>false</PlayBackwards>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+		<TaskType>TASK_APPEAR</TaskType>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsPosAndOrientation" classid="0x2f706fdd">
+		<TaskType>TASK_SET_POS</TaskType>
+		<Position>
+			<X>540</X>
+			<Y>540</Y>
+		</Position>
+		<Orientation>0</Orientation>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+		<TaskType>TASK_GO_TO_POS</TaskType>
+		<Position>
+			<X>6.948328e+002</X>
+			<Y>5.025532e+002</Y>
+		</Position>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+		<TaskType>TASK_GO_TO_POS</TaskType>
+		<Position>
+			<X>7.777290e+002</X>
+			<Y>-2.079126e+002</Y>
+		</Position>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+		<TaskType>TASK_GO_TO_POS</TaskType>
+		<Position>
+			<X>5.146451e+002</X>
+			<Y>-5.167236e+002</Y>
+		</Position>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+		<TaskType>TASK_GO_TO_POS</TaskType>
+		<Position>
+			<X>-4.400718e+002</X>
+			<Y>-5.789009e+002</Y>
+		</Position>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+		<TaskType>TASK_GO_TO_POS</TaskType>
+		<Position>
+			<X>-6.270222e+002</X>
+			<Y>-3.021387e+001</Y>
+		</Position>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+		<TaskType>TASK_GO_TO_POS</TaskType>
+		<Position>
+			<X>-4.231434e+002</X>
+			<Y>2.707983e+002</Y>
+		</Position>
+	</Task>
+
+	<Task classname="EGL::CTaskArgsFloat" classid="0xa2787eed">
+		<TaskType>TASK_SET_TARGET_ORIENTATION_RELATIVE</TaskType>
+		<Value>3.000000e+002</Value>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+		<TaskType>TASK_TURN_TO_TARGET_ORIENTATION</TaskType>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsSubAnim" classid="0x23f8242d">
+		<TaskType>TASK_SET_ANIM_AT_WORKPLACE</TaskType>
+		<AnimID>PB_SulfurMine3_conveyor_602</AnimID>
+		<Category></Category>
+		<PlayBackwards>false</PlayBackwards>
+		<IsLooped>true</IsLooped>
+		<SubAnimIdx>2</SubAnimIdx>
+	</Task>
+
+ 	<Task classname="EGL::CTaskArgsUVAnim">
+  		<TaskType>TASK_ACTIVATE_UVANIM</TaskType> 
+  		<SlotIndex>3</SlotIndex> 
+  		<Activate>True</Activate> 
+ 	</Task>
+
+	<Task classname="EGL::CTaskArgsParticleEffectIndex" classid="0xbfc2ebb7">
+		<TaskType>TASK_ACTIVATE_PARTICLE_EFFECT</TaskType>
+		<EffectIndex>0</EffectIndex>
+	</Task>
+
+	<Task classname="EGL::CTaskArgsParticleEffectIndex" classid="0xbfc2ebb7">
+		<TaskType>TASK_ACTIVATE_PARTICLE_EFFECT</TaskType>
+		<EffectIndex>1</EffectIndex>
+	</Task>
+
+	<Task classname="EGL::CTaskArgsParticleEffectIndex" classid="0xbfc2ebb7">
+		<TaskType>TASK_ACTIVATE_PARTICLE_EFFECT</TaskType>
+		<EffectIndex>2</EffectIndex>
+	</Task>
+
+	<Task classname="EGL::CTaskArgsParticleEffectIndex" classid="0xbfc2ebb7">
+		<TaskType>TASK_ACTIVATE_PARTICLE_EFFECT</TaskType>
+		<EffectIndex>3</EffectIndex>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsAnimation" classid="0x4d90ecb8">
+		<TaskType>TASK_SET_ANIM</TaskType>
+		<AnimID>PU_Miner_SulfurMine_Work2</AnimID>
+		<Category></Category>
+		<PlayBackwards>false</PlayBackwards>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsThousandths" classid="0x230862d8">
+		<TaskType>TASK_WAIT_FOR_ANIM</TaskType>
+		<Thousandths>100</Thousandths>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+		<TaskType>TASK_MINED_RESOURCE</TaskType>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+		<TaskType>TASK_CHANGE_WORK_TIME_WORK</TaskType>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsThousandths" classid="0x230862d8">
+		<TaskType>TASK_WAIT_FOR_ANIM</TaskType>
+		<Thousandths>800</Thousandths>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+		<TaskType>TASK_MINED_RESOURCE</TaskType>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+		<TaskType>TASK_CHANGE_WORK_TIME_WORK</TaskType>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsThousandths" classid="0x230862d8">
+		<TaskType>TASK_WAIT_FOR_ANIM</TaskType>
+		<Thousandths>1000</Thousandths>
+	</Task>
+
+ 	<Task classname="EGL::CTaskArgsUVAnim">
+  		<TaskType>TASK_ACTIVATE_UVANIM</TaskType> 
+  		<SlotIndex>3</SlotIndex> 
+  		<Activate>False</Activate> 
+ 	</Task>
+
+	<Task classname="EGL::CTaskArgsParticleEffectIndex" classid="0xbfc2ebb7">
+		<TaskType>TASK_DEACTIVATE_PARTICLE_EFFECT</TaskType>
+		<EffectIndex>0</EffectIndex>
+	</Task>
+
+	<Task classname="EGL::CTaskArgsParticleEffectIndex" classid="0xbfc2ebb7">
+		<TaskType>TASK_DEACTIVATE_PARTICLE_EFFECT</TaskType>
+		<EffectIndex>1</EffectIndex>
+	</Task>
+
+	<Task classname="EGL::CTaskArgsParticleEffectIndex" classid="0xbfc2ebb7">
+		<TaskType>TASK_DEACTIVATE_PARTICLE_EFFECT</TaskType>
+		<EffectIndex>2</EffectIndex>
+	</Task>
+
+	<Task classname="EGL::CTaskArgsParticleEffectIndex" classid="0xbfc2ebb7">
+		<TaskType>TASK_DEACTIVATE_PARTICLE_EFFECT</TaskType>
+		<EffectIndex>3</EffectIndex>
+	</Task>  
+
+	<Task classname="EGL::CGLETaskArgsSubAnim" classid="0x23f8242d">
+		<TaskType>TASK_SET_ANIM_AT_WORKPLACE</TaskType>
+		<AnimID></AnimID>
+		<Category></Category>
+		<PlayBackwards>false</PlayBackwards>
+		<IsLooped>false</IsLooped>
+		<SubAnimIdx>2</SubAnimIdx>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsAnimation" classid="0x4d90ecb8">
+		<TaskType>TASK_SET_ANIM</TaskType>
+		<AnimID>PU_Miner_Walk</AnimID>
+		<Category></Category>
+		<PlayBackwards>false</PlayBackwards>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+		<TaskType>TASK_GO_TO_POS</TaskType>
+		<Position>
+			<X>-4.207051e+002</X>
+			<Y>-4.762051e+002</Y>
+		</Position>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+		<TaskType>TASK_GO_TO_POS</TaskType>
+		<Position>
+			<X>7.370022e+002</X>
+			<Y>-6.517329e+002</Y>
+		</Position>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+		<TaskType>TASK_GO_TO_POS</TaskType>
+		<Position>
+			<X>8.686851e+002</X>
+			<Y>-1.439287e+002</Y>
+		</Position>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+		<TaskType>TASK_GO_TO_POS</TaskType>
+		<Position>
+			<X>8.139478e+002</X>
+			<Y>5.333625e+002</Y>
+		</Position>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+		<TaskType>TASK_GO_TO_POS</TaskType>
+		<Position>
+			<X>5.362516e+002</X>
+			<Y>5.556685e+002</Y>
+		</Position>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+		<TaskType>TASK_VANISH</TaskType>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+		<TaskType>TASK_WORK_WAIT_UNTIL</TaskType>
+	</Task>
+ 
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+		<TaskType>TASK_ADVANCE_IN_CYCLE</TaskType>
+	</Task>
+</CGLETaskList>

@@ -1,0 +1,58 @@
+<root>
+	<TecCategoryType>TC_BuildingUpgrades</TecCategoryType>
+	<TimeToResearch>15</TimeToResearch>
+	<ResourceCosts>
+		<Clay>100</Clay>
+	</ResourceCosts>
+
+	<Conditions>
+		<RequiredTecConditions>4</RequiredTecConditions>
+			
+		
+		<TecCondition>
+			<TecType>GT_Mercenaries</TecType>
+			<TecCategoryType>TC_Military</TecCategoryType>
+		</TecCondition>		
+		<TecCondition>
+			<TecType>GT_StandingArmy</TecType>
+			<TecCategoryType>TC_Military</TecCategoryType>
+		</TecCondition>	
+		<TecCondition>
+			<TecType>GT_Construction</TecType>
+			<TecCategoryType>TC_Construction</TecCategoryType>
+		</TecCondition>		
+		<TecCondition>
+			<TecType>GT_GearWheel</TecType>
+			<TecCategoryType>TC_Construction</TecCategoryType>
+		</TecCondition>	
+		<TecCondition>
+			<TecType>GT_Alchemy</TecType>
+			<TecCategoryType>TC_Resources</TecCategoryType>
+		</TecCondition>		
+		<TecCondition>
+			<TecType>GT_Alloying</TecType>
+			<TecCategoryType>TC_Resources</TecCategoryType>
+		</TecCondition>		
+		
+		<TecCondition>
+			<TecType>GT_Trading</TecType>
+			<TecCategoryType>TC_Trading</TecCategoryType>
+		</TecCondition>
+		<TecCondition>
+			<TecType>GT_Literacy</TecType>
+			<TecCategoryType>TC_Administration</TecCategoryType>
+		</TecCondition>		
+		
+		
+		<TecCondition>
+			<TecType>GT_Mathematics</TecType>
+			<TecCategoryType>TC_Inventions</TecCategoryType>
+		</TecCondition>
+		<TecCondition>
+			<TecType>GT_Binocular</TecType>
+			<TecCategoryType>TC_Inventions</TecCategoryType>
+		</TecCondition>
+				
+		
+	</Conditions>
+</root>

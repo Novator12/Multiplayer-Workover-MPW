@@ -1,0 +1,67 @@
+﻿<?xml version="1.0"	encoding="utf-8" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		<Class>ED::CDisplayStaticEntity</Class>
+		<Model>PU_Hero3_Foundation1</Model>
+		<RenderInFoW>false</RenderInFoW>
+	</Display>
+	<!--Logic classname="EGL::CGLEEntityProps"-->
+	<Logic classname="GGL::CGLBuildingProps">
+		<Class>GGL::CBuilding</Class>
+ 	    <AccessCategory>AccessCategoryBuilding</AccessCategory>
+ 	    <DeleteWhenBuiltOn>false</DeleteWhenBuiltOn>
+		<NeedsPlayer>true</NeedsPlayer>
+		<ForceNoPlayer>false</ForceNoPlayer>
+		<MaxHealth>500</MaxHealth>
+		<ArmorClass>ArmorClassFortification</ArmorClass> 
+		<ArmorAmount>5</ArmorAmount>
+        <Exploration>0</Exploration>
+		<Category>Military</Category> 
+        <ConstructionInfo>
+        <Time>20</Time>
+            <!--Cost>
+				<Silver>250</Silver>
+				<Stone>200</Stone>
+            </Cost-->
+            <ConstructionSite>ZB_ConstructionSiteResidence1</ConstructionSite>
+        </ConstructionInfo>
+        <ApproachPos>
+            <X>30</X>
+            <Y>220</Y>
+        </ApproachPos>
+		<ApproachR>0</ApproachR>
+        <DoorPos>
+            <X>-20</X>
+            <Y>130</Y>			
+        </DoorPos>
+        <Blocked1>
+            <X>-100</X>
+            <Y>100</Y>
+        </Blocked1>
+        <Blocked2>
+            <X>100</X>
+            <Y>-100</Y>
+        </Blocked2>
+        <TerrainPos1>
+            <X>-200</X>
+            <Y>200</Y>
+        </TerrainPos1>
+        <TerrainPos2>
+            <X>200</X>
+            <Y>-200</Y>
+        </TerrainPos2>		
+	</Logic>
+    
+	<Behavior>
+	    <Logic classname="EGL::CGLEBehaviorProps">
+	        <Class>GGL::CFoundationBehavior</Class>
+        </Logic>
+    </Behavior>
+    
+	<Behavior>
+		<Logic classname="GGL::CGLBehaviorPropsDying">
+			<Class>GGL::CGLBehaviorDying</Class>
+		</Logic>
+	</Behavior>
+
+</root>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?><root>
+	<TecCategoryType>TC_Technologies</TecCategoryType>
+	<TimeToResearch>100</TimeToResearch>
+	<UseForStatisticsFlag>true</UseForStatisticsFlag>
+	
+	<ResourceCosts>
+		  <Gold>600</Gold>
+		  <Iron>400</Iron>
+		  <Clay/>		
+		  <Wood/>
+		  <Stone/>				
+		  <Sulfur/>
+	</ResourceCosts>
+
+	<Conditions>
+		<EntityCondition>
+			  <EntityType>PB_Archery2</EntityType>
+			  <Amount>1</Amount>
+		</EntityCondition>
+		
+		<EntityCondition>
+			  <EntityType>PB_Blacksmith3</EntityType>
+			  <Amount>1</Amount>
+		</EntityCondition>
+	</Conditions>
+</root>

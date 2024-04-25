@@ -1,0 +1,25 @@
+--------------------------------------------------------------------------------
+-- replace "Template" in this file with any unique name
+--------------------------------------------------------------------------------
+MPW.Template = {}
+table.insert( MPW.Modules, "Template" )
+--------------------------------------------------------------------------------
+function MPW.Template.Init()
+	LuaDebugger.Log( "Template.Init()" )
+end
+--------------------------------------------------------------------------------
+function MPW.Template.Load()
+	LuaDebugger.Log( "Template.Load()" )
+end
+--------------------------------------------------------------------------------
+function MPW.Template.PostInit()
+	LuaDebugger.Log( "Template.PostInit()" )
+end
+--------------------------------------------------------------------------------
+function MPW.Template.PostLoad()
+	LuaDebugger.Log( "Template.PostLoad()" )
+end
+--------------------------------------------------------------------------------
+function MPW.Template.Unload()
+	LuaDebugger.Log( "Template.Unload()" )
+end

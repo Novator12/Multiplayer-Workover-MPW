@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?><root>
+	<TecCategoryType>TC_MilitaryUnits</TecCategoryType>
+	<TimeToResearch>1</TimeToResearch>
+	<ResourceCosts>
+		<Clay>100</Clay>
+	</ResourceCosts>		
+
+	<Conditions>
+	 	<!--EntityCondition>
+			  <EntityType>PB_Barracks2</EntityType>
+			  <Amount>1</Amount>
+		</EntityCondition-->	
+		
+		<!--We need a requiered upgradecategory condition-->
+		<!--RequiredEntityConditions>1</RequiredEntityConditions>
+		  <EntityCondition>
+			  <EntityType>PB_Sawmill1</EntityType>
+			  <Amount>1</Amount>
+		</EntityCondition>
+		  <EntityCondition>
+			  <EntityType>PB_Sawmill2</EntityType>
+			  <Amount>1</Amount>
+		</EntityCondition-->
+	</Conditions>
+</root>

@@ -1,0 +1,43 @@
+<AnimSet>
+	<Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Walk</Name>
+		<Animation>PU_SoldierSword3_Run1</Animation>
+    </Category>
+    
+    <Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Idle</Name>
+		<Animation>PU_SoldierSword3_Idle1</Animation>
+    </Category>
+    
+    <Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Idle1</Name>
+		<Animation>PU_SoldierSword3_Idle1</Animation>
+    </Category>
+    
+    <Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Idle2</Name>
+		<Animation>PU_SoldierSword3_Idle1</Animation>
+    </Category>
+    
+    <Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Idle3</Name>
+		<Animation>PU_SoldierSword3_Idle1</Animation>
+    </Category>
+    
+    <Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Idle4</Name>
+		<Animation>PU_SoldierSword3_Idle1</Animation>
+    </Category>
+    
+    <Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Idle5</Name>
+		<Animation>PU_SoldierSword3_Idle1</Animation>
+    </Category>
+    
+    
+    <Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Die</Name>
+		<Animation>PU_SoldierSword3_Dying1</Animation>
+    </Category>
+    
+</AnimSet>

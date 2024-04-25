@@ -1,0 +1,37 @@
+<root>
+	<Table>Spear</Table>
+	<!--Level 1-->
+	<Level>		
+		<DamageBonus>4</DamageBonus>	
+	</Level>
+	
+	<!--Level 2 + DodgeChance-->
+	<Level>
+		<DamageBonus>4</DamageBonus>	
+		<DodgeChance>2</DodgeChance>		
+	</Level>
+	
+	<!--Level 3 + HealingPoints -->
+	<Level>
+		<DamageBonus>4</DamageBonus>	
+		<DodgeChance>2</DodgeChance>			
+		<HealingPoints>6</HealingPoints>		
+	</Level>
+	
+	<!--Level 4 + DamageAmount -->
+	<Level>
+		<DamageBonus>4</DamageBonus>	
+		<DodgeChance>2</DodgeChance>			
+		<HealingPoints>6</HealingPoints>		
+		<DamageAmount>2</DamageAmount>		
+	</Level>
+	
+	<!--Level 5 + Armor-->
+	<Level>
+		<DamageBonus>4</DamageBonus>	
+		<ArmorAmount>2</ArmorAmount>			
+		<HealingPoints>6</HealingPoints>		
+		<DamageAmount>2</DamageAmount>	
+		<DodgeChance>2</DodgeChance>
+	</Level>
+</root>

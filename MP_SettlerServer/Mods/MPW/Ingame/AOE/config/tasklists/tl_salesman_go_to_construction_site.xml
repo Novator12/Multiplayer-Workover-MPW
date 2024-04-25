@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<CTaskList>
+<!--
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+        <TaskType>TASK_ENTITY_APPEAR</TaskType>
+	</Task>
+-->
+     <!-- <Task classname="EGL::CTaskArgsModelID" classid="0x3d17c8cd">
+  		<TaskType>TASK_SET_MODEL</TaskType>
+  		<Model>PU_SerfHammer</Model>
+ 	</Task> -->
+    
+    
+    <Task classname="EGL::CGLETaskArgs" classid="7ce66308">
+        <TaskType>TASK_LEAVE_CAMP</TaskType>
+    </Task>
+    
+
+	<Task classname="EGL::CGLETaskArgsAnimation" classid="0x4d90ecb8">
+        <TaskType>TASK_SET_ANIM</TaskType>        
+        <AnimID>PU_Travelling_Salesman_Walk</AnimID>
+        <PlayBackwards>false</PlayBackwards>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+        <TaskType>TASK_GO_TO_CONSTRUCTION_SITE</TaskType>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+        <TaskType>TASK_GO_TO_CONSTRUCTION_SITE_SLOT</TaskType>
+	</Task>
+	
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+        <TaskType>TASK_TURN_TO_CONSTRUCTION_SITE</TaskType>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+        <TaskType>TASK_TURN_TO_TARGET_ORIENTATION</TaskType>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+        <TaskType>TASK_CHANGE_ATTACHMENT_TO_CONSTRUCTION_SITE</TaskType>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsTaskListID" classid="0x6385ea0d">
+		<TaskType>TASK_SET_TASK_LIST</TaskType>
+		<TaskList>TL_SALESMAN_BUILD</TaskList>
+	</Task>
+
+</CTaskList>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<root>
+	<TecCategoryType>TC_Technologies</TecCategoryType>
+	<TimeToResearch>25</TimeToResearch>
+	
+	<ResourceCosts>
+		<Gold>450</Gold>
+		<Clay/>
+		<Wood/>
+		<Stone/>
+		<Iron>350</Iron>
+		<Sulfur/>
+	</ResourceCosts>
+	
+	<AutomaticResearch>false</AutomaticResearch>
+	<UseForStatisticsFlag>true</UseForStatisticsFlag>
+	
+	<ArmorModifier>
+		<Value>2</Value>
+		<Operation>+</Operation>
+	</ArmorModifier>
+	
+	<Conditions>
+		<TecCondition>
+			<TecType>T_ChainMailArmor</TecType>
+			<TecCategoryType/>
+		</TecCondition>
+		
+		<EntityCondition>
+			<EntityType>PB_Blacksmith3</EntityType>
+			<Amount>1</Amount>
+		</EntityCondition>
+	</Conditions>
+</root>

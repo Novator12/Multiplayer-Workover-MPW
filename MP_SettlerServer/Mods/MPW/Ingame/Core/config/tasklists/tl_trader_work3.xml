@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CGLETaskList>
+	<PrincipalTask>Work</PrincipalTask>
+ 
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+		<TaskType>TASK_CHECK_FEAR</TaskType>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+		<TaskType>TASK_CHECK_FEAR</TaskType>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsAnimation" classid="0x4d90ecb8">
+		<TaskType>TASK_SET_ANIM</TaskType>
+		<AnimID></AnimID>
+		<Category>Walk</Category>
+		<PlayBackwards>false</PlayBackwards>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+		<TaskType>TASK_RESET_TASK_LIST_TIMER</TaskType>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+		<TaskType>TASK_APPEAR</TaskType>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsPosAndOrientation" classid="0x2f706fdd">
+		<TaskType>TASK_SET_POS</TaskType>
+		<Position>
+			<X>3.500000e+002</X>
+			<Y>4.500000e+002</Y>
+		</Position>
+		<Orientation>1.800000e+002</Orientation>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+		<TaskType>TASK_GO_TO_POS</TaskType>
+		<Position>
+			<X>1.793606e+002</X>
+			<Y>3.984893e+002</Y>
+		</Position>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+		<TaskType>TASK_GO_TO_POS</TaskType>
+		<Position>
+			<X>1.647656e+002</X>
+			<Y>2.306345e+002</Y>
+		</Position>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+		<TaskType>TASK_GO_TO_POS</TaskType>
+		<Position>
+			<X>-9.031445e+001</X>
+			<Y>2.129692e+002</Y>
+		</Position>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+		<TaskType>TASK_GO_TO_POS</TaskType>
+		<Position>
+			<X>-2.535981e+002</X>
+			<Y>1.733770e+002</Y>
+		</Position>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+		<TaskType>TASK_GO_TO_POS</TaskType>
+		<Position>
+			<X>-2.937836e+002</X>
+			<Y>-1.417310e+001</Y>
+		</Position>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+		<TaskType>TASK_GO_TO_POS</TaskType>
+		<Position>
+			<X>-3.370852e+002</X>
+			<Y>-1.946975e+002</Y>
+		</Position>
+	</Task>
+
+	<Task classname="EGL::CTaskArgsFloat" classid="0xa2787eed">
+		<TaskType>TASK_SET_TARGET_ORIENTATION_RELATIVE</TaskType>
+		<Value>1.100000e+002</Value>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+		<TaskType>TASK_TURN_TO_TARGET_ORIENTATION</TaskType>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsAnimation" classid="0x4d90ecb8">
+		<TaskType>TASK_SET_ANIM</TaskType>
+		<AnimID>PU_Trader_Talk1</AnimID>
+		<Category></Category>
+		<PlayBackwards>false</PlayBackwards>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsThousandths" classid="0x230862d8">
+		<TaskType>TASK_WAIT_FOR_ANIM</TaskType>
+		<Thousandths>200</Thousandths>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+		<TaskType>TASK_DO_TRADE_STEP</TaskType>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+		<TaskType>TASK_CHANGE_WORK_TIME_WORK</TaskType>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsThousandths" classid="0x230862d8">
+		<TaskType>TASK_WAIT_FOR_ANIM</TaskType>
+		<Thousandths>1700</Thousandths>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+		<TaskType>TASK_DO_TRADE_STEP</TaskType>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+		<TaskType>TASK_CHANGE_WORK_TIME_WORK</TaskType>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsThousandths" classid="0x230862d8">
+		<TaskType>TASK_WAIT_FOR_ANIM</TaskType>
+		<Thousandths>1000</Thousandths>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsAnimation" classid="0x4d90ecb8">
+		<TaskType>TASK_SET_ANIM</TaskType>
+		<AnimID></AnimID>
+		<Category>Walk</Category>
+		<PlayBackwards>false</PlayBackwards>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+		<TaskType>TASK_GO_TO_POS</TaskType>
+		<Position>
+			<X>-1.059775e+002</X>
+			<Y>-8.110889e+001</Y>
+		</Position>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+		<TaskType>TASK_GO_TO_POS</TaskType>
+		<Position>
+			<X>-7.779468e+001</X>
+			<Y>9.568945e+001</Y>
+		</Position>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+		<TaskType>TASK_GO_TO_POS</TaskType>
+		<Position>
+			<X>3.322302e+002</X>
+			<Y>4.582456e+002</Y>
+		</Position>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+		<TaskType>TASK_VANISH</TaskType>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+		<TaskType>TASK_WORK_WAIT_UNTIL</TaskType>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+		<TaskType>TASK_ADVANCE_IN_CYCLE</TaskType>
+	</Task>
+</CGLETaskList>

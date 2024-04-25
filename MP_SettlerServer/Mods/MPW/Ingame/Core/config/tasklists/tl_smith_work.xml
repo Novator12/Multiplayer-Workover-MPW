@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CGLETaskList>
+	<PrincipalTask>Work</PrincipalTask>
+ 
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+		<TaskType>TASK_CHECK_FEAR</TaskType>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+		<TaskType>TASK_CHECK_FEAR</TaskType>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+		<TaskType>TASK_RESET_TASK_LIST_TIMER</TaskType>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+		<TaskType>TASK_APPEAR</TaskType>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsPosAndOrientation" classid="0x2f706fdd">
+		<TaskType>TASK_SET_POS</TaskType>
+		<Position>
+			<X>100</X>
+			<Y>100</Y>
+		</Position>
+		<Orientation>270</Orientation>
+	</Task>
+
+	<Task classname="EGL::CTaskArgsModelID" classid="0x3d17c8cd">
+		<TaskType>TASK_SET_MODEL</TaskType>
+		<Model>PU_SmithHammer</Model>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsAnimation" classid="0x4d90ecb8">
+		<TaskType>TASK_SET_ANIM</TaskType>
+		<AnimID>PU_SmithHammer_Walk</AnimID>
+		<Category></Category>
+		<PlayBackwards>false</PlayBackwards>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+		<TaskType>TASK_GO_TO_POS</TaskType>
+		<Position>
+			<X>1.000000e+002</X>
+			<Y>-1.190000e+002</Y>
+		</Position>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+		<TaskType>TASK_GO_TO_POS</TaskType>
+		<Position>
+			<X>8.000000e+001</X>
+			<Y>-1.580000e+002</Y>
+		</Position>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+		<TaskType>TASK_GO_TO_POS</TaskType>
+		<Position>
+			<X>5.400000e+001</X>
+			<Y>-1.800000e+002</Y>
+		</Position>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+		<TaskType>TASK_GO_TO_POS</TaskType>
+		<Position>
+			<X>1.300000e+001</X>
+			<Y>-1.780000e+002</Y>
+		</Position>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+		<TaskType>TASK_GO_TO_POS</TaskType>
+		<Position>
+			<X>-1.040000e+002</X>
+			<Y>-1.990000e+002</Y>
+		</Position>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+		<TaskType>TASK_GO_TO_POS</TaskType>
+		<Position>
+			<X>-1.310000e+002</X>
+			<Y>-1.890000e+002</Y>
+		</Position>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsAnimation" classid="0x4d90ecb8">
+		<TaskType>TASK_SET_ANIM</TaskType>
+		<AnimID>PU_SmithHammer_Work1</AnimID>
+		<Category></Category>
+		<PlayBackwards>false</PlayBackwards>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsThousandths" classid="0x230862d8">
+		<TaskType>TASK_WAIT_FOR_ANIM</TaskType>
+		<Thousandths>3000</Thousandths>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsAnimation" classid="0x4d90ecb8">
+		<TaskType>TASK_SET_ANIM</TaskType>
+		<AnimID>PU_SmithHammer_Walk</AnimID>
+		<Category></Category>
+		<PlayBackwards>false</PlayBackwards>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+		<TaskType>TASK_GO_TO_POS</TaskType>
+		<Position>
+			<X>-1.270000e+002</X>
+			<Y>-1.500000e+002</Y>
+		</Position>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsAnimation" classid="0x4d90ecb8">
+		<TaskType>TASK_SET_ANIM</TaskType>
+		<AnimID>PU_SmithHammer_Work2</AnimID>
+		<Category></Category>
+		<PlayBackwards>false</PlayBackwards>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsThousandths" classid="0x230862d8">
+		<TaskType>TASK_WAIT_FOR_ANIM</TaskType>
+		<Thousandths>200</Thousandths>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+		<TaskType>TASK_REFINE_RESOURCE</TaskType>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+		<TaskType>TASK_CHANGE_WORK_TIME_WORK</TaskType>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsThousandths" classid="0x230862d8">
+		<TaskType>TASK_WAIT_FOR_ANIM</TaskType>
+		<Thousandths>1800</Thousandths>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+		<TaskType>TASK_REFINE_RESOURCE</TaskType>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+		<TaskType>TASK_CHANGE_WORK_TIME_WORK</TaskType>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsThousandths" classid="0x230862d8">
+		<TaskType>TASK_WAIT_FOR_ANIM</TaskType>
+		<Thousandths>2000</Thousandths>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsAnimation" classid="0x4d90ecb8">
+		<TaskType>TASK_SET_ANIM</TaskType>
+		<AnimID>PU_SmithHammer_Walk</AnimID>
+		<Category></Category>
+		<PlayBackwards>false</PlayBackwards>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+		<TaskType>TASK_GO_TO_POS</TaskType>
+		<Position>
+			<X>-1.460000e+002</X>
+			<Y>-1.860000e+002</Y>
+		</Position>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsAnimation" classid="0x4d90ecb8">
+		<TaskType>TASK_SET_ANIM</TaskType>
+		<AnimID>PU_SmithHammer_Work1</AnimID>
+		<Category></Category>
+		<PlayBackwards>false</PlayBackwards>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+		<TaskType>TASK_REFINE_RESOURCE</TaskType>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+		<TaskType>TASK_CHANGE_WORK_TIME_WORK</TaskType>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsThousandths" classid="0x230862d8">
+		<TaskType>TASK_WAIT_FOR_ANIM</TaskType>
+		<Thousandths>2000</Thousandths>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsAnimation" classid="0x4d90ecb8">
+		<TaskType>TASK_SET_ANIM</TaskType>
+		<AnimID>PU_SmithHammer_Walk</AnimID>
+		<Category></Category>
+		<PlayBackwards>false</PlayBackwards>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+		<TaskType>TASK_GO_TO_POS</TaskType>
+		<Position>
+			<X>4.600000e+001</X>
+			<Y>-1.930000e+002</Y>
+		</Position>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+		<TaskType>TASK_GO_TO_POS</TaskType>
+		<Position>
+			<X>8.300000e+001</X>
+			<Y>-1.510000e+002</Y>
+		</Position>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+		<TaskType>TASK_GO_TO_POS</TaskType>
+		<Position>
+			<X>1.040000e+002</X>
+			<Y>-1.110000e+002</Y>
+		</Position>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+		<TaskType>TASK_GO_TO_POS</TaskType>
+		<Position>
+			<X>1.250000e+002</X>
+			<Y>7.500000e+001</Y>
+		</Position>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+		<TaskType>TASK_VANISH</TaskType>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+		<TaskType>TASK_GO_TO_POS</TaskType>
+		<Position>
+			<X>0.000000e+000</X>
+			<Y>0.000000e+000</Y>
+		</Position>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+		<TaskType>TASK_VANISH</TaskType>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+		<TaskType>TASK_WORK_WAIT_UNTIL</TaskType>
+	</Task>
+
+	<Task classname="EGL::CTaskArgsModelID" classid="0x3d17c8cd">
+		<TaskType>TASK_SET_MODEL</TaskType>
+		<Model>PU_Smith</Model>
+	</Task>
+
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+		<TaskType>TASK_ADVANCE_IN_CYCLE</TaskType>
+	</Task>
+</CGLETaskList>

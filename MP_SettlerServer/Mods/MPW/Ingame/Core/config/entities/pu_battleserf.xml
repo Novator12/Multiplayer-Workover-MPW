@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		<Class>GD::CDisplaySettler</Class>
+		<Model>PU_Militia</Model>
+		<DrawPlayerColor>True</DrawPlayerColor>
+		<Anim>PU_Militia_Walk</Anim>
+		<Anim>PU_Militia_Run1</Anim>
+		<Anim>PU_Militia_Idle1</Anim>
+		<Anim>PU_Militia_Idle2</Anim>
+		<Anim>PU_Militia_Idle3</Anim>
+		<Anim>PU_Militia_Idle4</Anim>
+		<Anim>PU_Militia_Idle5</Anim>
+		<Anim>PU_Militia_Idle6</Anim>
+		<Anim>PU_Militia_IdleAttack1</Anim>
+		<Anim>PU_Militia_Attack1</Anim>
+		<Anim>PU_Militia_Attack2</Anim>
+		<Anim>PU_Militia_Finish</Anim>
+		<Anim>PU_Militia_Hit</Anim>		
+		<Anim>PU_Militia_Dying1</Anim>
+	</Display>
+	
+	<Logic classname="GGL::CGLSettlerProps">
+		<Class>GGL::CSettler</Class>
+		<AccessCategory>AccessCategorySettler</AccessCategory>		
+		<NeedsPlayer>true</NeedsPlayer>
+		<ForceNoPlayer>false</ForceNoPlayer>
+		<Category>Military</Category>
+		<Category>Sword</Category>
+		<AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
+		<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
+		<Hat></Hat>
+		
+	<!--Explorationmodifier-->
+		<ModifyExploration>
+			<Technology>T_Tracking</Technology>			
+		</ModifyExploration>
+		
+	<!--Armormodifier-->
+		<ModifyArmor>
+			<Technology>T_Loom</Technology>
+		</ModifyArmor>
+		
+	<!--SpeedModifier-->
+		<ModifySpeed>
+			<Technology>T_Shoes</Technology>
+		</ModifySpeed>
+
+	<!--DamageModifier-->
+		<ModifyDamage>
+			<Technology>T_WoodAging</Technology>
+		</ModifyDamage>
+		
+		<ModifyDamage>
+			<Technology>T_Turnery</Technology>
+		</ModifyDamage>
+		
+		<Cost>
+			<Silver>100</Silver>
+			<Iron>80</Iron>
+		</Cost>
+		
+		<MaxHealth>300</MaxHealth>
+		<Exploration>20</Exploration>
+		
+		<ArmorClass>ArmorClassNone</ArmorClass>
+		<ArmorAmount>2</ArmorAmount>
+		<DodgeChance>0</DodgeChance>
+		
+		<ExperiencePoints>0</ExperiencePoints>
+	</Logic>
+	
+	<Behavior>
+		<Logic classname="GGL::CBattleSerfBehaviorProps">
+			<Class>GGL::CBattleSerfBehavior</Class>
+			<TurnIntoSerfTaskList>TL_BATTLE_SERF_TURN_INTO_SERF</TurnIntoSerfTaskList>
+			<HomeRadius>0</HomeRadius>
+
+			<BattleTaskList>TL_BATTLE</BattleTaskList>
+			
+			<NormalAttackAnim1>PU_Militia_Attack1</NormalAttackAnim1>
+			<NormalAttackAnim2>PU_Militia_Attack2</NormalAttackAnim2>
+			<CounterAttackAnim>PU_Militia_Finish</CounterAttackAnim>
+			<FinishingMoveAnim>PU_Militia_Attack1</FinishingMoveAnim>
+			<MissAttackAnim>PU_Militia_Attack1</MissAttackAnim>
+			<BattleIdleAnim>PU_Militia_Idle1</BattleIdleAnim>
+			<BattleWalkAnim>PU_Militia_Run1</BattleWalkAnim>
+			<HitAnim>PU_Militia_Hit</HitAnim>
+
+			<DamageClass>DC_Fist</DamageClass>
+			<DamageAmount>10</DamageAmount>
+			<MaxRandomDamageBonus>2</MaxRandomDamageBonus>
+			
+			<BattleWaitUntil>1500</BattleWaitUntil>
+			
+			<MaxRange>200.0f</MaxRange>
+			<MinRange>0.0f</MinRange>
+			
+			<AutoAttackRange>1500</AutoAttackRange>
+			
+			<HealingPoints>3</HealingPoints>
+			<HealingSeconds>5</HealingSeconds>
+		</Logic>
+	</Behavior>
+	
+	<Behavior>
+		<Logic classname="GGL::CGLAnimationBehaviorExProps">
+			<Class>GGL::CGLBehaviorAnimationEx</Class>			
+			<SuspensionAnimation>PU_Militia_Idle1</SuspensionAnimation>			
+			<AnimSet>SET_MILITIA</AnimSet>
+		</Logic>
+		
+		<Display classname="ED::CBehaviorProps">
+			<Class>ED::CDisplayBehaviorAnimation</Class>
+		</Display>
+	</Behavior>
+	
+	<Behavior>
+		<Logic classname="EGL::CMovementBehaviorProps">
+			<Class>GGL::CSettlerMovement</Class>
+			<Speed>360</Speed>
+			<RotationSpeed>30</RotationSpeed>
+			<MoveTaskList>TL_MILITIA_WALK</MoveTaskList>
+		</Logic>
+		
+		<Display classname="ED::CBehaviorProps">
+			<Class>ED::CDisplayBehaviorMovement</Class>
+		</Display>
+	</Behavior>
+	
+	<Behavior>
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>GGL::CBehaviorWalkCommand</Class>
+		</Logic>
+	</Behavior>
+	
+	<Behavior>
+		<Logic classname="GGL::CGLBehaviorPropsDying">
+			<Class>GGL::CGLBehaviorDying</Class>
+			<DyingTaskList>TL_DIE</DyingTaskList>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>GGL::CWorkerEvadeBehavior</Class>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CEvadeExecutionBehaviorProps">
+			<Class>GGL::CEvadeExecutionBehavior</Class>
+			<BasePriority>300</BasePriority>
+		</Logic>
+	</Behavior>
+</root>

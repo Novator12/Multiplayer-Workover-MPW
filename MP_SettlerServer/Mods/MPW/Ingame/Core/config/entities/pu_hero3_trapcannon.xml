@@ -1,0 +1,47 @@
+﻿<?xml version="1.0"	encoding="utf-8" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		<Class>GD::CDisplaySettler</Class>
+		<Model>SalimTrapPlayer</Model>
+		<RenderInFoW>false</RenderInFoW>
+	</Display>
+	<Logic classname="EGL::CGLEEntityProps">
+		<Class>EGL::CGLEEntity</Class>
+		<AccessCategory>AccessCategorySettler</AccessCategory>
+		<DoNotExecute>false</DoNotExecute>
+		<ForceNoPlayer>false</ForceNoPlayer>
+		<Exploration>20</Exploration>	
+		<Category>Military</Category> 
+		<Category>Cannon</Category> 	
+        <!--NumBlockedPoints>2</NumBlockedPoints-->
+        <SnapTolerance>30.0f</SnapTolerance>
+        <Visible>false</Visible>
+		
+	</Logic>
+	
+	<Behavior>
+    	<Logic classname="GGL::CAutoCannonBehaviorProps">
+    	    <Class>GGL::CAutoCannonBehavior</Class>
+    	    <NumberOfShots>1</NumberOfShots>
+    	    <RotationSpeed>100</RotationSpeed>
+    	    <ImpactEffectType>FXExplosionPilgrim</ImpactEffectType>
+    	    <ReloadTime>5000</ReloadTime>
+    	    <MaxAttackRange>1000.0f</MaxAttackRange>
+    	    <DamageClass>DC_Chaos</DamageClass>
+    	    <DamageAmount>40</DamageAmount>
+    	    <DamageRange>3000</DamageRange>
+    	    <AutoAttackRange>1000</AutoAttackRange>
+    	    <BattleTaskList>TL_BATTLE_TRAP</BattleTaskList>
+    	</Logic>
+		<Display classname="ED::CBehaviorProps">
+			<Class>ED::CDisplayBehaviorMovement</Class>
+		</Display>
+    </Behavior>
+    
+	<Behavior>
+		<Logic classname="GGL::CGLBehaviorPropsDying">
+			<Class>GGL::CGLBehaviorDying</Class>
+		</Logic>
+	</Behavior>
+
+</root>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		<Class>ED::CDisplayStaticEntity</Class>
+		<Model>XD_ThiefBomb</Model>
+	</Display>
+    <Logic classname="EGL::CGLEEntityProps">
+        <Class>EGL::CGLEEntity</Class>
+        <AccessCategory>AccessCategoryStatic</AccessCategory>
+        <ForceNoPlayer>false</ForceNoPlayer>
+        <DeleteWhenBuiltOn>false</DeleteWhenBuiltOn>
+    </Logic>
+    
+    <Behavior>
+        <Logic classname="GGL::CKegBehaviorProperties">
+            <Class>GGL::CKegBehavior</Class>
+            
+            <Delay>15.0</Delay>
+            <ExplodeEffectID>FXExplosionPilgrim</ExplodeEffectID>
+            
+            <!-- Radial damage (just like Pilgrim's bomb) -->
+            <Radius>1500</Radius>
+            <Damage>50</Damage>
+            
+            <!-- Damage done to target building -->
+            <DamagePercentage>40</DamagePercentage>
+        </Logic>
+    </Behavior>
+    
+</root>

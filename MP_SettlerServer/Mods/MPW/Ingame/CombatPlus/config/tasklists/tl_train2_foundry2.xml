@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CTaskList>
+	<Task classname="EGL::CGLETaskArgsAnimation" classid="0x4d90ecb8">
+	   <TaskType>TASK_SET_ANIM</TaskType>
+        <Category>Walk</Category>
+	   <PlayBackwards>false</PlayBackwards>
+	</Task> 
+
+    <Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+        <TaskType>TASK_GO_TO_POS</TaskType>
+        <Position>
+            <X>-100</X>
+            <Y>0</Y>
+        </Position>
+    </Task>
+
+    <Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+        <TaskType>TASK_GO_TO_POS</TaskType>
+        <Position>
+            <X>-100</X>
+            <Y>-200</Y>
+        </Position>
+    </Task>
+
+    <Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+        <TaskType>TASK_GO_TO_POS</TaskType>
+        <Position>
+            <X>-200</X>
+            <Y>-200</Y>
+        </Position>
+    </Task>
+	
+    <Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+        <TaskType>TASK_TRAIN</TaskType>
+    </Task>
+</CTaskList>

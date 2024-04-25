@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		<Class>GD::CDisplaySettler</Class>
+		<Model>PU_LeaderAxe1</Model>
+		<DrawPlayerColor>True</DrawPlayerColor>
+		<Anim>CU_LeaderOutlaw1_Walk</Anim>
+		<Anim>CU_LeaderOutlaw1_Run1</Anim>
+		<Anim>CU_LeaderOutlaw1_Idle1</Anim>
+		<Anim>CU_LeaderOutlaw1_Idle2</Anim>
+		<Anim>CU_LeaderOutlaw1_Idle3</Anim>
+		<Anim>CU_LeaderOutlaw1_Idle4</Anim>
+		<Anim>CU_LeaderOutlaw1_Idle5</Anim>
+		<Anim>CU_LeaderOutlaw1_Idle6</Anim>
+		<Anim>CU_LeaderOutlaw1_IdleAttack1</Anim>
+		<Anim>CU_LeaderOutlaw1_Attack1</Anim>
+		<Anim>CU_LeaderOutlaw1_Attack2</Anim>
+		<Anim>CU_LeaderOutlaw1_Finish</Anim>
+		<Anim>CU_LeaderOutlaw1_Hit</Anim>
+		<Anim>CU_LeaderOutlaw1_Dying1</Anim>
+	</Display>
+	
+	<Logic classname="GGL::CGLSettlerProps">
+		<Class>GGL::CSettler</Class>
+		<AccessCategory>AccessCategorySettler</AccessCategory>
+		<NeedsPlayer>true</NeedsPlayer>
+		<ForceNoPlayer>false</ForceNoPlayer>
+		<Category>Military</Category>
+		<Category>Leader</Category>
+		<Category>Axe</Category>
+		<Category>Melee</Category>
+		<AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
+		<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
+		<Hat/>
+
+		<!--Armormodifier-->
+		<ModifyArmor>
+			<Technology>T_LeatherMailArmor</Technology>
+		</ModifyArmor>
+
+		<ModifyArmor>
+			<Technology>T_ChainMailArmor</Technology>
+		</ModifyArmor>
+
+		<ModifyArmor>
+			<Technology>T_PlateMailArmor</Technology>
+		</ModifyArmor>
+
+		<!--DamageModifier-->
+		<ModifyDamage>
+			<Technology>T_MasterOfSmithery</Technology>
+		</ModifyDamage>
+
+		<ModifyDamage>
+			<Technology>T_IronCasting</Technology>
+		</ModifyDamage>
+
+		<!--SpeedModifier-->
+		<ModifySpeed>
+			<Technology>T_BetterTrainingBarracks</Technology>
+		</ModifySpeed>
+
+		<Cost>
+			<Gold>100</Gold>
+			<Iron>0</Iron>
+			<Wood>60</Wood>
+		</Cost>
+
+		<Upgrade>
+			<Category>LeaderAxe</Category>
+			<Type>PU_LeaderAxe2</Type>
+		</Upgrade>
+
+		<MaxHealth>200</MaxHealth>
+		<Exploration>20</Exploration>
+
+		<ArmorClass>ArmorClassIron</ArmorClass>
+		<ArmorAmount>2</ArmorAmount>
+		<DodgeChance>0</DodgeChance>
+
+		<ExperiencePoints>25</ExperiencePoints>
+	</Logic>
+
+	<Behavior>
+		<Logic classname="GGL::CLeaderBehaviorProps">
+			<Class>GGL::CLeaderBehavior</Class>
+			<BarrackUpgradeCategory>Barracks</BarrackUpgradeCategory>
+			<HomeRadius>2000</HomeRadius>
+
+			<SoldierType>PU_SoldierAxe1</SoldierType>
+			<BattleTaskList>TL_BATTLE_MACE</BattleTaskList>
+
+			<NormalAttackAnim1>CU_LeaderOutlaw1_Attack1</NormalAttackAnim1>
+			<NormalAttackAnim2>CU_LeaderOutlaw1_Attack1</NormalAttackAnim2>
+			<CounterAttackAnim>CU_LeaderOutlaw1_Attack1</CounterAttackAnim>
+			<FinishingMoveAnim>CU_LeaderOutlaw1_Attack1</FinishingMoveAnim>
+			<MissAttackAnim>CU_LeaderOutlaw1_Attack1</MissAttackAnim>
+			<BattleIdleAnim>CU_LeaderOutlaw1_IdleAttack1</BattleIdleAnim>
+			<BattleWalkAnim>CU_LeaderOutlaw1_Run1</BattleWalkAnim>
+			<HitAnim>CU_LeaderOutlaw1_Hit</HitAnim>
+
+			<DamageClass>DC_Axe</DamageClass>
+			<DamageAmount>12</DamageAmount>
+			<MaxRandomDamageBonus>2</MaxRandomDamageBonus>
+
+			<BattleWaitUntil>1500</BattleWaitUntil>
+
+			<MaxRange>300</MaxRange>
+			<MinRange>0.0f</MinRange>
+			<AutoAttackRange>2000</AutoAttackRange>
+
+			<HealingPoints>4</HealingPoints>
+			<HealingSeconds>3</HealingSeconds>
+
+			<UpkeepCost>20</UpkeepCost>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CLimitedAttachmentBehaviorProperties">
+			<Class>GGL::CLimitedAttachmentBehavior</Class>
+			<Attachment>
+				<Type>ATTACHMENT_LEADER_SOLDIER</Type>
+				<Limit>4</Limit>
+			</Attachment>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CGLAnimationBehaviorExProps">
+			<Class>GGL::CGLBehaviorAnimationEx</Class>
+			<SuspensionAnimation>CU_LeaderOutlaw1_Idle1</SuspensionAnimation>
+			<AnimSet>SET_CU_LEADEROUTLAW1</AnimSet>
+		</Logic>
+		
+		<Display classname="ED::CBehaviorProps">
+			<Class>ED::CDisplayBehaviorAnimation</Class>
+		</Display>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="EGL::CMovementBehaviorProps">
+			<Class>GGL::CLeaderMovement</Class>
+			<Speed>360</Speed>
+			<RotationSpeed>30</RotationSpeed>
+			<MoveTaskList>TL_LEADER_WALK</MoveTaskList>
+			<MoveIdleAnim>CU_LeaderOutlaw1_Idle1</MoveIdleAnim>
+		</Logic>
+		
+		<Display classname="ED::CBehaviorProps">
+			<Class>ED::CDisplayBehaviorMovement</Class>
+		</Display>
+	</Behavior>
+	
+	<Behavior>
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>GGL::CBehaviorWalkCommand</Class>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CGLBehaviorPropsDying">
+			<Class>GGL::CGLBehaviorDying</Class>
+			<DyingTaskList>TL_DIE</DyingTaskList>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>GGL::CLeaderEvadeBehavior</Class>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CEvadeExecutionBehaviorProps">
+			<Class>GGL::CEvadeExecutionBehavior</Class>
+			<BasePriority>400</BasePriority>
+		</Logic>
+	</Behavior>
+	
+	<Behavior>
+		<Logic classname="GGL::CReplaceableEntityBehaviorProperties">
+			<Class>GGL::CReplaceableEntityBehavior</Class>
+			<EntityType>XD_DroppedAxeShield</EntityType>
+		</Logic>
+	</Behavior>
+</root>

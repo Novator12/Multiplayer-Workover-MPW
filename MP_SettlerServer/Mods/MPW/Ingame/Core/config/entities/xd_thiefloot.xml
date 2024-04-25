@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<root>
+	<!--
+	vanilla:
+		When a thief steals resources, the stolen amount is subtracted from the player stolen from.
+		When a loaded thief steals again, the previosly stolen resources go back to the previous player stolen from and new resources are subtracted from the current player stolen from.
+		When a thief dies, the carried resources are lost. No player gets anything.
+	msw:
+		When a thief dies, he drops his carried resources in form of this loot entity. the logic herefor is handled in lua and requires the S5Hook.
+		The vanilla stealing behavior can stay as it is. There are no conflicts whith this addition.
+	-->
+	
+	<Display classname="ED::CDisplayEntityProps">
+		  <Class>ED::CDisplayStaticEntity</Class>
+		  <Model>XD_MiscSack1</Model>
+	</Display>
+	
+	<Logic classname="GGL::CGLSettlerProps">
+		<Class>GGL::CSettler</Class>
+		<AccessCategory>AccessCategorySettler</AccessCategory>
+		<NeedsPlayer>true</NeedsPlayer>		<!-- essential -->
+		<ForceNoPlayer>false</ForceNoPlayer><!-- crashs if player is 0 -->
+		<Convertible>false</Convertible>
+		<Fearless>true</Fearless>
+		<AttractionSlots>0</AttractionSlots>
+	</Logic>
+	
+	<Behavior>
+		  <Logic classname="EGL::CMovementBehaviorProps">
+			  <Class>GGL::CSettlerMovement</Class>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorMovement</Class>
+		</Display>
+	</Behavior>
+
+	<Behavior>
+	    <Logic classname="GGL::CCamouflageBehaviorProps">
+	        <Class>GGL::CThiefCamouflageBehavior</Class>
+	        <DurationSeconds>0</DurationSeconds>  <!-- Time between being discovered and returning to sneak mode -->
+	        <DiscoveryRange>0.0</DiscoveryRange>
+	    </Logic>
+	    <Display classname="GD::CCamouflageBehaviorProps">
+	        <Class>GD::CCamouflageBehavior</Class>
+	        <CamouflageModelID>XD_MiscSack1</CamouflageModelID>
+	        <CamouflageAlpha>255</CamouflageAlpha>
+	    </Display>
+	</Behavior>	
+</root>

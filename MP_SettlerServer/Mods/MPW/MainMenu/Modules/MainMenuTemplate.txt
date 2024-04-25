@@ -1,0 +1,45 @@
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--
+-- Template
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--
+MPW.Template = {}
+MPW.Modules.Template = {
+	Priority = 1,				-- optional, higher priority will be loaded last e.g. on top of archive stack
+	Dependencies = { "Core" },	-- TODO: modules, that require each other are currently not selectable
+	Incompatible = {},
+	Name = "MyTemplate",
+	Description = "This is my template."
+}
+--------------------------------------------------------------------------------
+function MPW.Template.OnInitialize()
+	LuaDebugger.Log( "Template.OnInitialize()" )
+	
+	-- create buttons here ( optional )
+	-- return false to create a button manually
+	
+	-- return true to let MPW create a default rule button
+	return true
+end
+--------------------------------------------------------------------------------
+function MPW.Template.OnGUILoaded()
+	LuaDebugger.Log( "Template.OnGUILoaded()" )
+	
+	-- set button texts and positions here ( optional )
+end
+--------------------------------------------------------------------------------
+function MPW.Template.OnMapStart()
+	LuaDebugger.Log( "Template.OnMapStart()" )
+	
+	-- this will only be called if the module is active and all dependencies are met
+	-- add xmls here, like Enitites, UpgradeCategories ...
+	
+	--	CMod.AddEntity( "PB_Template" )
+	
+	--	CMod.AppendToLogicXML(
+	--		[[
+	--			<BuildingUpgrade>
+	--				<Category> Template </Category>
+	--				<FirstBuilding> PB_Template </FirstBuilding>
+	--			</BuildingUpgrade>
+	--		]]
+	--	)
+end

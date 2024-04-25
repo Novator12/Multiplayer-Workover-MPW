@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- this task list makes the leader walk to a position and then go back to idling -->
+
+<CTasksList>
+    <Task classname="EGL::CGLETaskArgs" classid="7ce66308">
+        <TaskType>TASK_ABANDON_CURRENT_JOB</TaskType>
+    </Task>
+    <Task classname="EGL::CGLETaskArgsAnimation" classid="0x4d90ecb8">
+        <TaskType>TASK_SET_ANIM</TaskType>
+        <AnimID>PU_Travelling_Salesman_Walk</AnimID>
+        <PlayBackwards>false</PlayBackwards>
+    </Task>
+    <Task classname="EGL::CGLETaskArgs" classid="7ce66308">
+        <TaskType>TASK_WALK</TaskType>
+    </Task>
+    <Task classname="EGL::CGLETaskArgs" classid="7ce66308">
+        <TaskType>TASK_TURN_TO_TARGET_ORIENTATION</TaskType>
+    </Task>
+    <Task classname="EGL::CGLETaskArgs" classid="7ce66308">
+        <TaskType>TASK_RESOLVE_COLLISION</TaskType>
+    </Task>
+	<!--Task classname="EGL::CGLETaskArgsTaskListID" classid="0x6385ea0d">
+		<TaskType>TASK_SET_TASK_LIST</TaskType>
+		<TaskList>TL_SERF_IDLE</TaskList>
+	</Task-->
+	<Task classname="EGL::CGLETaskArgs" classid="7ce66308">
+	    <TaskType>TASK_SET_DEFAULT_REACTION_TYPE</TaskType>
+	</Task>
+    <Task classname="EGL::CGLETaskArgs" classid="7ce66308">
+        <TaskType>TASK_LIST_DONE</TaskType>
+    </Task>
+</CTasksList>
