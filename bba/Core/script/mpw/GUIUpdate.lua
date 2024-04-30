@@ -45,3 +45,20 @@ function GUIUpdate_HeroAbility( _Ability, _Button, _Technology )
 	
 	XGUIEng.SetProgressBarValues(CurrentWidgetID,TimeLeft, RechargeTime)
 end
+--------------------------------------------------------------------------------
+function GUIUpdate_GroupStrength()
+	local LeaderID = GUI.GetSelectedEntity()
+	if LeaderID == nil then
+		return
+	end
+
+	local AmountOfSoldiers = Logic.LeaderGetNumberOfSoldiers( LeaderID )
+	local MaxAmountOfSoldiers = Logic.LeaderGetMaxNumberOfSoldiers( LeaderID )
+	XGUIEng.ShowAllSubWidgets( gvGUI_WidgetID.DetailsGroupStrengthSoldiersContainer, 0 )
+
+	-- show Buttons for each Soldier 
+	for i = 1, MaxAmountOfSoldiers do
+		XGUIEng.ShowWidget( gvGUI_WidgetID.DetailsGroupStrengthSoldiers[i], 1 )
+		XGUIEng.DisableButton(gvGUI_WidgetID.DetailsGroupStrengthSoldiers[i], (i <= AmountOfSoldiers and 0) or 1 )
+	end
+end

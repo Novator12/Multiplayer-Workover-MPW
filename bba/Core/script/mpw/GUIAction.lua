@@ -190,7 +190,7 @@ function GUIAction_BuySerf()
 	end
 		
 	-- Maximum number of settlers attracted?
-	if Logic.GetPlayerAttractionUsage( PlayerID ) + MPW.AttractionLimit.GetNumberOfAdditionalSerfsOfPlayer( PlayerID ) >= Logic.GetPlayerAttractionLimit( PlayerID ) + MPW.AttractionLimit.MaxAdditionalSerfs then
+	if Logic.GetPlayerAttractionUsage( PlayerID ) + MPW.AttractionLimit.GetNumberOfAdditionalSerfsOfPlayer( PlayerID ) >= Logic.GetPlayerAttractionLimit( PlayerID ) + MPW.AttractionLimit.MaxAdditionalSerfs[PlayerID] then
 		GUI.SendPopulationLimitReachedFeedbackEvent( PlayerID )
 		return
 	end

@@ -39,8 +39,12 @@ function MPW.AOE.Init()
 	end
 
 	MPW.AOE.ReplacePlayerBuildingsWithTravelingSalesmen()
-	MPW.AOE.MaxAdditionalSerfs = MPW.AttractionLimit.MaxAdditionalSerfs
-	MPW.AttractionLimit.MaxAdditionalSerfs = 0
+
+	MPW.AOE.MaxAdditionalSerfs = {}
+	for player = 1, (CNetwork and 16) or 8 do
+		MPW.AOE.MaxAdditionalSerfs[player] = MPW.AttractionLimit.MaxAdditionalSerfs[player]
+		MPW.AttractionLimit.MaxAdditionalSerfs[player] = 0
+	end
 end
 --------------------------------------------------------------------------------
 function MPW.AOE.Load()
@@ -95,8 +99,8 @@ function MPW.AOE.PostInit()
 				csitetype = Entities.ZB_ConstructionSiteVillageCenter1
 			else
 				csitetype = Entities.ZB_ConstructionSite4
-				MPW.AttractionLimit.MaxAdditionalSerfs = MPW.AOE.MaxAdditionalSerfs or MPW.AttractionLimit.MaxAdditionalSerfs
-				MPW.AOE.MaxAdditionalSerfs = nil
+				MPW.AttractionLimit.MaxAdditionalSerfs[_playerId] = MPW.AOE.MaxAdditionalSerfs[_playerId] or MPW.AttractionLimit.MaxAdditionalSerfs[_playerId]
+				MPW.AOE.MaxAdditionalSerfs[_playerId] = nil
 			end
 			for id in CEntityIterator.Iterator(CEntityIterator.OfTypeFilter(csitetype), CEntityIterator.InRangeFilter(x, y, 0)) do
 				csite = id
@@ -281,18 +285,18 @@ function MPW.AOE.ReplacePlayerBuildingsWithTravelingSalesmen()
 		local numberofvillagecenters = table.getn(villagecenterspersector[sector] or {})
 
 		local villagecentersperplayer = math.floor(numberofvillagecenters / numberofplayers)
-		for _ = 1, villagecentersperplayer do
-			for i = 1, table.getn(players) do
-				local player = players[i]
-				
-				if MPW.AOE.VC[player] then
-					local x, y = Logic.GetEntityPosition(headquarters[player])
-					-- Logic.GetEntitiesInArea doesnt work this early
-					local _,villagecenter = MPW.AOE.GetEntitiesInArea(Entities.XD_VillageCenter, x, y, 0, 1)
+		for i = 1, table.getn(players) do
+			local player = players[i]
+			
+			if MPW.AOE.VC[player] then
+				local x, y = Logic.GetEntityPosition(headquarters[player][1])
+				-- Logic.GetEntitiesInArea doesnt work this early
+				local villagecenters = {MPW.AOE.GetEntitiesInArea(Entities.XD_VillageCenter, x, y, 0, villagecentersperplayer)}
 
-					MPW.AOE.VC[player].Limit = MPW.AOE.VC[player].Limit + 1
-					Logic.DestroyEntity(villagecenter)
+				for j = 1, villagecentersperplayer do
+					Logic.DestroyEntity(villagecenters[j])
 				end
+				MPW.AOE.VC[player].Limit = MPW.AOE.VC[player].Limit + villagecentersperplayer
 			end
 		end
 	end

@@ -8,7 +8,7 @@ MPW.AttractionLimit.EntityTypesToIgnoreSupplyPlaces = {
 	Entities.PB_Tower3_Cannon,
 	-- TODO: add all NPCs here,
 }
-MPW.AttractionLimit.MaxAdditionalSerfs = 25
+MPW.AttractionLimit.MaxAdditionalSerfs = {}
 --------------------------------------------------------------------------------
 function MPW.AttractionLimit.Init()
 	
@@ -125,29 +125,25 @@ function MPW.AttractionLimit.Init()
 		return CostString, TooltipText, ShortCutToolTip
 	end
 
-	-- 25 bonus serfs
-	function GameCallback_GetPlayerAttractionLimitForSpawningWorker(player, amount)
-		return amount - MPW.AttractionLimit.MaxAdditionalSerfs
-	end
-	function GameCallback_GetPlayerAttractionUsageForSpawningWorker(player, amount)
-		return amount - MPW.AttractionLimit.GetNumberOfAdditionalSerfsOfPlayer(player)
-	end
-
 	function GUIUpdate_AdditionalSerfs()
 			
 		local player = GUI.GetPlayerID()
 		local serfamount = MPW.AttractionLimit.GetNumberOfAdditionalSerfsOfPlayer( player )
 		local output = ""
 
-		if serfamount < MPW.AttractionLimit.MaxAdditionalSerfs then
+		if serfamount < MPW.AttractionLimit.MaxAdditionalSerfs[player] then
 			output = "@color:114,134,124,255 "
 		else
 			output = "@color:255,120,120,255 "
 		end
 
-		output = output .. "@ra " .. serfamount .. "/" .. MPW.AttractionLimit.MaxAdditionalSerfs
+		output = output .. "@ra " .. serfamount .. "/" .. MPW.AttractionLimit.MaxAdditionalSerfs[player]
 		
 		XGUIEng.SetText( XGUIEng.GetCurrentWidgetID(), output )
+	end
+
+	for player = 1, (CNetwork and 16) or 8 do
+		MPW.AttractionLimit.MaxAdditionalSerfs[player] = 25
 	end
 end
 --------------------------------------------------------------------------------
@@ -162,7 +158,7 @@ function MPW.AttractionLimit.Load()
 	-- sub additional serfs from attraction limit
 	MPW.GetPlayerAttractionLimit = MPW.GetPlayerAttractionLimit or Logic.GetPlayerAttractionLimit
 	Logic.GetPlayerAttractionLimit = function( _Player )
-		return MPW.GetPlayerAttractionLimit( _Player ) - MPW.AttractionLimit.MaxAdditionalSerfs
+		return MPW.GetPlayerAttractionLimit( _Player ) - MPW.AttractionLimit.MaxAdditionalSerfs[_Player]
 	end
 
 	-- remove turrets and NPCs from eaters
@@ -175,6 +171,27 @@ function MPW.AttractionLimit.Load()
 	MPW.GetNumberOfWorkerWithoutSleepPlace = MPW.GetNumberOfWorkerWithoutSleepPlace or Logic.GetNumberOfWorkerWithoutSleepPlace
 	Logic.GetNumberOfWorkerWithoutSleepPlace = function(_Player)
 		return MPW.GetNumberOfWorkerWithoutSleepPlace(_Player) - MPW.AttractionLimit.GetNumberOfMissingSupplyPlacesToIgnore(_Player)
+	end
+end
+--------------------------------------------------------------------------------
+function MPW.AttractionLimit.PostInit()
+
+	-- override EMS AttractionLimitFix, we dont need two of them
+	if MPW.IsEMS then
+		function EMS.RF.ActivateAttractionLimitFix() end
+	end
+
+	-- 25 bonus serfs
+	MPW.AttractionLimit.GameCallback_GetPlayerAttractionLimitForSpawningWorker = GameCallback_GetPlayerAttractionLimitForSpawningWorker or function() end
+	function GameCallback_GetPlayerAttractionLimitForSpawningWorker(player, amount)
+		amount = MPW.AttractionLimit.GameCallback_GetPlayerAttractionLimitForSpawningWorker(player, amount) or amount
+		return amount - MPW.AttractionLimit.MaxAdditionalSerfs[player]
+	end
+
+	MPW.AttractionLimit.GameCallback_GetPlayerAttractionUsageForSpawningWorker = GameCallback_GetPlayerAttractionUsageForSpawningWorker or function() end
+	function GameCallback_GetPlayerAttractionUsageForSpawningWorker(player, amount)
+		amount = MPW.AttractionLimit.GameCallback_GetPlayerAttractionUsageForSpawningWorker(player, amount) or amount
+		return amount - MPW.AttractionLimit.GetNumberOfAdditionalSerfsOfPlayer(player)
 	end
 end
 --------------------------------------------------------------------------------
@@ -240,5 +257,5 @@ function MPW.AttractionLimit.GetNumberOfMissingSupplyPlacesToIgnore(_Player)
 end
 --------------------------------------------------------------------------------
 function MPW.AttractionLimit.GetNumberOfAdditionalSerfsOfPlayer(_Player)
-	return math.min(Logic.GetNumberOfEntitiesOfTypeOfPlayer(_Player, Entities.PU_Serf), MPW.AttractionLimit.MaxAdditionalSerfs)
+	return math.min(Logic.GetNumberOfEntitiesOfTypeOfPlayer(_Player, Entities.PU_Serf), MPW.AttractionLimit.MaxAdditionalSerfs[_Player])
 end

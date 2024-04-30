@@ -83,6 +83,9 @@ function MPW.Widgets_Init()
 			-- add population additional serfs
 			-- this is a workaround, since @ra formating kills following @color formatings
 			CWidget.Transaction_AddRawWidgetsFromFile("data\\menu\\projects\\PopulationAdditionalSerfs.xml")
+
+			-- tell weather tower to not spend weather energy
+			CWidget.Transaction_AddRawWidgetsFromFile("data\\menu\\projects\\WeatherTower_StoreEnergy.xml", "WeatherTower_MakeSummer")
 		end
 	)
 end

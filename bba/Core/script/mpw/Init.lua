@@ -71,6 +71,7 @@ function MPW.Init()
 	Script.Load( path .. "Memory.lua" )
 	Script.Load( path .. "Motivation.lua" )
 	Script.Load( path .. "QOL.lua" )
+	Script.Load( path .. "Weather.lua" )
 	Script.Load( path .. "Widgets.lua" )
 	
 	-- init scripts
@@ -79,6 +80,7 @@ function MPW.Init()
 	MPW.Motivation.Init()
 	MPW.Motivation.InitBuildingLimit()
 	MPW.QOL.Init()
+	MPW.Weather.Init()
 	MPW.Widgets_Init()
 
 	--Army implementation
@@ -100,8 +102,8 @@ function MPW.Init()
 		-- load modules manually here
 		Script.Load( "MP_SettlerServer\\Mods\\MPW\\Ingame\\aoe\\script\\mpw\\modules\\aoe.lua" )
 		Script.Load( "MP_SettlerServer\\Mods\\MPW\\Ingame\\aoe\\script\\mpw\\modules\\aoe_gui.lua" )
-		Script.Load( "MP_SettlerServer\\Mods\\MPW\\Ingame\\PU_Axe\\script\\mpw\\modules\\pu_axe.lua" )
-		Script.Load( "MP_SettlerServer\\Mods\\MPW\\Ingame\\s4\\script\\mpw\\modules\\s4.lua" )
+		Script.Load( "MP_SettlerServer\\Mods\\MPW\\Ingame\\CombatPlus\\script\\mpw\\modules\\CombatPlus.lua" )
+		Script.Load( "MP_SettlerServer\\Mods\\MPW\\Ingame\\Territory\\script\\mpw\\modules\\Territory.lua" )
 		--Script.Load( "MP_SettlerServer\\Mods\\MPW\\Ingame\\unlimited\\script\\mpw\\modules\\unlimited.lua" )
 	end
 	
@@ -157,6 +159,7 @@ function MPW.PostInit()
 	Script.Load( path .. "Trading.lua" )
 	
 	-- init scripts
+	MPW.AttractionLimit.PostInit()
 	MPW.Camera.PostInit()
 	MPW.Defeat.PostInit()
 	MPW.GFXSetHandler.PostInit()
@@ -165,6 +168,7 @@ function MPW.PostInit()
 	MPW.QOL.PostInit()
 	MPW.ThiefLoot.PostInit() -- here because network handlers neeed to be setup after simis stuff has loaded
 	MPW.Trading.PostInit()
+	MPW.Weather.PostInit()
 	
 	-- init modules
 	for _, name in pairs( MPW.Modules ) do

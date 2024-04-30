@@ -180,7 +180,7 @@ function GUITooltip_BuySerf()
 	local ShortCutToolTip = XGUIEng.GetStringTableText("MenuGeneric/Key_name") .. ": [" .. XGUIEng.GetStringTableText("KeyBindings/BuyUnits1") .. "]"
 	local player = GUI.GetPlayerID()
 	local costcolor = "@color:220,64,16,255 "
-	local nserfs, maxserfs = MPW.AttractionLimit.GetNumberOfAdditionalSerfsOfPlayer(player), MPW.AttractionLimit.MaxAdditionalSerfs
+	local nserfs, maxserfs = MPW.AttractionLimit.GetNumberOfAdditionalSerfsOfPlayer(player), MPW.AttractionLimit.MaxAdditionalSerfs[player]
 	local nslots = Logic.GetAttractionLimitValueByEntityType(Entities.PU_Serf)
 
 	if Logic.GetPlayerAttractionLimit(player) + maxserfs > Logic.GetPlayerAttractionUsage(player) + nserfs then

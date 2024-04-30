@@ -44,7 +44,7 @@
 		<IdleTaskList>TL_NPC_IDLE</IdleTaskList>
 		<ArmorClass>ArmorClassNone</ArmorClass>
 		<ArmorAmount>0</ArmorAmount>
-
+		<AttractionSlots>0</AttractionSlots>
 	</Logic>
 	<Behavior>
 		<Logic classname="GGL::CGLAnimationBehaviorExProps">
