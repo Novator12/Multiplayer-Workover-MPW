@@ -235,191 +235,190 @@ function GUITooltip_HeroButton( _TechnologyType, _Tooltip, _ShortCut )
 	
 	return CostString, XGUIEng.GetStringTableText( TooltipText ), ShortCutToolTip
 end
-
+--------------------------------------------------------------------------------
+function MPW.GetHeroAbilityName(_string)
+	_string = string.gsub(_string, "@color:180,180,180,255 ", "")
+	local index = string.find(_string, "@cr")
+	return string.sub(_string, 0, index - 2)
+end
+function MPW.GetHeroAbilityRequirement(_string)
+	local indices = {string.find(_string, "@color:255,255,255,255 ")}
+	local index = indices[table.getn(indices)]
+	return string.sub(_string, index + 1)
+end
+--------------------------------------------------------------------------------
 HeroInfoTable = {
-
 	[Entities.PU_Hero1c] = {
-		Name = "Dario",
+		Name = XGUIEng.GetStringTableText("Names/PU_Hero1"),
 		Abilities = {
-			[1] = "Falkenauge",
-			[2] = "Vertreiben",
-			[3] = "Aura d. Freude"
+			[1] = MPW.GetHeroAbilityName(XGUIEng.GetStringTableText("MenuHero1/command_sendhawk_disabled")),
+			[2] = MPW.GetHeroAbilityName(XGUIEng.GetStringTableText("MenuHero1/command_protectunits_disabled")),
+			[3] = MPW.GetHeroAbilityName(XGUIEng.GetStringTableText("MenuHero1/command_motivate_disabled")),
 		},
 		Technologies = {
-			[1] = "Fernglas",
-			[2] = "Wehrpflicht",  --Fehler in StringTableKey t fehlt
-			[3] = "Bildung"
+			[1] = MPW.GetHeroAbilityRequirement(XGUIEng.GetStringTableText("MenuHero1/command_sendhawk_disabled")),
+			[2] = MPW.GetHeroAbilityRequirement(XGUIEng.GetStringTableText("MenuHero1/command_protectunits_disabled")),
+			[3] = MPW.GetHeroAbilityRequirement(XGUIEng.GetStringTableText("MenuHero1/command_motivate_disabled")),
 		},
-
 	},
 
 	[Entities.PU_Hero2] = {
-		Name = "Pilgrim",
+		Name = XGUIEng.GetStringTableText("Names/PU_Hero2"),
 		Abilities = {
-			[1] = "Bombe",
-			[2] = "Kanone",
-			[3] = "-None-"
+			[1] = MPW.GetHeroAbilityName(XGUIEng.GetStringTableText("MenuHero2/command_bomb_disabled")),
+			[2] = MPW.GetHeroAbilityName(XGUIEng.GetStringTableText("MenuHero2/command_buildcannon_disabled")),
+			[3] = "-"
 		},
 		Technologies = {
-			[1] = "Legierung",
-			[2] = "Architektur",
-			[3] = "-None-"
+			[1] = MPW.GetHeroAbilityRequirement(XGUIEng.GetStringTableText("MenuHero2/command_bomb_disabled")),
+			[2] = MPW.GetHeroAbilityRequirement(XGUIEng.GetStringTableText("MenuHero2/command_buildcannon_disabled")),
+			[3] = "-"
 		},
-
 	},
 
 	[Entities.PU_Hero3] = {
-		Name = "Salim",
+		Name = XGUIEng.GetStringTableText("Names/PU_Hero3"),
 		Abilities = {
-			[1] = "Falle",
-			[2] = "Heilen",
-			[3] = "-None-"
+			[1] = MPW.GetHeroAbilityName(XGUIEng.GetStringTableText("MenuHero3/command_buildTrap_disabled")),
+			[2] = MPW.GetHeroAbilityName(XGUIEng.GetStringTableText("MenuHero3/command_heal_disabled")),
+			[3] = "-"
 		},
 		Technologies = {
-			[1] = "Flaschenzug",
-			[2] = "Alchemie",
-			[3] = "-None-"
+			[1] = MPW.GetHeroAbilityRequirement(XGUIEng.GetStringTableText("MenuHero3/command_buildTrap_disabled")),
+			[2] = MPW.GetHeroAbilityRequirement(XGUIEng.GetStringTableText("MenuHero3/command_heal_disabled")),
+			[3] = "-"
 		},
-
 	},
 
 	[Entities.PU_Hero4] = {
-		Name = "Erec",
+		Name = XGUIEng.GetStringTableText("Names/PU_Hero4"),
 		Abilities = {
-			[1] = "Wirbelschlag",
-			[2] = "Aura d. Stärke",
-			[3] = "-None-"
+			[1] = MPW.GetHeroAbilityName(XGUIEng.GetStringTableText("MenuHero4/command_circularattack_disabled")),
+			[2] = MPW.GetHeroAbilityName(XGUIEng.GetStringTableText("MenuHero4/command_auraofwar_disabled")),
+			[3] = "-"
 		},
 		Technologies = {
-			[1] = "Pferdezucht",
-			[2] = "Taktiken",
-			[3] = "-None-"
+			[1] = MPW.GetHeroAbilityRequirement(XGUIEng.GetStringTableText("MenuHero4/command_circularattack_disabled")),
+			[2] = MPW.GetHeroAbilityRequirement(XGUIEng.GetStringTableText("MenuHero4/command_auraofwar_disabled")),
+			[3] = "-"
 		},
-
 	},
 
 	[Entities.PU_Hero5] = {
-		Name = "Ari",
+		Name = XGUIEng.GetStringTableText("Names/PU_Hero5"),
 		Abilities = {
-			[1] = "Tarnen",
-			[2] = "Banditen",
-			[3] = "-None-"
+			[1] = MPW.GetHeroAbilityName(XGUIEng.GetStringTableText("MenuHero5/command_camouflage_disabled")),
+			[2] = MPW.GetHeroAbilityName(XGUIEng.GetStringTableText("MenuHero5/command_summon_disabled")),
+			[3] = "-"
 		},
 		Technologies = {
-			[1] = "Konstruktion",
-			[2] = "Stehendes Heer",
-			[3] = "-None-"
+			[1] = MPW.GetHeroAbilityRequirement(XGUIEng.GetStringTableText("MenuHero5/command_camouflage_disabled")),
+			[2] = MPW.GetHeroAbilityRequirement(XGUIEng.GetStringTableText("MenuHero5/command_summon_disabled")),
+			[3] = "-"
 		},
-
 	},
 
 	[Entities.PU_Hero6] = {
-		Name = "Helias",
+		Name = XGUIEng.GetStringTableText("Names/PU_Hero6"),
 		Abilities = {
-			[1] = "Überzeugen",
-			[2] = "Segnen",
-			[3] = "-None-"
+			[1] = MPW.GetHeroAbilityName(XGUIEng.GetStringTableText("MenuHero6/command_convertbuilding_disabled")),
+			[2] = MPW.GetHeroAbilityName(XGUIEng.GetStringTableText("MenuHero6/command_bless_disabled")),
+			[3] = "-"
 		},
 		Technologies = {
-			[1] = "Bücherein",
-			[2] = "Buchdruck",
-			[3] = "-None-"
+			[1] = MPW.GetHeroAbilityRequirement(XGUIEng.GetStringTableText("MenuHero6/command_convertbuilding_disabled")),
+			[2] = MPW.GetHeroAbilityRequirement(XGUIEng.GetStringTableText("MenuHero6/command_bless_disabled")),
+			[3] = "-"
 		},
-
 	},
 
 	[Entities.CU_BlackKnight] = {
-		Name = "Kerberos",
+		Name = XGUIEng.GetStringTableText("Names/CU_BlackKnight"),
 		Abilities = {
-			[1] = "Höllenschrei",
-			[2] = "Aura d. Furcht",
-			[3] = "-None-"
+			[1] = MPW.GetHeroAbilityName(XGUIEng.GetStringTableText("MenuHero7/command_madness_disabled")),
+			[2] = MPW.GetHeroAbilityName(XGUIEng.GetStringTableText("MenuHero7/command_inflictfear_disabled")),
+			[3] = "-"
 		},
 		Technologies = {
-			[1] = "Wehrpflicht",
-			[2] = "Buchdruck",
-			[3] = "-None-"
+			[1] = MPW.GetHeroAbilityRequirement(XGUIEng.GetStringTableText("MenuHero7/command_madness_disabled")),
+			[2] = MPW.GetHeroAbilityRequirement(XGUIEng.GetStringTableText("MenuHero7/command_inflictfear_disabled")),
+			[3] = "-"
 		},
-
 	},
 
 	[Entities.CU_Mary_de_Mortfichet] = {
-		Name = "Mary de Mortfichet",
+		Name = XGUIEng.GetStringTableText("Names/CU_Mary_de_Mortfichet"),
 		Abilities = {
-			[1] = "Gift",
-			[2] = "Demoralisieren",
-			[3] = "-None-"
+			[1] = MPW.GetHeroAbilityName(XGUIEng.GetStringTableText("MenuHero8/command_poison_disabled")),
+			[2] = MPW.GetHeroAbilityName(XGUIEng.GetStringTableText("MenuHero8/command_moraledamage_disabled")),
+			[3] = "-"
 		},
 		Technologies = {
-			[1] = "Chemie",
-			[2] = "Metallurgie",
-			[3] = "-None-"
+			[1] = MPW.GetHeroAbilityRequirement(XGUIEng.GetStringTableText("MenuHero8/command_poison_disabled")),
+			[2] = MPW.GetHeroAbilityRequirement(XGUIEng.GetStringTableText("MenuHero8/command_moraledamage_disabled")),
+			[3] = "-"
 		},
-
 	},
 
 	[Entities.CU_Barbarian_Hero] = {
-		Name = "Varg",
+		Name = XGUIEng.GetStringTableText("Names/CU_Barbarian_Hero"),
 		Abilities = {
-			[1] = "Wolfsbrut",
-			[2] = "Berserkerwut",
-			[3] = "-None-"
+			[1] = MPW.GetHeroAbilityName(XGUIEng.GetStringTableText("MenuHero9/command_callwolfs_disabled")),
+			[2] = MPW.GetHeroAbilityName(XGUIEng.GetStringTableText("MenuHero9/command_berserk_disabled")),
+			[3] = "-"
 		},
 		Technologies = {
-			[1] = "Stehendes Heer",
-			[2] = "Taktiken",
-			[3] = "-None-"
+			[1] = MPW.GetHeroAbilityRequirement(XGUIEng.GetStringTableText("MenuHero9/command_callwolfs_disabled")),
+			[2] = MPW.GetHeroAbilityRequirement(XGUIEng.GetStringTableText("MenuHero9/command_berserk_disabled")),
+			[3] = "-"
 		},
-
 	},
 
 	[Entities.PU_Hero10] = {
-		Name = "Drake",
+		Name = XGUIEng.GetStringTableText("Names/PU_Hero10"),
 		Abilities = {
-			[1] = "Meisterschuss",
-			[2] = "Feuerkraft",
-			[3] = "-None-"
+			[1] = MPW.GetHeroAbilityName(XGUIEng.GetStringTableText("AOMenuHero10/command_sniperattack_disabled")),
+			[2] = MPW.GetHeroAbilityName(XGUIEng.GetStringTableText("AOMenuHero10/command_longrangeaura_disabled")),
+			[3] = "-"
 		},
 		Technologies = {
-			[1] = "Gezogener Lauf",
-			[2] = "Luntenschloss",
-			[3] = "-None-"
+			[1] = MPW.GetHeroAbilityRequirement(XGUIEng.GetStringTableText("AOMenuHero10/command_sniperattack_disabled")),
+			[2] = MPW.GetHeroAbilityRequirement(XGUIEng.GetStringTableText("AOMenuHero10/command_longrangeaura_disabled")),
+			[3] = "-"
 		},
-
 	},
 
 	[Entities.PU_Hero11] = {
-		Name = "Yuki",
+		Name = XGUIEng.GetStringTableText("Names/PU_Hero11"),
 		Abilities = {
-			[1] = "Shuriken",
-			[2] = "Feuerw. d. Furcht",
-			[3] = "Feuerw. d. Freude"
+			[1] = MPW.GetHeroAbilityName(XGUIEng.GetStringTableText("AOMenuHero11/command_Shuriken_disabled")),
+			[2] = MPW.GetHeroAbilityName(XGUIEng.GetStringTableText("AOMenuHero11/command_FireworksFear_disabled")),
+			[3] = MPW.GetHeroAbilityName(XGUIEng.GetStringTableText("AOMenuHero11/command_fireworksmotivate_disabled")),
 		},
 		Technologies = {
-			[1] = "Zahnrad",
-			[2] = "Mathematik",
-			[3] = "Bildung"
+			[1] = MPW.GetHeroAbilityRequirement(XGUIEng.GetStringTableText("AOMenuHero11/command_Shuriken_disabled")),
+			[2] = MPW.GetHeroAbilityRequirement(XGUIEng.GetStringTableText("AOMenuHero11/command_FireworksFear_disabled")),
+			[3] = MPW.GetHeroAbilityRequirement(XGUIEng.GetStringTableText("AOMenuHero11/command_fireworksmotivate_disabled")),
 		},
-
 	},
 
 	[Entities.CU_Evil_Queen] = {
-		Name = "Kala",
+		Name = XGUIEng.GetStringTableText("Names/CU_Evil_Queen"),
 		Abilities = {
-			[1] = "Giftpfeile",
-			[2] = "Giftnebel",
-			[3] = "-None-"
+			[1] = MPW.GetHeroAbilityName(XGUIEng.GetStringTableText("AOMenuHero12/command_poisonrange_disabled")),
+			[2] = MPW.GetHeroAbilityName(XGUIEng.GetStringTableText("AOMenuHero12/command_poisonarrows_disabled")),
+			[3] = "-"
 		},
 		Technologies = {
-			[1] = "Chemie",
-			[2] = "Legierung",
-			[3] = "-None-"
+			[1] = MPW.GetHeroAbilityRequirement(XGUIEng.GetStringTableText("AOMenuHero12/command_poisonrange_disabled")),
+			[2] = MPW.GetHeroAbilityRequirement(XGUIEng.GetStringTableText("AOMenuHero12/command_poisonarrows_disabled")),
+			[3] = "-"
 		},
-
 	},
 }
-
+--------------------------------------------------------------------------------
 --setting text in hero buy window
+--------------------------------------------------------------------------------
 function GUITooltip_BuyHeroText(_EntityType)
 	for k,v in pairs(HeroInfoTable) do
 		--filter for herotype

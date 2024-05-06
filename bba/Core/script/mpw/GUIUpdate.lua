@@ -51,14 +51,54 @@ function GUIUpdate_GroupStrength()
 	if LeaderID == nil then
 		return
 	end
-
+	
 	local AmountOfSoldiers = Logic.LeaderGetNumberOfSoldiers( LeaderID )
 	local MaxAmountOfSoldiers = Logic.LeaderGetMaxNumberOfSoldiers( LeaderID )
 	XGUIEng.ShowAllSubWidgets( gvGUI_WidgetID.DetailsGroupStrengthSoldiersContainer, 0 )
-
+	
 	-- show Buttons for each Soldier 
 	for i = 1, MaxAmountOfSoldiers do
 		XGUIEng.ShowWidget( gvGUI_WidgetID.DetailsGroupStrengthSoldiers[i], 1 )
 		XGUIEng.DisableButton(gvGUI_WidgetID.DetailsGroupStrengthSoldiers[i], (i <= AmountOfSoldiers and 0) or 1 )
+	end
+end
+--------------------------------------------------------------------------------
+function GUIUpdate_SettlersInBuilding()
+	local EntityId = GUI.GetSelectedEntity()
+
+	if EntityId == nil then
+		return
+	end
+	if Logic.IsBuilding( EntityId ) ~= 1 then
+		return
+	end
+
+	local BuildingType =  Logic.GetEntityType( EntityId )
+	local BuildingCategory = Logic.GetUpgradeCategoryByBuildingType( BuildingType )
+
+	local SettlersTable = {}
+	local MaxSettlersAmount = 0
+
+	--fill tables depending on the Building type	
+	if BuildingCategory == UpgradeCategories.Residence then
+		SettlersTable = {Logic.GetAttachedResidentsToBuilding(EntityId)}
+		MaxSettlersAmount = Logic.GetMaxNumberOfResidents(EntityId)
+
+	elseif BuildingCategory == UpgradeCategories.Farm or BuildingCategory == UpgradeCategories.Tavern then
+		SettlersTable = {Logic.GetAttachedEaterToBuilding(EntityId)}
+		MaxSettlersAmount = Logic.GetMaxNumberOfEaters(EntityId)
+
+	else
+		SettlersTable = {Logic.GetAttachedWorkersToBuilding(EntityId)}
+		MaxSettlersAmount = Logic.GetCurrentMaxNumWorkersInBuilding(EntityId)
+	end
+
+	XGUIEng.ShowAllSubWidgets(gvGUI_WidgetID.WorkerButtonContainer, 0)
+
+	--show settlers containers and set variable of container
+	for i = 1, MaxSettlersAmount do
+		local ButtonName = "WorkerContainer" .. i
+		XGUIEng.ShowWidget(ButtonName,1)
+		XGUIEng.SetBaseWidgetUserVariable(ButtonName, 0, SettlersTable[i + 1])
 	end
 end

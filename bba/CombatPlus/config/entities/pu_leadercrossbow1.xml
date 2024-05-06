@@ -76,8 +76,8 @@
 		
 		<Cost>
 			<Gold>210</Gold>
-			<Iron>0</Iron>
-			<Wood>80</Wood>
+			<Iron>80</Iron>
+			<Wood>0</Wood>
 		</Cost>
 
 		<Upgrade>

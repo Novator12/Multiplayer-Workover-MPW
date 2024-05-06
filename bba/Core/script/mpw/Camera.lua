@@ -38,6 +38,7 @@ end
 -- zoomfactor button tooltip
 --------------------------------------------------------------------------------
 function GUITooltip_ZoomButton()
-	XGUIEng.SetText("TooltipBottomText", "@color:180,180,180 Kameraentfernung @cr @color:255,255,255 Die Zoomstufe der Kamera beträgt "..MPW.Camera.ZoomFactorMax.." von 2.")
 	XGUIEng.SetText("TooltipBottomCosts", "")
+	XGUIEng.SetText("TooltipBottomText", XGUIEng.GetStringTableText("mpwmenucamera/zoomfactormax") .. MPW.Camera.ZoomFactorMax)
+	XGUIEng.SetText("TooltipBottomShortCut", "")
 end

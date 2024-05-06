@@ -520,7 +520,14 @@ function GameCallback_GUI_SelectionChanged()
 				XGUIEng.ShowWidget(gvGUI_WidgetID.Tavern,1)	
 				ButtonStem =  "Upgrade_Tavern"
 				
-			--Is EntityType the Gunsmith?
+				XGUIEng.ShowWidget(gvGUI_WidgetID.BuildingTabs,1)
+				XGUIEng.UnHighLightGroup(gvGUI_WidgetID.InGame, "BuildingMenuGroup")
+				XGUIEng.HighLightButton(gvGUI_WidgetID.ToBuildingCommandMenu,1)
+				
+				XGUIEng.ShowWidget(gvGUI_WidgetID.ActivateOvertimes,0)
+				XGUIEng.ShowWidget(gvGUI_WidgetID.QuitOvertimes,0)
+
+				--Is EntityType the Gunsmith?
 			elseif UpgradeCategories.GunsmithWorkshop and UpgradeCategory == UpgradeCategories.GunsmithWorkshop then
 				XGUIEng.ShowWidget(gvGUI_WidgetID.GunsmithWorkshop,1)
 				ButtonStem =  "Upgrade_GunsmithWorkshop"

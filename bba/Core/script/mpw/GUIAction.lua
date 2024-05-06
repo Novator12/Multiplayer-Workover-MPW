@@ -209,3 +209,36 @@ function GUIAction_BuySerf()
 		GUI.BuySerf(BuildingID)
 	end
 end
+--------------------------------------------------------------------------------
+-- fix for unknown unit types
+function GUIAction_AOOnlineHelp(_SelectedEntityID, _SpokenText, _Text)
+	local AOSpokenText
+	local AOText
+	local EntityType = Logic.GetEntityType( _SelectedEntityID )
+	local UpgradeCategory
+
+	if Logic.IsBuilding( _SelectedEntityID ) == 1 then
+		UpgradeCategory = Logic.GetUpgradeCategoryByBuildingType(EntityType)
+	else
+		UpgradeCategory = Logic.LeaderGetSoldierUpgradeCategory( _SelectedEntityID )
+	end
+
+	if UpgradeCategory ~= 0 and UpgradeCategory ~= nil and HintTable[UpgradeCategory] then
+		AOSpokenText	= Sounds["AOVoicesMentorHelp_" .. HintTable[UpgradeCategory]]
+		AOText 			= XGUIEng.GetStringTableText("AOVoicesMentorHelp/" .. HintTable[UpgradeCategory])
+	end
+
+	if EntityType == Entities.PU_Scout then
+		AOSpokenText	= Sounds.AOVoicesMentorHelp_UNIT_Scout
+		AOText 			= XGUIEng.GetStringTableText("AOVoicesMentorHelp/UNIT_Scout")
+	elseif EntityType == Entities.PU_Thief then
+		AOSpokenText	= Sounds.AOVoicesMentorHelp_UNIT_Thief
+		AOText 			= XGUIEng.GetStringTableText("AOVoicesMentorHelp/UNIT_Thief")
+	end
+
+	if AOSpokenText ~= nil and AOText ~= nil then
+		return AOSpokenText, AOText
+	else
+		return _SpokenText, _Text
+	end
+end
