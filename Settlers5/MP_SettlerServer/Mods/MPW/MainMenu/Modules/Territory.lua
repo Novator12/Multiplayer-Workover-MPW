@@ -7,7 +7,10 @@ MPW.Modules.Territory = {
 	Dependencies = { "Core" },
 	Incompatible = {},
 	Name = "Territory",
-	Description = "Fügt Territorien wie in Die Siedler 4 hinzu. @cr Neben eurer Burg, könnt ihr euer Territorium mit Dorfzentren, Aussichtstürmen und Außenposten erwetern. @cr @cr @color:255,204,51,255 Dieser Spielmodus funktioniert aktuell nur, wenn die Burgen und Aussichtstürme von verschiedenen Spielern zu Spielstart nicht zu dicht stehen. Im laufe des Spiels platzierte Gebäude machen keine Probleme. An einer Lösung wird gearbeitet."
+	Description = {
+		DE = "Fügt Territorien wie in Die Siedler 4 hinzu. @cr Neben eurer Burg, könnt ihr euer Territorium mit Dorfzentren, Aussichtstürmen und Außenposten erwetern. @cr @cr @color:255,204,51,255 Dieser Spielmodus funktioniert aktuell nur, wenn die Burgen und Aussichtstürme von verschiedenen Spielern zu Spielstart nicht zu dicht stehen. Im laufe des Spiels platzierte Gebäude machen keine Probleme. An einer Lösung wird gearbeitet.",
+		GB = "Adds territories as in The Settlers 4. @cr Beside your Keep, you can expand your territory with Village Centers, Watch Towers and Outposts. @cr @cr @color:255,204,51,255 This gamemode currently only works, if the Keep and Watch Towers of different players have enough space between them. Buildings placed in game are no problem. We work on a solution.",
+	},
 }
 --------------------------------------------------------------------------------
 function MPW.Territory.OnInitialize()

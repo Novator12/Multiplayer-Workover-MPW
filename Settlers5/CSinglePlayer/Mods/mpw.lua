@@ -14,14 +14,22 @@ if not MPW then
 	end
 	--------------------------------------------------------------------------------
 	MPW = {}
+	MPW.Core = { OnInitialize = function() return true end }
 	MPW.Modules = {
-		Core = { Priority = 0 },
+		Core = {
+			Priority = 0,
+			Name = "Core",
+			Description = {
+				DE = "Schaltet das Multiplayer Workover ein oder aus. @cr Wenn das Kernmodul deaktiviert ist, können auch keine anderen Module geladen werden.",
+				GB = "Turns the Multiplayer Workover on or off. @cr If the Core module is deactivated, no other modules can be loaded.",
+			},
+		},
 	}
 	--------------------------------------------------------------------------------
 	function OnInitialize()
 		
 		print( "MPW: OnInitialize" )
-		
+
 		-- push our widgets in front of the potential hd menu buttons
 		for i = 0, 5 do
 			CWidget.Transaction_AddRawWidgetsFromFile( "CSinglePlayer\\Mods\\MPW\\MainMenu\\OptionsMenu" .. i .. "0_ToModules.xml", "OptionsMenu" .. i .. "0_ToNetwork" )
@@ -49,17 +57,16 @@ if not MPW then
 		
 		print( "MPW: OnGUILoaded" )
 		
+		local title = (XNetworkUbiCom.Tool_GetCurrentLanguageShortName() == "DE" and "@center «MPW Module»") or "@center «MPW Modules»"
+
 		-- right button name for each menu
-		XGUIEng.SetText( "OptionsMenu00_ToModules", "@center «MPW Module»" )
-		XGUIEng.SetText( "OptionsMenu10_ToModules", "@center «MPW Module»" )
-		XGUIEng.SetText( "OptionsMenu20_ToModules", "@center «MPW Module»" )
-		XGUIEng.SetText( "OptionsMenu30_ToModules", "@center «MPW Module»" )
-		XGUIEng.SetText( "OptionsMenu40_ToModules", "@center «MPW Module»" )
-		XGUIEng.SetText( "OptionsMenu50_ToModules", "@center «MPW Module»" )
-		XGUIEng.SetText( "MPWMenu_ToModules", "@center «MPW Module»")
-		
-		-- mpw menu button names
-		XGUIEng.SetText( "MPWMenu_Core", "@center Core" )
+		XGUIEng.SetText( "OptionsMenu00_ToModules", title )
+		XGUIEng.SetText( "OptionsMenu10_ToModules", title )
+		XGUIEng.SetText( "OptionsMenu20_ToModules", title )
+		XGUIEng.SetText( "OptionsMenu30_ToModules", title )
+		XGUIEng.SetText( "OptionsMenu40_ToModules", title )
+		XGUIEng.SetText( "OptionsMenu50_ToModules", title )
+		XGUIEng.SetText( "MPWMenu_ToModules", title)
 		
 		-- init modules
 		for name, _ in pairs( MPW.Modules ) do

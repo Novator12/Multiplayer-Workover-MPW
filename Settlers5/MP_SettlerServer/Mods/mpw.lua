@@ -16,8 +16,16 @@ if not MPW then
 	end
 	--------------------------------------------------------------------------------
 	MPW = {}
+	MPW.Core = { OnInitialize = function() return true end }
 	MPW.Modules = {
-		Core = { Priority = 0 },
+		Core = {
+			Priority = 0,
+			Name = "Core",
+			Description = {
+				DE = "Schaltet das Multiplayer Workover ein oder aus. @cr Wenn das Kernmodul deaktiviert ist, können auch keine anderen Module geladen werden.",
+				GB = "Turns the Multiplayer Workover on or off. @cr If the Core module is deactivated, no other modules can be loaded.",
+			},
+		},
 	}
 	--------------------------------------------------------------------------------
 	function OnInitialize()

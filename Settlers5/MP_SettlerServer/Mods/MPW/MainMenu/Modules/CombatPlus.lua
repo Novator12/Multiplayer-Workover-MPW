@@ -6,7 +6,10 @@ MPW.Modules.CombatPlus = {
 	Dependencies = { "Core" },
 	Incompatible = {},
 	Name = "Combat Plus",
-	Description = "Fügt dem Spiel Axtkrieger hinzu und separiert Armbrustschützen von Begenschützen. Außerdem können Kanonen deutlich schneller rekrutiert werden und nehmen eine anderer Rolle im Balancing ein."
+	Description = {
+		DE = "Fügt dem Spiel Axtkrieger hinzu und separiert Armbrustschützen von Begenschützen. Außerdem können Kanonen deutlich schneller rekrutiert werden und nehmen eine anderer Rolle im Balancing ein.",
+		GB = "Adds axe warriors as a new unit type to the game and separates Crossbowmen from Archers. Additionaly cannons can be recruited much faster and play a different roll in the unit balancing. ",
+	},
 }
 --------------------------------------------------------------------------------
 function MPW.CombatPlus.OnInitialize()
@@ -98,53 +101,53 @@ function MPW.CombatPlus.OnMapStart()
 		[[<Model id="PU_LeaderAxe1">
 			<SelectionRadius>80</SelectionRadius>
 			<Effect>SettlerPlayerColorSpecular</Effect>
-			<OcclusionReceiver>False</OcclusionReceiver>
+			<OcclusionReceiver>True</OcclusionReceiver>
 		</Model>]],
 	
 		[[<Model id="PU_SoldierAxe1">
 			<SelectionRadius>75</SelectionRadius>
 			<Effect>SettlerPlayerColorSpecular</Effect>
 			<SelectionTexture>Selection_Soldier</SelectionTexture>
-			<OcclusionReceiver>False</OcclusionReceiver>
+			<OcclusionReceiver>True</OcclusionReceiver>
 		</Model>]],
 
 		[[<Model id="PU_LeaderAxe2">
 			<SelectionRadius>80</SelectionRadius>
 			<Effect>SettlerPlayerColorSpecular</Effect>
-			<OcclusionReceiver>False</OcclusionReceiver>
+			<OcclusionReceiver>True</OcclusionReceiver>
 		</Model>]],
 	
 		[[<Model id="PU_SoldierAxe2">
 			<SelectionRadius>75</SelectionRadius>
 			<Effect>SettlerPlayerColorSpecular</Effect>
 			<SelectionTexture>Selection_Soldier</SelectionTexture>
-			<OcclusionReceiver>False</OcclusionReceiver>
+			<OcclusionReceiver>True</OcclusionReceiver>
 		</Model>]],
 
 		[[<Model id="PU_LeaderAxe3">
 			<SelectionRadius>80</SelectionRadius>
 			<Effect>SettlerPlayerColorSpecular</Effect>
-			<OcclusionReceiver>False</OcclusionReceiver>
+			<OcclusionReceiver>True</OcclusionReceiver>
 		</Model>]],
 	
 		[[<Model id="PU_SoldierAxe3">
 			<SelectionRadius>75</SelectionRadius>
 			<Effect>SettlerPlayerColorSpecular</Effect>
 			<SelectionTexture>Selection_Soldier</SelectionTexture>
-			<OcclusionReceiver>False</OcclusionReceiver>
+			<OcclusionReceiver>True</OcclusionReceiver>
 		</Model>]],
 	
 		[[<Model id="PU_LeaderAxe4">
 			<SelectionRadius>80</SelectionRadius>
 			<Effect>SettlerPlayerColorSpecular</Effect>
-			<OcclusionReceiver>False</OcclusionReceiver>
+			<OcclusionReceiver>True</OcclusionReceiver>
 		</Model>]],
 	
 		[[<Model id="PU_SoldierAxe4">
 			<SelectionRadius>75</SelectionRadius>
 			<Effect>SettlerPlayerColorSpecular</Effect>
 			<SelectionTexture>Selection_Soldier</SelectionTexture>
-			<OcclusionReceiver>False</OcclusionReceiver>
+			<OcclusionReceiver>True</OcclusionReceiver>
 		</Model>]],
 	}
 	

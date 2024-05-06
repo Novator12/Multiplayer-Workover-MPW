@@ -6,7 +6,10 @@ MPW.Modules.AOE = {
 	Dependencies = { "Core" },
 	Incompatible = {},
 	Name = "Age Of Empires",
-	Description = "Basierend auf dem Spiel Age of Empires, startet ihr mit Handelskarren mit denen ihr die Startposition eurer Burg und Siedlungsplätze selbst bestimmen könnt."
+	Description = {
+		DE = "Basierend auf dem Spiel Age of Empires, startet ihr mit Gründungskarren mit denen ihr die Startposition eurer Burg und Siedlungsplätze selbst bestimmen könnt.",
+		GB = "Based on the game Age of Empires, you start with founder carts with which you can choose the start position of your Keep and Village Centers on you own.",
+	},
 }
 --------------------------------------------------------------------------------
 function MPW.AOE.OnInitialize()

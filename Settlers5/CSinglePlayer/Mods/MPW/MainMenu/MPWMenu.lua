@@ -109,6 +109,7 @@ function MPW.LoadModules()
 	-- load all modules
 	Script.LoadFolder( "MP_SettlerServer\\Mods\\MPW\\MainMenu\\Modules\\" )
 	
+	local lang = XNetworkUbiCom.Tool_GetCurrentLanguageShortName()
 	local index, rows = 0, 6
 	local x, y, w, h, d = 32, 75, 100, 40, 10
 	
@@ -117,6 +118,12 @@ function MPW.LoadModules()
 			if MPW[ name ].OnInitialize() then
 				
 				local r, c = math.floor( index / rows ), math.mod( index, rows )
+				
+				if name == "Core" then
+					r, c = -1, 0
+				else
+					index = index + 1
+				end
 				
 				-- create toggle button
 				CWidget.Transaction_AddTextButton(
@@ -195,7 +202,7 @@ function MPW.LoadModules()
 							ToolTipEnabledFlag = true,
 							ToolTipString = {
 								StringTableKey = "",
-								RawString = mod.Description,
+								RawString = mod.Description[lang],
 							},
 							TargetWidget = "StartMenu_TooltipText",
 							ControlTargetWidgetDisplayState = true,
@@ -206,8 +213,6 @@ function MPW.LoadModules()
 					},
 					"MPWMenu_BG"
 				)
-				
-				index = index + 1
 			end
 		end
 	end
