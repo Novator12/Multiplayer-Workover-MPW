@@ -2,9 +2,11 @@
 MPW.OSI.Technologies = {}
 --------------------------------------------------------------------------------
 function MPW.OSI.Technologies.PostInit( _TexturePath, _X, _Y, _W, _H )
-	
-	MPW.OSI.Technologies.Image = S5Hook.OSILoadImage( "graphics\\textures\\gui\\onscreen_techstar" )
 	table.insert( MPW.OSI.DrawCalls, MPW.OSI.Technologies.DrawCall )
+end
+--------------------------------------------------------------------------------
+function MPW.OSI.Technologies.PostLoad( _TexturePath, _X, _Y, _W, _H )
+	MPW.OSI.Technologies.Image = S5Hook.OSILoadImage( "graphics\\textures\\gui\\onscreen_techstar" )
 end
 --------------------------------------------------------------------------------
 function MPW.OSI.Technologies.DrawCall( _Id, _Active, _X, _Y )

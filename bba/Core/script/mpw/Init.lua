@@ -52,19 +52,21 @@ function MPW.Init()
 	if not S5Hook then
 		Script.Load( path .. "S5Hook.lua" )
 	end
-	if CNetwork then
+	if CNetwork then --or MPW_Debug then
 		Script.Load( path .. "S5HookOSIReplacement.lua" )
 		MPW.OSIReplacement.Init()
 	end
 
 	-- load trigger fix before other scripts - some need it
 	Script.Load( path .. "TriggerFix.lua" )
+	Script.Load("maps\\user\\EMS\\tools\\s5CommunityLib\\comfort\\other\\NextTick.lua")
 	
 	-- load scripts
 	Script.Load( "MP_SettlerServer\\WidgetHelper.lua" )
 	Script.Load( path .. "AttractionLimit.lua" )
 	Script.Load( path .. "Camera.lua" )
 	Script.Load( path .. "Defeat.lua" )
+	Script.Load( path .. "EntityCategories.lua" )
 	Script.Load( path .. "GUIAction.lua" )
 	Script.Load( path .. "GUITooltip.lua" )
 	Script.Load( path .. "GUIUpdate.lua" )
@@ -77,6 +79,7 @@ function MPW.Init()
 	-- init scripts
 	MPW.AttractionLimit.Init()
 	MPW.Camera.Init()
+	MPW.EntityCategories.Init()
 	MPW.Motivation.Init()
 	MPW.Motivation.InitBuildingLimit()
 	MPW.QOL.Init()
@@ -123,12 +126,13 @@ function MPW.Load()
 	
 	-- the safety check is now done by the hook itself
 	InstallS5Hook()
-	if CNetwork then
+	if CNetwork then --or MPW_Debug then
 		MPW.OSIReplacement.Load()
 	end
 
 	-- init scripts
 	MPW.AttractionLimit.Load()
+	MPW.EntityCategories.Load()
 	MPW.QOL.Load()
 	MPW.Widgets_Load()
 	
@@ -144,7 +148,7 @@ end
 --------------------------------------------------------------------------------
 function MPW.PostInit()
 	
-	if CNetwork then
+	if CNetwork then --or MPW_Debug then
 		MPW.OSIReplacement.PostInit()
 	end
 	
@@ -162,7 +166,6 @@ function MPW.PostInit()
 	MPW.AttractionLimit.PostInit()
 	MPW.Camera.PostInit()
 	MPW.Defeat.PostInit()
-	MPW.GFXSetHandler.PostInit()
 	MPW.HeroSummonHandler.PostInit() -- here because network handlers neeed to be setup after simis stuff has loaded
 	MPW.OSI.PostInit()
 	MPW.QOL.PostInit()
@@ -190,6 +193,7 @@ function MPW.PostLoad()
 	CEntity.EnableDamageClassAoEDamage()
 
 	-- init scripts
+	MPW.GFXSetHandler.PostLoad()
 	MPW.OSI.PostLoad()
 	MPW.QOL.PostLoad()
 	MPW.Widgets_PostLoad()

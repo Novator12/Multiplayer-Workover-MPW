@@ -2,11 +2,11 @@
 MPW.OSI.CombatPlus = {}
 --------------------------------------------------------------------------------
 function MPW.OSI.CombatPlus.PostInit()
-
-	MPW.OSI.CombatPlus.ImageAxe = S5Hook.OSILoadImage( "graphics\\textures\\gui\\mo_emblem_axe" )
-	MPW.OSI.CombatPlus.ImageCrossBow = S5Hook.OSILoadImage( "graphics\\textures\\gui\\mo_emblem_crossbow" )
-	
-	table.insert( MPW.OSI.DrawCalls, MPW.OSI.CombatPlus.DrawCall )
+    --table.insert(MPW.OSI.Leader.DrawExperience, EntityCategories.CrossBow)
+end
+--------------------------------------------------------------------------------
+function MPW.OSI.CombatPlus.PostLoad()
+    MPW.OSI.Leader.DrawEmblem[EntityCategories.CrossBow] = S5Hook.OSILoadImage( "graphics\\textures\\gui\\mo_emblem_crossbow" )
 end
 --------------------------------------------------------------------------------
 function MPW.OSI.CombatPlus.DrawCall( _Id, _Active, _X, _Y )
@@ -17,6 +17,7 @@ function MPW.OSI.CombatPlus.DrawCall( _Id, _Active, _X, _Y )
     for i = 2, entitytypes[1] + 1 do
         if entitytype == entitytypes[i] then
             S5Hook.OSIDrawImage( MPW.OSI.CombatPlus.ImageAxe, _X - 33, _Y - 16, 32, 32 )
+            S5Hook.OSIDrawImage( MPW.OSI.CombatPlus.ImpageExpStars[Logic.GetLeaderExperienceLevel(_Id)], _X - 33, _Y - 16, 32, 32 )
             return
         end
     end
@@ -26,6 +27,7 @@ function MPW.OSI.CombatPlus.DrawCall( _Id, _Active, _X, _Y )
     for i = 2, entitytypes[1] + 1 do
         if entitytype == entitytypes[i] then
             S5Hook.OSIDrawImage( MPW.OSI.CombatPlus.ImageCrossBow, _X - 33, _Y - 16, 32, 32 )
+            S5Hook.OSIDrawImage( MPW.OSI.CombatPlus.ImpageExpStars[Logic.GetLeaderExperienceLevel(_Id)], _X - 33, _Y - 16, 32, 32 )
             return
         end
     end

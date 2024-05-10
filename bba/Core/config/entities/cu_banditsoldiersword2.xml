@@ -26,7 +26,7 @@
 		<ForceNoPlayer>false</ForceNoPlayer>
 		<Category>Military</Category>
 		<Category>Soldier</Category>
-		<Category>Sword</Category>
+		<Category>Axe</Category>
 		<Category>Melee</Category>
 		<AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
 		<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
@@ -46,11 +46,11 @@
 
 	<!--DamageModifier-->
 		<ModifyDamage>
-			<Technology>T_MasterOfSmithery</Technology>
+			<Technology>T_WoodAging</Technology>
 		</ModifyDamage>
 		
 		<ModifyDamage>
-			<Technology>T_IronCasting</Technology>
+			<Technology>T_Turnery</Technology>
 		</ModifyDamage>
 	
 	<!--SpeedModifier-->
@@ -71,7 +71,7 @@
 		<MaxHealth>150</MaxHealth>
 		<Exploration>20</Exploration>
 		
-		<ArmorClass>ArmorClassLeather</ArmorClass>
+		<ArmorClass>ArmorClassIron</ArmorClass>
 		<ArmorAmount>4</ArmorAmount>
 		<DodgeChance>0</DodgeChance>
 		
@@ -92,7 +92,7 @@
 			<BattleWalkAnim>CU_SoldierOutlaw1_Run1</BattleWalkAnim>
 			<HitAnim>CU_SoldierOutlaw1_Hit</HitAnim>
 			
-			<DamageClass>DC_Strike</DamageClass>
+			<DamageClass>DC_HeavyCavalry</DamageClass>
 			<DamageAmount>16</DamageAmount>
 			<MaxRandomDamageBonus>2</MaxRandomDamageBonus>
 			
@@ -100,7 +100,7 @@
 			<MinRange>0.0f</MinRange>
 			<AutoAttackRange>1500</AutoAttackRange>
 			
-			<BattleWaitUntil>1500</BattleWaitUntil>
+			<BattleWaitUntil>2000</BattleWaitUntil>
 			
 			<HealingPoints>3</HealingPoints>
 			<HealingSeconds>5</HealingSeconds>

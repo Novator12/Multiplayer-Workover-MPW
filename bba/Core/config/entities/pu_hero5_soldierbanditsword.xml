@@ -2,22 +2,22 @@
 <root>
 	<Display classname="ED::CDisplayEntityProps">
 		<Class>GD::CDisplaySettler</Class>
-		<Model>CU_SoldierOutlaw1</Model>
+		<Model>CU_BanditLeaderSword1</Model>
 		<DrawPlayerColor>True</DrawPlayerColor>
-		<Anim>CU_SoldierOutlaw1_Walk</Anim>
-		<Anim>CU_SoldierOutlaw1_Idle1</Anim>
-		<Anim>CU_SoldierOutlaw1_Idle2</Anim>
-		<Anim>CU_SoldierOutlaw1_Idle3</Anim>
-		<Anim>CU_SoldierOutlaw1_Idle4</Anim>
-		<Anim>CU_SoldierOutlaw1_Idle5</Anim>
-		<Anim>CU_SoldierOutlaw1_Idle6</Anim>
-		<Anim>CU_SoldierOutlaw1_IdleAttack1</Anim>
-		<Anim>CU_SoldierOutlaw1_Dying1</Anim>
-		<Anim>CU_SoldierOutlaw1_Attack1</Anim>
-		<Anim>CU_SoldierOutlaw1_Attack2</Anim>
-		<Anim>CU_SoldierOutlaw1_Finish</Anim>
-		<Anim>CU_SoldierOutlaw1_Hit</Anim>
-		<Anim>CU_SoldierOutlaw1_Run1</Anim>
+		<Anim>CU_BanditLeaderSword1_Walk</Anim>
+		<Anim>CU_BanditLeaderSword1_Run1</Anim>
+		<Anim>CU_BanditLeaderSword1_Idle1</Anim>
+		<Anim>CU_BanditLeaderSword1_Idle2</Anim>
+		<Anim>CU_BanditLeaderSword1_Idle3</Anim>
+		<Anim>CU_BanditLeaderSword1_Idle4</Anim>
+		<Anim>CU_BanditLeaderSword1_Idle5</Anim>
+		<Anim>CU_BanditLeaderSword1_Idle6</Anim>
+		<Anim>CU_BanditLeaderSword1_IdleAttack1</Anim>
+		<Anim>CU_BanditLeaderSword1_Attack1</Anim>
+		<Anim>CU_BanditLeaderSword1_Attack2</Anim>
+		<Anim>CU_BanditLeaderSword1_Finish</Anim>
+		<Anim>CU_BanditLeaderSword1_Hit</Anim>
+		<Anim>CU_BanditLeaderSword1_Dying1</Anim>
 	</Display>
 	
 	<Logic classname="GGL::CGLSettlerProps">
@@ -74,7 +74,7 @@
 		<Exploration>20</Exploration>
 		
 		<ArmorClass>ArmorClassHero</ArmorClass>
-		<ArmorAmount>3</ArmorAmount>
+		<ArmorAmount>2</ArmorAmount>
 		<DodgeChance>0</DodgeChance>
 
 		<ExperiencePoints>15</ExperiencePoints>
@@ -86,17 +86,17 @@
 			<Class>GGL::CSoldierBehavior</Class>
 			
 			<BattleTaskList>TL_BATTLE</BattleTaskList>
-			<NormalAttackAnim1>CU_SoldierOutlaw1_Attack1</NormalAttackAnim1>
-			<NormalAttackAnim2>CU_SoldierOutlaw1_Attack2</NormalAttackAnim2>
-			<CounterAttackAnim>CU_SoldierOutlaw1_Attack2</CounterAttackAnim>
-			<FinishingMoveAnim>CU_SoldierOutlaw1_Attack1</FinishingMoveAnim>
-			<MissAttackAnim>CU_SoldierOutlaw1_Attack1</MissAttackAnim>
-			<BattleIdleAnim>CU_SoldierOutlaw1_Idle1</BattleIdleAnim>
-			<BattleWalkAnim>CU_SoldierOutlaw1_Run1</BattleWalkAnim>
-			<HitAnim>CU_SoldierOutlaw1_Hit</HitAnim>
+	        <NormalAttackAnim1>CU_BanditLeaderSword1_Attack1</NormalAttackAnim1>
+	        <NormalAttackAnim2>CU_BanditLeaderSword1_Attack2</NormalAttackAnim2>
+	        <CounterAttackAnim>CU_BanditLeaderSword1_Finish</CounterAttackAnim>
+	        <FinishingMoveAnim>CU_BanditLeaderSword1_Attack1</FinishingMoveAnim>
+	        <MissAttackAnim>CU_BanditLeaderSword1_Attack1</MissAttackAnim>
+	        <BattleIdleAnim>CU_BanditLeaderSword1_Idle1</BattleIdleAnim>
+	        <BattleWalkAnim>CU_BanditLeaderSword1_Run1</BattleWalkAnim>
+			<HitAnim>CU_BanditLeaderSword1_Hit</HitAnim>
 			
 			<DamageClass>DC_Hero</DamageClass>
-			<DamageAmount>14</DamageAmount>
+			<DamageAmount>12</DamageAmount>
 			<MaxRandomDamageBonus>2</MaxRandomDamageBonus>
 			
 			<MaxRange>300.0f</MaxRange>
@@ -113,7 +113,7 @@
 	<Behavior>
 		<Logic classname="GGL::CGLAnimationBehaviorExProps">
 			<Class>GGL::CGLBehaviorAnimationEx</Class>
-			<AnimSet>SET_CU_SOLDIEROUTLAW1</AnimSet>
+			<AnimSet>SET_BANDITLEADERSWORD1</AnimSet>
 		</Logic>
 		<Display classname="ED::CBehaviorProps">
 			<Class>ED::CDisplayBehaviorAnimation</Class>
@@ -143,7 +143,7 @@
 		<Logic classname="GGL::CFormationBehaviorProperties">
 			<Class>GGL::CFormationBehavior</Class>
 			<IdleAnim>
-				<AnimID>CU_SoldierOutlaw1_Idle1</AnimID>
+				<AnimID>CU_BanditLeaderSword1_Idle1</AnimID>
 				<Frequency>1</Frequency>
 			</IdleAnim>
 		</Logic>

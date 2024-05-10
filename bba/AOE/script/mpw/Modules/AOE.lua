@@ -14,7 +14,6 @@ function MPW.AOE.Init()
 			CWidget.Transaction_AddRawWidgetsFromFile("data\\menu\\projects\\MultiSelectionSource_Founder_Cart.xml")
 		end
 	)
-	Script.Load("maps\\user\\EMS\\tools\\s5CommunityLib\\comfort\\other\\NextTick.lua")
 
 	MPW.GUIUpdate_MultiSelectionButton = GUIUpdate_MultiSelectionButton
 	function GUIUpdate_MultiSelectionButton()
@@ -65,7 +64,7 @@ function MPW.AOE.PostInit()
 		for i = 1, table.getn(selectedentities) do
 			local selectedentity = selectedentities[i]
 			local tasklist = Logic.GetCurrentTaskList(selectedentity)
-			if tasklist == "TL_SALESMAN_GO_TO_CONSTRUCTION_SITE" or tasklist == "TL_SALESMAN_BUILD" or (tasklist == "TL_WORKER_LEAVE" and Logic.GetEntityType(selectedentity) == Entities.PU_Founder_Cart) then
+			if tasklist == "TL_SALESMAN_GO_TO_CONSTRUCTION_SITE" or tasklist == "TL_SALESMAN_BUILD" or Logic.GetEntityType(selectedentity) == Entities.XD_VillageCenter then --or (tasklist == "TL_WORKER_LEAVE" and Logic.GetEntityType(selectedentity) == Entities.PU_Founder_Cart) then
 				GUI.DeselectEntity(selectedentity)
 				return
 			end

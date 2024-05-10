@@ -67,6 +67,27 @@ end
 -- ************************************************************************************************
 function MPW.HeroSummonHandler.PostInit()
 	
+	MPW.HeroSummonHandler.GameCallback_OnBuildingUpgradeComplete = GameCallback_OnBuildingUpgradeComplete
+	function GameCallback_OnBuildingUpgradeComplete(_OldId, _NewId)
+
+		MPW.HeroSummonHandler.GameCallback_OnBuildingUpgradeComplete(_OldId, _NewId)
+
+		local maxhp = 600
+		if Logic.GetEntityType(_NewId) == Entities.PB_Headquarters2 then
+			maxhp = 800
+		elseif Logic.GetEntityType(_NewId) == Entities.PB_Headquarters3 then
+			maxhp = 1000
+		end
+
+		if maxhp > 600 then
+			local player = Logic.EntityGetPlayer(_NewId)
+			for id in CEntityIterator.Iterator(CEntityIterator.OfCategoryFilter(EntityCategories.Hero), CEntityIterator.OfPlayerFilter(player)) do
+				CEntity.SetMaxHealth(id, maxhp)
+				Logic.HealEntity(id, 200)
+			end
+		end
+	end
+
 	-- setup handler for CNetwork.SendCommand
 	if CNetwork then
 		CNetwork.SetNetworkHandler("HeroSummonHandler", MPW.HeroSummonHandler.Handler)

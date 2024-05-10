@@ -45,9 +45,9 @@
 		</ModifyArmor>
 		
 	<!--DamageModifier-->
-		<!--ModifyDamage>
+		<ModifyDamage>
 			<Technology>T_Fletching</Technology>
-		</ModifyDamage-->
+		</ModifyDamage>
 		
 		<ModifyExploration>
 			<Technology>T_Fletching</Technology>
@@ -60,6 +60,14 @@
 		<ModifyDamage>
 			<Technology>T_BodkinArrow</Technology>
 		</ModifyDamage>
+		
+		<ModifyExploration>
+			<Technology>T_BodkinArrow</Technology>
+		</ModifyExploration>
+		
+		<ModifyMaxRange>
+			<Technology>T_BodkinArrow</Technology>
+		</ModifyMaxRange>
 
 	<!--SpeedModifier-->
 		<ModifySpeed>

@@ -43,19 +43,19 @@ end
 -- Display.GfxSetSetFogParams(3, 0.0, 1.0, 1, 200, 220, 230,  0 , 22000) --bei Zoomstufe 1
 
 ----------------------------------------------------------------------------------------------------------------------------
-function MPW.GFXSetHandler.PostInit()
-	
+function MPW.GFXSetHandler.PostLoad()
+
 	MPW.GFXSetHandler.InitSummerSet()
 	MPW.GFXSetHandler.InitRainSet()
 	MPW.GFXSetHandler.InitWinterSet()
-
+	
 	MPW.GFXSetHandler.InputCallback_MouseWheel = InputCallback_MouseWheel
 	function InputCallback_MouseWheel( _Forward )
 		
 		if MPW.GFXSetHandler.InputCallback_MouseWheel then
 			MPW.GFXSetHandler.InputCallback_MouseWheel( _Forward )
 		end
-
+		
 		MPW.GFXSetHandler.UpdateFog()
 	end
 end

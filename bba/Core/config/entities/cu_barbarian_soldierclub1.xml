@@ -26,7 +26,7 @@
 		<ForceNoPlayer>false</ForceNoPlayer>
 		<Category>Military</Category>
 		<Category>Soldier</Category>
-		<Category>Sword</Category>
+		<Category>Spear</Category>
 		<Category>Melee</Category>
 		<AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
 		<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
@@ -34,24 +34,24 @@
 
 	<!--Armormodifier-->
 		<ModifyArmor>
-			<Technology>T_LeatherMailArmor</Technology>
+			<Technology>T_SoftArcherArmor</Technology>
 		</ModifyArmor>
 		
 		<ModifyArmor>
-			<Technology>T_ChainMailArmor</Technology>
+			<Technology>T_PaddedArcherArmor</Technology>
 		</ModifyArmor>
 		
 		<ModifyArmor>
-			<Technology>T_PlateMailArmor</Technology>
+			<Technology>T_LeatherArcherArmor</Technology>
 		</ModifyArmor>
 
 	<!--DamageModifier-->
 		<ModifyDamage>
-			<Technology>T_MasterOfSmithery</Technology>
+			<Technology>T_WoodAging</Technology>
 		</ModifyDamage>
 		
 		<ModifyDamage>
-			<Technology>T_IronCasting</Technology>
+			<Technology>T_Turnery</Technology>
 		</ModifyDamage>
 	
 	<!--SpeedModifier-->
@@ -73,7 +73,7 @@
 		<MaxHealth>150</MaxHealth>
 		<Exploration>20</Exploration>
 		
-		<ArmorClass>ArmorClassLeather</ArmorClass>
+		<ArmorClass>ArmorClassJerkin</ArmorClass>
 		<ArmorAmount>2</ArmorAmount>
 		<DodgeChance>0</DodgeChance>
 
@@ -94,7 +94,7 @@
 			<BattleWalkAnim>CU_Barbarian_SoldierClub1_Run1</BattleWalkAnim>
 			<HitAnim>CU_Barbarian_SoldierClub1_Hit</HitAnim>
 			
-			<DamageClass>DC_Strike</DamageClass>
+			<DamageClass>DC_Pole</DamageClass>
 			<DamageAmount>12</DamageAmount>
 			<MaxRandomDamageBonus>2</MaxRandomDamageBonus>
 			

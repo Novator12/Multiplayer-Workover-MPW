@@ -230,6 +230,11 @@
     <Effect>SkinnedObject</Effect>
   </Model>
   
+  <Model id="XA_Wolf">
+    <Effect>SkinnedObject</Effect>
+    <OcclusionReceiver>True</OcclusionReceiver>
+  </Model>
+  
   <Model id="XD_Signpost1">
     <Effect>SimpleObject</Effect>
   </Model>
@@ -243,31 +248,60 @@
   </Model>
   
   <Model id="CU_LeaderOutlaw1">
+    <SelectionRadius>80</SelectionRadius>
     <Effect>SettlerPlayerColorSpecular</Effect>
+    <OcclusionReceiver>True</OcclusionReceiver>
+  </Model>
+    
+  <Model id="CU_SoldierOutlaw1">
+    <SelectionRadius>55</SelectionRadius>
+    <Effect>SettlerPlayerColorSpecular</Effect>
+    <SelectionTexture>Selection_Soldier</SelectionTexture>
+    <OcclusionReceiver>True</OcclusionReceiver>
   </Model>
     
   <Model id="CU_BlackKnight_LeaderMace1">
+    <SelectionRadius>80</SelectionRadius>
     <Effect>SettlerPlayerColorSpecular</Effect>
+    <OcclusionReceiver>True</OcclusionReceiver>
   </Model>
   
   <Model id="CU_BlackKnight_SoldierMace1">
+    <SelectionRadius>55</SelectionRadius>
     <Effect>SettlerPlayerColorSpecular</Effect>
+    <SelectionTexture>Selection_Soldier</SelectionTexture>
+    <OcclusionReceiver>True</OcclusionReceiver>
   </Model>
   
   <Model id="CU_BanditLeaderSword1">
+    <SelectionRadius>80</SelectionRadius>
     <Effect>SettlerPlayerColorSpecular</Effect>
+    <OcclusionReceiver>True</OcclusionReceiver>
   </Model>
 
   <Model id="CU_BanditSoldierSword1">
+    <SelectionRadius>55</SelectionRadius>
     <Effect>SettlerPlayerColorSpecular</Effect>
+    <SelectionTexture>Selection_Soldier</SelectionTexture>
+    <OcclusionReceiver>True</OcclusionReceiver>
   </Model>
  
-  <Model id="CU_Barbarian_SoldierClub1">
+  <Model id="CU_Barbarian_LeaderClub1">
+    <SelectionRadius>80</SelectionRadius>
     <Effect>SettlerPlayerColorSpecular</Effect>
+    <OcclusionReceiver>True</OcclusionReceiver>
+  </Model>
+
+  <Model id="CU_Barbarian_SoldierClub1">
+    <SelectionRadius>55</SelectionRadius>
+    <Effect>SettlerPlayerColorSpecular</Effect>
+    <SelectionTexture>Selection_Soldier</SelectionTexture>
+    <OcclusionReceiver>True</OcclusionReceiver>
   </Model>
 
   <Model id="CU_BlackKnight_SoldierSword3">
     <Effect>SettlerPlayerColor</Effect>
+    <OcclusionReceiver>True</OcclusionReceiver>
   </Model>
 
   <Model id="CU_Leonardo">
@@ -389,7 +423,7 @@
     <SelectionTexture>Selection_hero</SelectionTexture>
  </Model>
  
-  <Model id="CU_Barbarian_LeaderClub1">
+  <Model id="CU_Barbarian_Hero">
     <Effect>SettlerPlayerColorSpecular</Effect>
     <OcclusionReceiver>True</OcclusionReceiver>
     <SelectionRadius>100</SelectionRadius>
@@ -2722,37 +2756,898 @@
     <CastShadow>False</CastShadow>
   </Model>
 
+<!-- Extra1 -->
+
+<Model id="XD_TreeMoor1">
+  <CastShadow>True</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>True</UseAlphaBlending>
+  <Effect>DoodadMovementHorizontalSlightly</Effect> <!-- TODO: add snow -->
+  <AlphaBlendHighQualityOnly>True</AlphaBlendHighQualityOnly>
+</Model>
+
+<Model id="XD_TreeMoor2">
+  <CastShadow>True</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>True</UseAlphaBlending>
+  <Effect>DoodadMovementHorizontalSlightly</Effect> <!-- TODO: add snow -->
+  <AlphaBlendHighQualityOnly>True</AlphaBlendHighQualityOnly>
+</Model>
+
+<Model id="XD_TreeMoor3">
+  <CastShadow>True</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>True</UseAlphaBlending>
+  <Effect>DoodadMovementHorizontalSlightly</Effect> <!-- TODO: add snow -->
+  <AlphaBlendHighQualityOnly>True</AlphaBlendHighQualityOnly>
+</Model>
+
+<Model id="XD_TreeMoor4">
+  <CastShadow>True</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>True</UseAlphaBlending>
+  <Effect>DoodadMovementHorizontalSlightly</Effect> <!-- TODO: add snow -->
+  <AlphaBlendHighQualityOnly>True</AlphaBlendHighQualityOnly>
+</Model>
+
+<Model id="XD_TreeMoor5">
+  <CastShadow>True</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>True</UseAlphaBlending>
+  <Effect>DoodadMovementHorizontalSlightly</Effect> <!-- TODO: add snow -->
+  <AlphaBlendHighQualityOnly>True</AlphaBlendHighQualityOnly>
+</Model>
+
+<Model id="XD_TreeMoor6">
+  <CastShadow>True</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>True</UseAlphaBlending>
+  <Effect>DoodadMovementHorizontalSlightly</Effect> <!-- TODO: add snow -->
+  <AlphaBlendHighQualityOnly>True</AlphaBlendHighQualityOnly>
+</Model>
+
+<Model id="XD_TreeMoor7">
+  <CastShadow>True</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>True</UseAlphaBlending>
+  <Effect>DoodadSnowMovementHorizontalSlightly</Effect> <!-- TODO: add snow -->
+  <AlphaBlendHighQualityOnly>True</AlphaBlendHighQualityOnly>
+</Model>
+
+<Model id="XD_TreeMoor8">
+  <CastShadow>True</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>True</UseAlphaBlending>
+  <Effect>DoodadSnowMovementHorizontalSlightly</Effect> <!-- TODO: add snow -->
+  <AlphaBlendHighQualityOnly>True</AlphaBlendHighQualityOnly>
+</Model>
+
+<Model id="XD_TreeMoor9">
+  <CastShadow>True</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>True</UseAlphaBlending>
+  <Effect>DoodadSnowMovementHorizontalSlightly</Effect> <!-- TODO: add snow -->
+  <AlphaBlendHighQualityOnly>True</AlphaBlendHighQualityOnly>
+</Model>
+
+<Model id="XD_DeadTreeMoor3">
+  <CastShadow>True</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>True</UseAlphaBlending>
+  <Effect>DoodadMovementHorizontalSlightly</Effect> <!-- TODO: add snow -->
+  <AlphaBlendHighQualityOnly>True</AlphaBlendHighQualityOnly>
+</Model>
+
+<Model id="XD_PlantMoor1">
+  <CastShadow>False</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>True</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>4500</OnePassAlphaBlendingDistance>
+  <OrnamentalItem>True</OrnamentalItem>
+  <OrnamentalItemEffect>OrnamentalItemMovementHorizontal</OrnamentalItemEffect>
+</Model>
+
+<Model id="XD_PlantMoor2">
+  <CastShadow>False</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>True</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>4500</OnePassAlphaBlendingDistance>
+  <OrnamentalItem>True</OrnamentalItem>
+  <OrnamentalItemEffect>OrnamentalItemMovementHorizontal</OrnamentalItemEffect>
+</Model>
+
+<Model id="XD_PlantMoor3">
+  <CastShadow>False</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>True</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>4500</OnePassAlphaBlendingDistance>
+  <OrnamentalItem>True</OrnamentalItem>
+  <OrnamentalItemEffect>OrnamentalItemMovementHorizontal</OrnamentalItemEffect>
+</Model>
+
+<Model id="XD_PlantMoor4">
+  <CastShadow>False</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>True</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>4500</OnePassAlphaBlendingDistance>
+  <OrnamentalItem>True</OrnamentalItem>
+  <OrnamentalItemEffect>OrnamentalItemMovementHorizontal</OrnamentalItemEffect>
+</Model>
+
+<Model id="XD_PlantMoor5">
+  <CastShadow>False</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>True</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>4500</OnePassAlphaBlendingDistance>
+  <OrnamentalItem>True</OrnamentalItem>
+  <OrnamentalItemEffect>OrnamentalItemMovementHorizontal</OrnamentalItemEffect>
+</Model>
+
+<Model id="XD_PlantMoor6">
+  <CastShadow>False</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>True</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>4500</OnePassAlphaBlendingDistance>
+  <OrnamentalItem>True</OrnamentalItem>
+  <OrnamentalItemEffect>OrnamentalItemMovementHorizontal</OrnamentalItemEffect>
+</Model>
+
+<Model id="XD_BushMoor1">
+  <CastShadow>True</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>True</UseAlphaBlending>
+  <Effect>DoodadSnowMovementHorizontalSlightly</Effect>
+</Model>
+
+
+<Model id="XD_BushMoor2">
+  <CastShadow>True</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>True</UseAlphaBlending>
+  <Effect>DoodadSnowMovementHorizontalSlightly</Effect>
+</Model>
+
+<Model id="XD_BushMoor3">
+  <Effect>DoodadMovementHorizontal</Effect>
+  <CastShadow>False</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>True</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>1000</OnePassAlphaBlendingDistance>
+  <OrnamentalItem>True</OrnamentalItem>
+  <OrnamentalItemEffect>OrnamentalItemMovementHorizontal</OrnamentalItemEffect>
+  <TerrainLightColorPortion>1</TerrainLightColorPortion>
+  <TerrainVertexColorPortion>1</TerrainVertexColorPortion>
+</Model>
+
+<Model id="XD_BushMoor4">
+  <Effect>DoodadMovementHorizontal</Effect>
+  <CastShadow>False</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>True</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>1000</OnePassAlphaBlendingDistance>
+  <OrnamentalItem>True</OrnamentalItem>
+  <OrnamentalItemEffect>OrnamentalItemMovementHorizontal</OrnamentalItemEffect>
+  <TerrainLightColorPortion>1</TerrainLightColorPortion>
+  <TerrainVertexColorPortion>1</TerrainVertexColorPortion>
+</Model>
+
+<Model id="XD_Cobweb1">
+  <CastShadow>False</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>True</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>4500</OnePassAlphaBlendingDistance>
+  <OrnamentalItem>True</OrnamentalItem>
+  <OrnamentalItemEffect>OrnamentalItemMovementHorizontal</OrnamentalItemEffect>
+</Model>
+
+<Model id="XD_Cobweb2">
+  <CastShadow>False</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>True</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>4500</OnePassAlphaBlendingDistance>
+  <OrnamentalItem>True</OrnamentalItem>
+  <OrnamentalItemEffect>OrnamentalItemMovementHorizontal</OrnamentalItemEffect>
+</Model>
+
+<Model id="XD_Cobweb3">
+  <CastShadow>False</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>True</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>4500</OnePassAlphaBlendingDistance>
+  <OrnamentalItem>True</OrnamentalItem>
+  <OrnamentalItemEffect>OrnamentalItemMovementHorizontal</OrnamentalItemEffect>
+</Model>
+
+<Model id="XD_Cobweb4">
+  <CastShadow>False</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>True</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>4500</OnePassAlphaBlendingDistance>
+  <OrnamentalItem>True</OrnamentalItem>
+  <OrnamentalItemEffect>OrnamentalItemMovementHorizontal</OrnamentalItemEffect>
+</Model>
+
+
+
+<Model id="XD_Fog1">
+  <SelectionRadius>500</SelectionRadius>
+  <CastShadow>False</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>True</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>4500</OnePassAlphaBlendingDistance>
+  <Effect>GroundFog</Effect>
+ <HasUVAnim>True</HasUVAnim>  
+</Model>
+
+<Model id="XD_Fog2">
+  <SelectionRadius>500</SelectionRadius>
+  <CastShadow>False</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>True</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>4500</OnePassAlphaBlendingDistance>
+  <Effect>GroundFogSlightly</Effect>
+ <HasUVAnim>True</HasUVAnim>  
+</Model>
+
+<Model id="XD_Fog3">
+  <SelectionRadius>500</SelectionRadius>
+  <CastShadow>False</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>True</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>4500</OnePassAlphaBlendingDistance>
+  <Effect>GroundFog</Effect>
+ <HasUVAnim>True</HasUVAnim>  
+</Model>
+
+<Model id="XD_BlendingFog">
+  <SelectionRadius>500</SelectionRadius>
+  <CastShadow>False</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>True</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>4500</OnePassAlphaBlendingDistance>
+  <Effect>GroundFog</Effect>
+ <HasUVAnim>True</HasUVAnim>  
+</Model>
+
+
+<Model id="XD_CliffMoor1">
+  <CastShadow>True</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+    <TerrainLightColorPortion>0.1</TerrainLightColorPortion>
+    <TerrainVertexColorPortion>0.9</TerrainVertexColorPortion>
+</Model>
+
+<Model id="XD_CliffMoor2">
+  <CastShadow>True</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+    <TerrainLightColorPortion>0.1</TerrainLightColorPortion>
+    <TerrainVertexColorPortion>0.9</TerrainVertexColorPortion>
+</Model>
+
+<Model id="XD_CliffMoor3">
+  <CastShadow>True</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+    <TerrainLightColorPortion>0.1</TerrainLightColorPortion>
+    <TerrainVertexColorPortion>0.9</TerrainVertexColorPortion>
+</Model>
+
+<Model id="XD_CliffMoor4">
+  <CastShadow>True</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+    <TerrainLightColorPortion>0.1</TerrainLightColorPortion>
+    <TerrainVertexColorPortion>0.9</TerrainVertexColorPortion>
+</Model>
+
+<Model id="XD_CliffMoor5">
+  <CastShadow>True</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+    <TerrainLightColorPortion>0.1</TerrainLightColorPortion>
+    <TerrainVertexColorPortion>0.9</TerrainVertexColorPortion>
+</Model>
+
+<Model id="XD_RockDarkMoor1">
+  <CastShadow>True</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+    <TerrainLightColorPortion>0.5</TerrainLightColorPortion>
+    <TerrainVertexColorPortion>0.8</TerrainVertexColorPortion>
+</Model>
+
+<Model id="XD_RockDarkMoor2">
+  <CastShadow>True</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+    <TerrainLightColorPortion>0.5</TerrainLightColorPortion>
+    <TerrainVertexColorPortion>0.8</TerrainVertexColorPortion>
+</Model>
+
+<Model id="XD_RockDarkMoor3">
+  <CastShadow>True</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+    <TerrainLightColorPortion>0.5</TerrainLightColorPortion>
+    <TerrainVertexColorPortion>0.8</TerrainVertexColorPortion>
+</Model>
+
+<Model id="XD_RockDarkMoor4">
+  <CastShadow>True</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+    <TerrainLightColorPortion>0.5</TerrainLightColorPortion>
+    <TerrainVertexColorPortion>0.8</TerrainVertexColorPortion>
+</Model>
+
+<Model id="XD_RockDarkMoor5">
+  <CastShadow>True</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+    <TerrainLightColorPortion>0.5</TerrainLightColorPortion>
+    <TerrainVertexColorPortion>0.8</TerrainVertexColorPortion>
+</Model>
+
+<Model id="XD_RockDarkMoor6">
+  <CastShadow>True</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+    <TerrainLightColorPortion>0.5</TerrainLightColorPortion>
+    <TerrainVertexColorPortion>0.8</TerrainVertexColorPortion>
+</Model>
+
+<Model id="XD_RockDarkMoor7">
+  <CastShadow>True</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+    <TerrainLightColorPortion>0.5</TerrainLightColorPortion>
+    <TerrainVertexColorPortion>0.8</TerrainVertexColorPortion>
+</Model>
+
+<!-- AddOn 1-->
+
+
+<Model id="PU_Gunsmith">
+  <SelectionRadius>65</SelectionRadius>
+  <Effect>SettlerPlayerColor</Effect>
+  <SelectionTexture>Selection_civilian</SelectionTexture>
+</Model>
+
+<Model id="PU_GunsmithCarry">
+  <SelectionRadius>65</SelectionRadius>
+  <Effect>SettlerPlayerColor</Effect>
+  <SelectionTexture>Selection_civilian</SelectionTexture>
+  <DefaultAnimID>PU_GunsmithCarry_Walk</DefaultAnimID>
+</Model>
+
+<Model id="PU_LeaderRifle1">
+  <SelectionRadius>80</SelectionRadius>
+  <Effect>SettlerPlayerColorSpecular</Effect>
+  <OcclusionReceiver>True</OcclusionReceiver>
+</Model>
+
+<Model id="PU_LeaderRifle2">
+  <SelectionRadius>80</SelectionRadius>
+  <Effect>SettlerPlayerColorSpecular</Effect>
+  <OcclusionReceiver>True</OcclusionReceiver>
+</Model>
+
+<Model id="PU_SoldierRifle1">
+  <SelectionRadius>55</SelectionRadius>
+  <SelectionTexture>Selection_Soldier</SelectionTexture>
+  <Effect>SettlerPlayerColorSpecular</Effect>
+  <OcclusionReceiver>True</OcclusionReceiver>
+</Model>
+
+<Model id="PU_SoldierRifle2">
+  <SelectionRadius>55</SelectionRadius>
+  <SelectionTexture>Selection_Soldier</SelectionTexture>
+  <Effect>SettlerPlayerColorSpecular</Effect>
+  <OcclusionReceiver>True</OcclusionReceiver>
+</Model>
+
+<Model id="PU_Thief">
+  <SelectionRadius>80</SelectionRadius>
+  <Effect>SettlerPlayerColor</Effect>
+  <OcclusionReceiver>True</OcclusionReceiver>
+</Model>
+
+<Model id="PU_ThiefCarry">
+  <SelectionRadius>80</SelectionRadius>
+  <Effect>SettlerPlayerColor</Effect>
+  <OcclusionReceiver>True</OcclusionReceiver>
+  <DefaultAnimID>PU_ThiefCarry_Idle1</DefaultAnimID>
+</Model>
+
+<Model id="PU_Scout">
+  <SelectionRadius>80</SelectionRadius>
+  <Effect>SettlerPlayerColor</Effect>
+  <OcclusionReceiver>True</OcclusionReceiver>
+</Model>
+
+
+<Model id="CU_Evil_LeaderBearman1">
+  <SelectionRadius>80</SelectionRadius>
+  <Effect>SettlerPlayerColor</Effect>
+  <OcclusionReceiver>True</OcclusionReceiver>
+</Model>
+
+<Model id="CU_Evil_LeaderSkirmisher1">
+  <SelectionRadius>80</SelectionRadius>
+  <Effect>SettlerPlayerColor</Effect>
+  <OcclusionReceiver>True</OcclusionReceiver>
+</Model>
+
+<Model id="CU_Evil_SoldierBearman1">
+  <SelectionRadius>55</SelectionRadius>
+  <Effect>SettlerPlayerColor</Effect>
+  <SelectionTexture>Selection_Soldier</SelectionTexture>
+  <OcclusionReceiver>True</OcclusionReceiver>
+</Model>
+
+<Model id="CU_Evil_SoldierSkirmisher1">
+  <SelectionRadius>55</SelectionRadius>
+  <Effect>SettlerPlayerColor</Effect>
+  <SelectionTexture>Selection_Soldier</SelectionTexture>
+  <OcclusionReceiver>True</OcclusionReceiver>
+</Model>
+
+
+<Model id="CU_Evil_Queen">
+  <SelectionRadius>55</SelectionRadius>    
+  <SelectionTexture>Selection_Soldier</SelectionTexture>
+  <OcclusionReceiver>True</OcclusionReceiver>
+</Model>
+
+<Model id="PU_Hero10">
+  <Effect>SettlerPlayerColor</Effect>
+  <OcclusionReceiver>True</OcclusionReceiver>
+  <SelectionRadius>100</SelectionRadius>
+  <SelectionTexture>Selection_hero</SelectionTexture>
+</Model>
+
+<Model id="PU_Hero11">
+  <Effect>SettlerPlayerColorSpecular</Effect>
+  <OcclusionReceiver>True</OcclusionReceiver>
+  <SelectionRadius>100</SelectionRadius>
+  <SelectionTexture>Selection_hero</SelectionTexture>
+</Model>
+
+
+<Model id="CU_BanditLeaderBow1">
+  <SelectionRadius>80</SelectionRadius>
+  <Effect>SettlerPlayerColor</Effect>
+  <OcclusionReceiver>True</OcclusionReceiver>
+</Model>
+
+<Model id="CU_BanditSoldierBow1">
+  <SelectionRadius>55</SelectionRadius>
+  <Effect>SettlerPlayerColor</Effect>
+  <SelectionTexture>Selection_Soldier</SelectionTexture>
+  <OcclusionReceiver>True</OcclusionReceiver>
+</Model>
+
+<Model id="PB_GunsmithWorkshop1">
+  <SelectionTexture>Selection_Building</SelectionTexture>
+</Model>  
+
+<Model id="PB_GunsmithWorkshop2">
+  <SelectionTexture>Selection_Building</SelectionTexture>
+</Model>  
+
+<Model id="PB_Tavern1">
+  <SelectionTexture>Selection_Building</SelectionTexture>
+</Model>
+
+<Model id="PB_Tavern2">
+  <SelectionTexture>Selection_Building</SelectionTexture>
+</Model>
+
+<Model id="PB_MasterBuilderWorkshop">
+  <SelectionTexture>Selection_Building</SelectionTexture>
+</Model>
+
+<Model id="PB_Bridge1">
+  <SelectionRadius>500</SelectionRadius>
+  <OcclusionReceiver>False</OcclusionReceiver>
+  <OcclusionCaster>False</OcclusionCaster>
+  <CastShadow>False</CastShadow>
+</Model>
+
+<Model id="PB_Bridge2">
+  <SelectionRadius>500</SelectionRadius>
+  <OcclusionReceiver>False</OcclusionReceiver>
+  <OcclusionCaster>False</OcclusionCaster>
+  <CastShadow>False</CastShadow>
+</Model>
+
+<Model id="PB_Bridge3">
+  <SelectionRadius>500</SelectionRadius>
+  <OcclusionReceiver>False</OcclusionReceiver>
+  <OcclusionCaster>False</OcclusionCaster>
+  <CastShadow>False</CastShadow>
+</Model>
+
+<Model id="PB_Bridge4">
+  <SelectionRadius>500</SelectionRadius>
+  <OcclusionReceiver>False</OcclusionReceiver>
+  <OcclusionCaster>False</OcclusionCaster>
+  <CastShadow>False</CastShadow>
+</Model>
+
+
+<Model id="XD_Hero2Bomb">
+  <UseSurfaceHeight>True</UseSurfaceHeight>
+</Model>
+
+<Model id="XD_IndoorsWallBanner1L">
+  <CastShadow>False</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>True</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>4500</OnePassAlphaBlendingDistance>
+</Model>
+
+<Model id="XD_IndoorsWallBanner1R">
+  <CastShadow>False</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>True</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>4500</OnePassAlphaBlendingDistance>
+</Model>
+
+<Model id="XD_NeutralBridge1">
+  <SelectionRadius>500</SelectionRadius>
+  <UseAlphaBlending>false</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>4500</OnePassAlphaBlendingDistance>
+  <OcclusionReceiver>False</OcclusionReceiver>
+  <OcclusionCaster>False</OcclusionCaster>
+  <CastShadow>False</CastShadow>
+</Model>
+
+<Model id="XD_NeutralBridge2">
+  <SelectionRadius>500</SelectionRadius>
+  <UseAlphaBlending>false</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>4500</OnePassAlphaBlendingDistance>
+  <OcclusionReceiver>False</OcclusionReceiver>
+  <OcclusionCaster>False</OcclusionCaster>
+  <CastShadow>False</CastShadow>
+</Model>
+
+ <Model id="XD_NeutralBridge3">
+  <SelectionRadius>500</SelectionRadius>
+  <UseAlphaBlending>false</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>4500</OnePassAlphaBlendingDistance>
+  <OcclusionReceiver>False</OcclusionReceiver>
+  <OcclusionCaster>False</OcclusionCaster>
+  <CastShadow>False</CastShadow>
+</Model>
+
+ <Model id="XD_NeutralBridge4">
+  <SelectionRadius>500</SelectionRadius>
+  <UseAlphaBlending>false</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>4500</OnePassAlphaBlendingDistance>
+  <OcclusionReceiver>False</OcclusionReceiver>
+  <OcclusionCaster>False</OcclusionCaster>
+  <CastShadow>False</CastShadow>
+</Model>
+
+ <Model id="XD_Bridge1_1">
+  <SelectionRadius>500</SelectionRadius>
+  <UseAlphaBlending>false</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>4500</OnePassAlphaBlendingDistance>
+  <OcclusionReceiver>False</OcclusionReceiver>
+  <OcclusionCaster>False</OcclusionCaster>
+  <CastShadow>False</CastShadow>
+</Model>
+ <Model id="XD_Bridge1_2">
+  <SelectionRadius>500</SelectionRadius>
+  <UseAlphaBlending>false</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>4500</OnePassAlphaBlendingDistance>
+  <OcclusionReceiver>False</OcclusionReceiver>
+  <OcclusionCaster>False</OcclusionCaster>
+  <CastShadow>False</CastShadow>
+</Model>
+ <Model id="XD_Bridge1_3">
+  <SelectionRadius>500</SelectionRadius>
+  <UseAlphaBlending>false</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>4500</OnePassAlphaBlendingDistance>
+  <OcclusionReceiver>False</OcclusionReceiver>
+  <OcclusionCaster>False</OcclusionCaster>
+  <CastShadow>False</CastShadow>
+</Model>
+ <Model id="XD_Bridge1_4">
+  <SelectionRadius>500</SelectionRadius>
+  <UseAlphaBlending>false</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>4500</OnePassAlphaBlendingDistance>
+  <OcclusionReceiver>False</OcclusionReceiver>
+  <OcclusionCaster>False</OcclusionCaster>
+  <CastShadow>False</CastShadow>
+</Model>
+
+ <Model id="XD_Bridge2_1">
+  <SelectionRadius>500</SelectionRadius>
+  <UseAlphaBlending>false</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>4500</OnePassAlphaBlendingDistance>
+  <OcclusionReceiver>False</OcclusionReceiver>
+  <OcclusionCaster>False</OcclusionCaster>
+  <CastShadow>False</CastShadow>
+</Model>
+ <Model id="XD_Bridge2_2">
+  <SelectionRadius>500</SelectionRadius>
+  <UseAlphaBlending>false</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>4500</OnePassAlphaBlendingDistance>
+  <OcclusionReceiver>False</OcclusionReceiver>
+  <OcclusionCaster>False</OcclusionCaster>
+  <CastShadow>False</CastShadow>
+</Model>
+ <Model id="XD_Bridge2_3">
+  <SelectionRadius>500</SelectionRadius>
+  <UseAlphaBlending>false</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>4500</OnePassAlphaBlendingDistance>
+  <OcclusionReceiver>False</OcclusionReceiver>
+  <OcclusionCaster>False</OcclusionCaster>
+  <CastShadow>False</CastShadow>
+</Model>
+ <Model id="XD_Bridge2_4">
+  <SelectionRadius>500</SelectionRadius>
+  <UseAlphaBlending>false</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>4500</OnePassAlphaBlendingDistance>
+  <OcclusionReceiver>False</OcclusionReceiver>
+  <OcclusionCaster>False</OcclusionCaster>
+  <CastShadow>False</CastShadow>
+</Model>
+
+ <Model id="XD_Bridge3_1">
+  <SelectionRadius>500</SelectionRadius>
+  <UseAlphaBlending>false</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>4500</OnePassAlphaBlendingDistance>
+  <OcclusionReceiver>False</OcclusionReceiver>
+  <OcclusionCaster>False</OcclusionCaster>
+  <CastShadow>False</CastShadow>
+</Model>
+ <Model id="XD_Bridge3_2">
+  <SelectionRadius>500</SelectionRadius>
+  <UseAlphaBlending>false</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>4500</OnePassAlphaBlendingDistance>
+  <OcclusionReceiver>False</OcclusionReceiver>
+  <OcclusionCaster>False</OcclusionCaster>
+  <CastShadow>False</CastShadow>
+</Model>
+  <SelectionRadius>500</SelectionRadius>
+ <Model id="XD_Bridge3_3">
+  <UseAlphaBlending>false</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>4500</OnePassAlphaBlendingDistance>
+  <OcclusionReceiver>False</OcclusionReceiver>
+  <OcclusionCaster>False</OcclusionCaster>
+  <CastShadow>False</CastShadow>
+</Model>
+ <Model id="XD_Bridge3_4">
+  <SelectionRadius>500</SelectionRadius>
+  <UseAlphaBlending>false</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>4500</OnePassAlphaBlendingDistance>
+  <OcclusionReceiver>False</OcclusionReceiver>
+  <OcclusionCaster>False</OcclusionCaster>
+  <CastShadow>False</CastShadow>
+</Model>
+
+ <Model id="XD_Bridge4_1">
+  <SelectionRadius>500</SelectionRadius>
+  <UseAlphaBlending>false</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>4500</OnePassAlphaBlendingDistance>
+  <OcclusionReceiver>False</OcclusionReceiver>
+  <OcclusionCaster>False</OcclusionCaster>
+  <CastShadow>False</CastShadow>
+</Model>
+ <Model id="XD_Bridge4_2">
+  <SelectionRadius>500</SelectionRadius>
+  <UseAlphaBlending>false</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>4500</OnePassAlphaBlendingDistance>
+  <OcclusionReceiver>False</OcclusionReceiver>
+  <OcclusionCaster>False</OcclusionCaster>
+  <CastShadow>False</CastShadow>
+</Model>
+ <Model id="XD_Bridge4_3">
+  <SelectionRadius>500</SelectionRadius>
+  <UseAlphaBlending>false</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>4500</OnePassAlphaBlendingDistance>
+  <OcclusionReceiver>False</OcclusionReceiver>
+  <OcclusionCaster>False</OcclusionCaster>
+  <CastShadow>False</CastShadow>
+</Model>
+ <Model id="XD_Bridge4_4">
+  <SelectionRadius>500</SelectionRadius>
+  <UseAlphaBlending>false</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>4500</OnePassAlphaBlendingDistance>
+  <OcclusionReceiver>False</OcclusionReceiver>
+  <OcclusionCaster>False</OcclusionCaster>
+  <CastShadow>False</CastShadow>
+</Model>
+
+<Model id="XD_ThiefBomb">
+  <UseSurfaceHeight>True</UseSurfaceHeight>
+</Model>
+
+  <!-- extra2 -->
+<Model id="XD_Groyne1">
+  <UseSurfaceHeight>True</UseSurfaceHeight>
+</Model>
+
+<Model id="XD_Groyne2">
+  <UseSurfaceHeight>True</UseSurfaceHeight>
+</Model>
+
+<Model id="XD_Groyne3">
+  <UseSurfaceHeight>True</UseSurfaceHeight>
+</Model>
+
+<Model id="XD_CliffTideland1">
+  <SelectionRadius>1000</SelectionRadius>
+  <CastShadow>False</CastShadow>
+</Model>
+
+<Model id="XD_CliffTideland2">
+  <SelectionRadius>1000</SelectionRadius>
+  <CastShadow>False</CastShadow>
+</Model>
+
+<Model id="XD_CliffTideland3">
+  <SelectionRadius>1000</SelectionRadius>
+  <CastShadow>False</CastShadow>
+</Model>
+
+<Model id="XD_CliffTideland4">
+  <SelectionRadius>1000</SelectionRadius>
+  <CastShadow>False</CastShadow>
+</Model>
+
+<Model id="XD_CliffTideland5">
+  <SelectionRadius>1000</SelectionRadius>
+  <CastShadow>False</CastShadow>
+</Model>
+
+<Model id="XD_CliffTidelandShadows1">
+  <SelectionRadius>1000</SelectionRadius>
+  <CastShadow>True</CastShadow>
+</Model>
+
+<Model id="XD_CliffTidelandShadows2">
+  <SelectionRadius>1000</SelectionRadius>
+  <CastShadow>True</CastShadow>
+</Model>
+
+<Model id="XD_CliffTidelandShadows3">
+  <SelectionRadius>1000</SelectionRadius>
+  <CastShadow>True</CastShadow>
+</Model>
+
+<Model id="XD_CliffTidelandShadows4">
+  <SelectionRadius>1000</SelectionRadius>
+  <CastShadow>True</CastShadow>
+</Model>
+
+<Model id="XD_CliffTidelandShadows5">
+  <SelectionRadius>1000</SelectionRadius>
+  <CastShadow>True</CastShadow>
+</Model>
+
+<Model id="XD_Rape1">
+  <Effect>DoodadMovementHorizontal</Effect>
+  <CastShadow>False</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>True</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>1000</OnePassAlphaBlendingDistance>
+  <OrnamentalItem>True</OrnamentalItem>
+  <OrnamentalItemEffect>OrnamentalItemMovementHorizontal</OrnamentalItemEffect>
+  <TerrainLightColorPortion>1</TerrainLightColorPortion>
+  <TerrainVertexColorPortion>1</TerrainVertexColorPortion>
+</Model>
+<Model id="XD_RapeBlossom1">
+  <Effect>DoodadMovementHorizontal</Effect>
+  <CastShadow>False</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>False</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>1000</OnePassAlphaBlendingDistance>
+  <OrnamentalItem>True</OrnamentalItem>
+  <OrnamentalItemEffect>OrnamentalItemMovementHorizontal</OrnamentalItemEffect>
+  <TerrainLightColorPortion>1</TerrainLightColorPortion>
+  <TerrainVertexColorPortion>1</TerrainVertexColorPortion>
+</Model>
+  
+<Model id="XD_NephilimFlower">
+  <CastShadow>True</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>True</UseAlphaBlending>
+  <Effect>DoodadSnowMovementHorizontalSlightly</Effect>
+</Model>
+
+<Model id="XD_Flower1">
+  <Effect>DoodadMovementHorizontal</Effect>
+  <CastShadow>True</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>False</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>1000</OnePassAlphaBlendingDistance>
+  <OrnamentalItem>True</OrnamentalItem>
+  <OrnamentalItemEffect>OrnamentalItemMovementHorizontal</OrnamentalItemEffect>
+  <TerrainLightColorPortion>1</TerrainLightColorPortion>
+  <TerrainVertexColorPortion>1</TerrainVertexColorPortion>
+</Model>
+ 
+<Model id="XD_Flower2">
+  <Effect>DoodadMovementHorizontal</Effect>
+  <CastShadow>True</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>True</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>1000</OnePassAlphaBlendingDistance>
+  <OrnamentalItem>True</OrnamentalItem>
+  <OrnamentalItemEffect>OrnamentalItemMovementHorizontal</OrnamentalItemEffect>
+  <TerrainLightColorPortion>1</TerrainLightColorPortion>
+  <TerrainVertexColorPortion>1</TerrainVertexColorPortion>
+</Model>
+
+ <Model id="XD_Flower3">
+  <Effect>DoodadMovementHorizontal</Effect>
+  <CastShadow>True</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>True</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>1000</OnePassAlphaBlendingDistance>
+  <OrnamentalItem>True</OrnamentalItem>
+  <OrnamentalItemEffect>OrnamentalItemMovementHorizontal</OrnamentalItemEffect>
+  <TerrainLightColorPortion>1</TerrainLightColorPortion>
+  <TerrainVertexColorPortion>1</TerrainVertexColorPortion>
+</Model>
+ 
+ <Model id="XD_Flower4">
+  <Effect>DoodadMovementHorizontal</Effect>
+  <CastShadow>True</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>True</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>1000</OnePassAlphaBlendingDistance>
+  <OrnamentalItem>True</OrnamentalItem>
+  <OrnamentalItemEffect>OrnamentalItemMovementHorizontal</OrnamentalItemEffect>
+  <TerrainLightColorPortion>1</TerrainLightColorPortion>
+  <TerrainVertexColorPortion>1</TerrainVertexColorPortion>
+</Model>
+
+<Model id="XD_Flower5">
+  <Effect>DoodadMovementHorizontal</Effect>
+  <CastShadow>True</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>False</UseAlphaBlending>
+  <OnePassAlphaBlendingDistance>1000</OnePassAlphaBlendingDistance>
+  <OrnamentalItem>True</OrnamentalItem>
+  <OrnamentalItemEffect>OrnamentalItemMovementHorizontal</OrnamentalItemEffect>
+  <TerrainLightColorPortion>1</TerrainLightColorPortion>
+  <TerrainVertexColorPortion>1</TerrainVertexColorPortion>
+</Model>
+
+<Model id="XD_CherryTree">
+  <CastShadow>True</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>True</UseAlphaBlending>
+  <Effect>DoodadSnowMovementRotation</Effect>
+  <AlphaBlendHighQualityOnly>True</AlphaBlendHighQualityOnly>
+</Model>
+
+<Model id="XD_Sunflower1">
+  <CastShadow>True</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>False</UseAlphaBlending>
+  <Effect>DoodadMovementHorizontalSlightly</Effect>
+</Model>
+<Model id="XD_Sunflower2">
+  <CastShadow>True</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>False</UseAlphaBlending>
+  <Effect>DoodadMovementHorizontalSlightly</Effect>
+</Model>
+<Model id="XD_Sunflower3">
+  <CastShadow>True</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>False</UseAlphaBlending>
+  <Effect>DoodadMovementHorizontalSlightly</Effect>
+</Model>
+<Model id="XD_Sunflower4">
+  <CastShadow>True</CastShadow>
+  <ShareShadowRaster>True</ShareShadowRaster>
+  <UseAlphaBlending>False</UseAlphaBlending>
+  <Effect>DoodadMovementHorizontalSlightly</Effect>
+</Model>
+
   <!-- Added Model for LeaderWolf and SoldierWolf - MPW -->
 
   <Model id="PU_Hero9_Leaderwolf">
     <Effect>SkinnedObject</Effect>
     <SelectionRadius>80</SelectionRadius>
-  </Model>
-
-  <Model id="XA_Wolf">
-    <Effect>SkinnedObject</Effect>
-    <SelectionRadius>55</SelectionRadius>
-    <SelectionTexture>Selection_Soldier</SelectionTexture>
-  </Model>
-
-  <Model id="CU_Evil_Queen">
     <OcclusionReceiver>True</OcclusionReceiver>
-    <SelectionRadius>100</SelectionRadius>
-    <SelectionTexture>Selection_hero</SelectionTexture>
-  </Model>
-
-  <Model id="PU_Hero10">
-      <Effect>SettlerPlayerColor</Effect>
-      <OcclusionReceiver>True</OcclusionReceiver>
-      <SelectionRadius>100</SelectionRadius>
-      <SelectionTexture>Selection_hero</SelectionTexture>
-  </Model>
-  
-  <Model id="PU_Hero11">
-      <Effect>SettlerPlayerColorSpecular</Effect>
-      <OcclusionReceiver>True</OcclusionReceiver>
-      <SelectionRadius>100</SelectionRadius>
-      <SelectionTexture>Selection_hero</SelectionTexture>
   </Model>
 
 </root>

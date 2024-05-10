@@ -36,6 +36,22 @@ function MPW.CombatPlus.Init()
 		end
 	)
 
+    MPW.EntityCategories.AddEntityCategory("CrossBow")
+
+    MPW.EntityCategories.AssignEntityCategory(Entities.PU_LeaderCrossBow1, EntityCategories.CrossBow)
+    MPW.EntityCategories.AssignEntityCategory(Entities.PU_LeaderCrossBow2, EntityCategories.CrossBow)
+    MPW.EntityCategories.AssignEntityCategory(Entities.PU_SoldierCrossBow1, EntityCategories.CrossBow)
+    MPW.EntityCategories.AssignEntityCategory(Entities.PU_SoldierCrossBow2, EntityCategories.CrossBow)
+
+    MPW.EntityCategories.AssignEntityCategory(Entities.PU_LeaderAxe1, EntityCategories.Axe)
+    MPW.EntityCategories.AssignEntityCategory(Entities.PU_LeaderAxe2, EntityCategories.Axe)
+    MPW.EntityCategories.AssignEntityCategory(Entities.PU_LeaderAxe3, EntityCategories.Axe)
+    MPW.EntityCategories.AssignEntityCategory(Entities.PU_LeaderAxe4, EntityCategories.Axe)
+    MPW.EntityCategories.AssignEntityCategory(Entities.PU_SoldierAxe1, EntityCategories.Axe)
+    MPW.EntityCategories.AssignEntityCategory(Entities.PU_SoldierAxe2, EntityCategories.Axe)
+    MPW.EntityCategories.AssignEntityCategory(Entities.PU_SoldierAxe3, EntityCategories.Axe)
+    MPW.EntityCategories.AssignEntityCategory(Entities.PU_SoldierAxe4, EntityCategories.Axe)
+	
 	MPW.CombatPlus.GUIUpdate_MultiSelectionButton = GUIUpdate_MultiSelectionButton
 	function GUIUpdate_MultiSelectionButton()
 		local CurrentWidgetID = XGUIEng.GetCurrentWidgetID()
@@ -185,6 +201,8 @@ function MPW.CombatPlus.PostLoad()
 
 	--XGUIEng.ShowWidget("Research_UpgradeBow2", 0)
 	--XGUIEng.ShowWidget("Research_UpgradeBow3", 0)
+
+	MPW.OSI.CombatPlus.PostLoad()
 end
 --------------------------------------------------------------------------------
 function MPW.CombatPlus.Unload()

@@ -7,8 +7,8 @@ MPW.Modules.AOE = {
 	Incompatible = {},
 	Name = "Age Of Empires",
 	Description = {
-		DE = "Basierend auf dem Spiel Age of Empires, startet ihr mit Gründungskarren mit denen ihr die Startposition eurer Burg und Siedlungsplätze selbst bestimmen könnt.",
-		GB = "Based on the game Age of Empires, you start with founder carts with which you can choose the start position of your Keep and Village Centers on you own.",
+		DE = "Basierend auf dem Spiel Age of Empires, startet ihr mit Gründungskarren mit denen ihr die Startposition eurer Burg und Siedlungsplätze selbst bestimmen könnt. @cr @cr @color:220,64,16,255 Warnung @cr Dieses Modul ist in erster Linie für den Multiplayer entworfen. Einige Spielmechaniken in Einzelspielerkarten können durch dieses Modul ausgehebelt werden, wodurch die Karte im schlimmsten Fall nicht mehr gewonnen werden kann.",
+		GB = "Based on the game Age of Empires, you start with founder carts with which you can choose the start position of your Keep and Village Centers on you own. @cr @cr @color:220,64,16,255 Warning @cr This module is designed for multiplayer in the first place. Some game mechanics in singelplayer maps could break with this module enabled. Worst case, the map can not be won anymore.",
 	},
 }
 --------------------------------------------------------------------------------

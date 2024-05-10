@@ -141,7 +141,7 @@ function GameCallback_LocalRecreateGameLogic()
 	
 	-- load mpw
 	MPW.Load()
-	MPW.PostLoad()
+	NextTick(MPW.PostLoad)
 end
 
 --------------------------------------------------------------------------------
