@@ -105,6 +105,10 @@
 				<SoundID>VoicesSerf\SERF_Yes_rnd_01</SoundID>
 			</ValueSound>
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_BattleSerf</EntityType>
+				<SoundID>VoicesSerf\SERF_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>PB_Headquarters1</EntityType>
 				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
 			</ValueSound>
@@ -245,6 +249,43 @@
 				<EntityType>CU_AggressiveWolf</EntityType>
 				<SoundID>AmbientSounds\wolf_rnd_1</SoundID>
 			</ValueSound>
+
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BanditLeaderBow1</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BanditLeaderSword1</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BanditLeaderSword2</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Barbarian_LeaderClub1</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Barbarian_LeaderClub2</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BlackKnight_LeaderMace1</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BlackKnight_LeaderMace2</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Evil_LeaderBearman1</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Evil_LeaderSkirmisher1</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
 <!--			<ValueSound classname="GGUI::SoundFeedback::CNormalValue">
 				<Value>0</Value>
 				<SoundID>VoicesMenotor\comment_yes_rnd_01</SoundID>
@@ -344,6 +385,10 @@
 			<!-- -->
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>PU_Serf</EntityType>
+				<SoundID>VoicesSerf\SERF_No_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_BattleSerf</EntityType>
 				<SoundID>VoicesSerf\SERF_No_rnd_01</SoundID>
 			</ValueSound>
 			
@@ -487,6 +532,43 @@
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>CU_AggressiveWolf</EntityType>
 				<SoundID>AmbientSounds\wolf_rnd_1</SoundID>
+			</ValueSound>
+
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BanditLeaderBow1</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BanditLeaderSword1</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BanditLeaderSword2</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Barbarian_LeaderClub1</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Barbarian_LeaderClub2</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BlackKnight_LeaderMace1</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BlackKnight_LeaderMace2</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Evil_LeaderBearman1</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Evil_LeaderSkirmisher1</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
 			</ValueSound>
 			
 			<!-- Workers -->
@@ -717,6 +799,10 @@
 				<SoundID>VoicesSerf\SERF_Yes_rnd_01</SoundID>
 			</ValueSound>
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_BattleSerf</EntityType>
+				<SoundID>VoicesSerf\SERF_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>PU_LeaderBow1</EntityType>
 				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
 			</ValueSound>
@@ -820,6 +906,43 @@
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>CU_AggressiveWolf</EntityType>
 				<SoundID>AmbientSounds\wolf_rnd_1</SoundID>
+			</ValueSound>
+
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BanditLeaderBow1</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BanditLeaderSword1</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BanditLeaderSword2</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Barbarian_LeaderClub1</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Barbarian_LeaderClub2</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BlackKnight_LeaderMace1</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BlackKnight_LeaderMace2</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Evil_LeaderBearman1</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Evil_LeaderSkirmisher1</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
 			</ValueSound>
 
 		<ParameterIndex>2</ParameterIndex>
