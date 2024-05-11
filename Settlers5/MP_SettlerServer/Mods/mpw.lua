@@ -5,17 +5,8 @@ if not MPW then
 	local OnRuleChanged
 	local OnMapStart
 	--------------------------------------------------------------------------------
-	local print = function(...)
-		if LuaDebugger and LuaDebugger.Log then
-			if table.getn(arg) > 1 then
-				LuaDebugger.Log(arg)
-			else
-				LuaDebugger.Log(unpack(arg))
-			end
-		end
-	end
-	--------------------------------------------------------------------------------
 	MPW = {}
+	MPW.Log = LuaDebugger.Log or function() end
 	MPW.Core = { OnInitialize = function() return true end }
 	MPW.Modules = {
 		Core = {
@@ -30,7 +21,7 @@ if not MPW then
 	--------------------------------------------------------------------------------
 	function OnInitialize()
 		
-		print( "MPW: OnInitialize" )
+		MPW.Log( "MPW: OnInitialize" )
 		
 		CWidget.Transaction_AddRulePage( "MP_SettlerServer\\Mods\\MPW\\MainMenu\\MPWMenu.xml" )
 		Script.Load( "MP_SettlerServer\\Mods\\MPW\\MainMenu\\MPWMenu.lua" )
@@ -40,7 +31,7 @@ if not MPW then
 	--------------------------------------------------------------------------------
 	function OnGUILoaded()
 		
-		print( "MPW: OnGUILoaded" )
+		MPW.Log( "MPW: OnGUILoaded" )
 		
 		-- init modules
 		for name, _ in pairs( MPW.Modules ) do
@@ -55,7 +46,7 @@ if not MPW then
 	--------------------------------------------------------------------------------
 	function OnRuleChanged()
 		
-		print("MPW: OnRuleChanged")
+		MPW.Log("MPW: OnRuleChanged")
 		
 		-- update buttons
 		MPW.UpdateModuleButtons()
@@ -63,6 +54,8 @@ if not MPW then
 	--------------------------------------------------------------------------------
 	function OnMapStart()
 		
+		MPW.Log("MPW: OnMapStart")
+
 		local modules = {}
 		local priorities = {}
 		
@@ -111,7 +104,7 @@ if not MPW then
 	--------------------------------------------------------------------------------
 	function MPW.Activate()
 		
-		LuaDebugger.Log("MPW: Activate")
+		MPW.Log("MPW: Activate")
 		MPW.IsActive = true
 		
 		-- get serverdata
@@ -173,7 +166,7 @@ if not MPW then
 	--------------------------------------------------------------------------------
 	function MPW.Deactivate()
 		
-		LuaDebugger.Log("MPW: Deactivate")
+		MPW.Log("MPW: Deactivate")
 		MPW.IsActive = nil
 		
 		-- get serverdata

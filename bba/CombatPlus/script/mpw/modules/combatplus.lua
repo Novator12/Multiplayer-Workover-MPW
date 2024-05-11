@@ -5,7 +5,7 @@ MPW.CombatPlus = {}
 table.insert(MPW.Modules, "CombatPlus")
 --------------------------------------------------------------------------------
 function MPW.CombatPlus.Init()
-	LuaDebugger.Log( "CombatPlus.Init()" )
+	MPW.Log( "CombatPlus.Init()" )
 
 	WidgetHelper.AddPreCommitCallback(
 		function()
@@ -93,7 +93,7 @@ function MPW.CombatPlus.Init()
 end
 --------------------------------------------------------------------------------
 function MPW.CombatPlus.Load()
-	LuaDebugger.Log( "CombatPlus.Load()" )
+	MPW.Log( "CombatPlus.Load()" )
 
 	-- hack for foundry not having founrdy behavior anymore
 	MPW.CombatPlus.GetCannonProgress = Logic.GetCannonProgress
@@ -106,7 +106,7 @@ function MPW.CombatPlus.Load()
 end
 --------------------------------------------------------------------------------
 function MPW.CombatPlus.PostInit()
-	LuaDebugger.Log( "CombatPlus.PostInit()" )
+	MPW.Log( "CombatPlus.PostInit()" )
 
 	local path = MPW_Debug and "MP_SettlerServer\\Mods\\MPW\\Ingame\\CombatPlus\\script\\mpw\\modules\\CombatPlus\\" or "data\\script\\mpw\\modules\\CombatPlus\\"
 	Script.Load( path .. "osi.lua" )
@@ -182,7 +182,7 @@ function MPW.CombatPlus.PostInit()
 end
 --------------------------------------------------------------------------------
 function MPW.CombatPlus.PostLoad()
-	LuaDebugger.Log( "CombatPlus.PostLoad()" )
+	MPW.Log( "CombatPlus.PostLoad()" )
 	
 	XGUIEng.SetWidgetPosition("Research_BetterTrainingBarracks", 112, 4)
 	XGUIEng.SetWidgetPosition("Research_BetterTrainingArchery", 112, 4)
@@ -206,5 +206,5 @@ function MPW.CombatPlus.PostLoad()
 end
 --------------------------------------------------------------------------------
 function MPW.CombatPlus.Unload()
-	--LuaDebugger.Log( "CombatPlus.Unload()" )
+	--MPW.Log( "CombatPlus.Unload()" )
 end

@@ -3,17 +3,8 @@ if not MPW then
 	local OnInitialize
 	local OnGUILoaded
 	--------------------------------------------------------------------------------
-	local print = function(...)
-		if LuaDebugger and LuaDebugger.Log then
-			if table.getn(arg) > 1 then
-				LuaDebugger.Log(arg)
-			else
-				LuaDebugger.Log(unpack(arg))
-			end
-		end
-	end
-	--------------------------------------------------------------------------------
 	MPW = {}
+	MPW.Log = LuaDebugger.Log or function() end
 	MPW.Core = { OnInitialize = function() return true end }
 	MPW.Modules = {
 		Core = {
@@ -28,7 +19,7 @@ if not MPW then
 	--------------------------------------------------------------------------------
 	function OnInitialize()
 		
-		print( "MPW: OnInitialize" )
+		MPW.Log( "MPW: OnInitialize" )
 
 		-- push our widgets in front of the potential hd menu buttons
 		for i = 0, 5 do
@@ -55,7 +46,7 @@ if not MPW then
 	--------------------------------------------------------------------------------
 	function OnGUILoaded()
 		
-		print( "MPW: OnGUILoaded" )
+		MPW.Log( "MPW: OnGUILoaded" )
 		
 		local title = (XNetworkUbiCom.Tool_GetCurrentLanguageShortName() == "DE" and "@center «MPW Module»") or "@center «MPW Modules»"
 
@@ -81,6 +72,8 @@ if not MPW then
 	--------------------------------------------------------------------------------
 	function OnMapStart()
 		
+		MPW.Log( "MPW: OnMapStart" )
+
 		local modules = {}
 		local priorities = {}
 		

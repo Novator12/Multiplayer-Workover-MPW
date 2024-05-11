@@ -13,7 +13,7 @@ MPW.Modules.AOE = {
 }
 --------------------------------------------------------------------------------
 function MPW.AOE.OnInitialize()
-	--LuaDebugger.Log( "AOE.OnInitialize()" )
+	--MPW.Log( "AOE.OnInitialize()" )
 	
 	-- create buttons here ( optional )
 	-- return false to create a button manually
@@ -23,13 +23,13 @@ function MPW.AOE.OnInitialize()
 end
 --------------------------------------------------------------------------------
 function MPW.AOE.OnGUILoaded()
-	--LuaDebugger.Log( "AOE.OnGUILoaded()" )
+	--MPW.Log( "AOE.OnGUILoaded()" )
 	
 	-- set button texts and positions here ( optional )
 end
 --------------------------------------------------------------------------------
 function MPW.AOE.OnMapStart()
-	--LuaDebugger.Log( "AOE.OnMapStart()" )
+	MPW.Log( "AOE.OnMapStart()" )
 
 	------------------Entry in entities.xml----------------------------------------
 	
@@ -63,5 +63,3 @@ function MPW.AOE.OnMapStart()
 		CMod.AppendToXML("data\\config\\tllist.xml", tl);
 	end
 end
-
-

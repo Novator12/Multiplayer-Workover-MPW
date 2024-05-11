@@ -1,11 +1,14 @@
 --------------------------------------------------------------------------------
 MPW = {}
-MPW.Version = 0.1
+MPW.Version = "0.1"
+MPW.Log = LuaDebugger.Log or function() end
 --------------------------------------------------------------------------------
 -- call this function on first load of the map
 --------------------------------------------------------------------------------
 function MPW.Init()
 	
+	MPW.Log( "MPW.Init()" )
+
 	-- simis stuff is loaded in GameCallback_OnGameStart
 	MPW.GameCallback_OnGameStart = GameCallback_OnGameStart
 	GameCallback_OnGameStart = function()
@@ -124,6 +127,8 @@ end
 --------------------------------------------------------------------------------
 function MPW.Load()
 	
+	MPW.Log( "MPW.Load()" )
+
 	-- the safety check is now done by the hook itself
 	InstallS5Hook()
 	if CNetwork then --or MPW_Debug then
@@ -148,8 +153,20 @@ end
 --------------------------------------------------------------------------------
 function MPW.PostInit()
 	
+	MPW.Log( "MPW.PostInit()" )
+
 	if CNetwork then --or MPW_Debug then
 		MPW.OSIReplacement.PostInit()
+
+		function MPW.VersionCheck( _Version, _Player )
+			if _Version ~= MPW.Version then
+				local r,g,b = GUI.GetPlayerColor( _Player )
+				GUI.AddStaticNote("@color:220,64,16,255 Different version of MPW detected for @color:" .. r .. "," .. g .. "," .. b .. ",255 " .. XNetwork.GameInformation_GetLogicPlayerUserName( _Player ) .. " @color:220,64,16,255 with Version @color:255,255,255,255 " .. _Version .. " @color:220,64,16,255 - Local version is @color:255,255,255,255 " .. MPW.Version )
+			end
+		end
+
+		CNetwork.SetNetworkHandler("MPWVersionCheck", MPW.VersionCheck)
+		CNetwork.SendCommand( "MPWVersionCheck", MPW.Version, GUI.GetPlayerID() )
 	end
 	
 	local path = MPW_Debug and "MP_SettlerServer\\Mods\\MPW\\Ingame\\Core\\script\\mpw\\" or "data\\script\\mpw\\"
@@ -187,6 +204,8 @@ end
 -- call this function on savegame load after simis stuff ( and EMS ) has loaded
 --------------------------------------------------------------------------------
 function MPW.PostLoad()
+
+	MPW.Log( "MPW.PostLoad()" )
 
 	-- enable Simis aoe damage fix
 	CEntity.EnableLogicAoEDamage()

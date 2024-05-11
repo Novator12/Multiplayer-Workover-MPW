@@ -13,7 +13,7 @@ MPW.Modules.CombatPlus = {
 }
 --------------------------------------------------------------------------------
 function MPW.CombatPlus.OnInitialize()
-	--LuaDebugger.Log( "CombatPlus.OnInitialize()" )
+	--MPW.Log( "CombatPlus.OnInitialize()" )
 	
 	-- create buttons here ( optional )
 	-- return false to create a button manually
@@ -23,13 +23,13 @@ function MPW.CombatPlus.OnInitialize()
 end
 --------------------------------------------------------------------------------
 function MPW.CombatPlus.OnGUILoaded()
-	--LuaDebugger.Log( "CombatPlus.OnGUILoaded()" )
+	--MPW.Log( "CombatPlus.OnGUILoaded()" )
 	
 	-- set button texts and positions here ( optional )
 end
 --------------------------------------------------------------------------------
 function MPW.CombatPlus.OnMapStart()
-	--LuaDebugger.Log( "CombatPlus.OnMapStart()" )
+	MPW.Log( "CombatPlus.OnMapStart()" )
 
 	------------------Entry in animsets.xml-------------------------------------
 	

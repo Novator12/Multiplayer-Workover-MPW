@@ -14,12 +14,12 @@ MPW.Modules.Territory = {
 }
 --------------------------------------------------------------------------------
 function MPW.Territory.OnInitialize()
-	LuaDebugger.Log( "Territory.OnInitialize()" )
+	--MPW.Log( "Territory.OnInitialize()" )
 	return true
 end
 --------------------------------------------------------------------------------
 function MPW.Territory.OnMapStart()
-	LuaDebugger.Log( "Territory.OnMapStart()" )
+	MPW.Log( "Territory.OnMapStart()" )
 	
 	-- this will only be called if the module is active and all dependencies are met
 	-- add xmls here, like Enitites, UpgradeCategories ...

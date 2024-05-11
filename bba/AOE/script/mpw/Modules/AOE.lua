@@ -6,7 +6,7 @@ MPW.AOE = {}
 table.insert(MPW.Modules, "AOE")
 --------------------------------------------------------------------------------
 function MPW.AOE.Init()
-	LuaDebugger.Log( "AOE.Init()" )
+	MPW.Log( "AOE.Init()" )
 
 	WidgetHelper.AddPreCommitCallback(
 		function()
@@ -47,11 +47,11 @@ function MPW.AOE.Init()
 end
 --------------------------------------------------------------------------------
 function MPW.AOE.Load()
-	--LuaDebugger.Log( "AOE.Load()" )
+	--MPW.Log( "AOE.Load()" )
 end
 --------------------------------------------------------------------------------
 function MPW.AOE.PostInit()
-	LuaDebugger.Log( "AOE.PostInit()" )
+	MPW.Log( "AOE.PostInit()" )
 
 	--Nötig damit auf 0 gesetzt werden kann
 	Score.Player[0] = { buildings = 0, all = 0 }
@@ -179,11 +179,11 @@ function MPW.AOE.PostInit()
 end
 --------------------------------------------------------------------------------
 function MPW.AOE.PostLoad()
-	--LuaDebugger.Log( "AOE.PostLoad()" )
+	--MPW.Log( "AOE.PostLoad()" )
 end
 --------------------------------------------------------------------------------
 function MPW.AOE.Unload()
-	--LuaDebugger.Log( "AOE.Unload()" )
+	--MPW.Log( "AOE.Unload()" )
 end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--
 function MPW.AOE.CreatedTrigger()

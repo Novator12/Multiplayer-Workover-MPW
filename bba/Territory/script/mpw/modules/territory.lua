@@ -24,7 +24,7 @@ MPW.Territory.BorderStones = {}
 table.insert(MPW.Modules, "Territory")
 --------------------------------------------------------------------------------
 function MPW.Territory.Init()
-	LuaDebugger.Log( "Territory.Init()" )
+	MPW.Log( "Territory.Init()" )
 	--Script.Load("maps\\user\\ems\\tools\\s5CommunityLib\\comfort\\other\\nexttick.lua")
 
 	WidgetHelper.AddPreCommitCallback(
@@ -42,7 +42,7 @@ function MPW.Territory.Init()
 end
 --------------------------------------------------------------------------------
 function MPW.Territory.PostInit()
-	LuaDebugger.Log( "Territory.PostInit()" )
+	MPW.Log( "Territory.PostInit()" )
 
 	MPW.Territory.GameCallback_GUI_SelectionChanged = GameCallback_GUI_SelectionChanged
 	function GameCallback_GUI_SelectionChanged()
@@ -149,7 +149,7 @@ function MPW.Territory.PostInit()
 end
 --------------------------------------------------------------------------------
 function MPW.Territory.Unload()
-	LuaDebugger.Log( "Territory.Unload()" )
+	MPW.Log( "Territory.Unload()" )
 	Trigger.UnrequestTrigger(MPW.Territory.EventOnEntityDestroyedId)
 end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--

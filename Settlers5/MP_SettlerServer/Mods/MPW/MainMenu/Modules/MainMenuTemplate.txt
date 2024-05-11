@@ -7,11 +7,15 @@ MPW.Modules.Template = {
 	Dependencies = { "Core" },	-- TODO: modules, that require each other are currently not selectable
 	Incompatible = {},
 	Name = "MyTemplate",
-	Description = "This is my template."
+	Name = "Age Of Empires",
+	Description = {
+		DE = "Das ist mein Template.",
+		GB = "This is my template.",
+	},
 }
 --------------------------------------------------------------------------------
 function MPW.Template.OnInitialize()
-	LuaDebugger.Log( "Template.OnInitialize()" )
+	MPW.Log( "Template.OnInitialize()" )
 	
 	-- create buttons here ( optional )
 	-- return false to create a button manually
@@ -21,13 +25,13 @@ function MPW.Template.OnInitialize()
 end
 --------------------------------------------------------------------------------
 function MPW.Template.OnGUILoaded()
-	LuaDebugger.Log( "Template.OnGUILoaded()" )
+	MPW.Log( "Template.OnGUILoaded()" )
 	
 	-- set button texts and positions here ( optional )
 end
 --------------------------------------------------------------------------------
 function MPW.Template.OnMapStart()
-	LuaDebugger.Log( "Template.OnMapStart()" )
+	MPW.Log( "Template.OnMapStart()" )
 	
 	-- this will only be called if the module is active and all dependencies are met
 	-- add xmls here, like Enitites, UpgradeCategories ...
