@@ -72,20 +72,39 @@ function MPW.HeroSummonHandler.PostInit()
 
 		MPW.HeroSummonHandler.GameCallback_OnBuildingUpgradeComplete(_OldId, _NewId)
 
-		local maxhp = 600
-		if Logic.GetEntityType(_NewId) == Entities.PB_Headquarters2 then
-			maxhp = 800
-		elseif Logic.GetEntityType(_NewId) == Entities.PB_Headquarters3 then
-			maxhp = 1000
+		if Logic.GetUpgradeCategoryByBuildingType(Logic.GetEntityType(_NewId)) == UpgradeCategories.Headquarters then
+			MPW.HeroSummonHandler.UpdatePlayerHeroMaxHealth(Logic.EntityGetPlayer(_NewId))
 		end
+	end
+
+	function MPW.HeroSummonHandler.GetPlayerHeroMaxHealth(_Player)
+		if Logic.GetNumberOfEntitiesOfTypeOfPlayer(_Player, Entities.PB_Headquarters3) > 0 then
+			return 1000
+		elseif Logic.GetNumberOfEntitiesOfTypeOfPlayer(_Player, Entities.PB_Headquarters2) > 0 then
+			return 800
+		else
+			return 600
+		end
+	end
+
+	function MPW.HeroSummonHandler.UpdatePlayerHeroMaxHealth(_Player)
+
+		local maxhp = MPW.HeroSummonHandler.GetPlayerHeroMaxHealth(_Player)
 
 		if maxhp > 600 then
-			local player = Logic.EntityGetPlayer(_NewId)
-			for id in CEntityIterator.Iterator(CEntityIterator.OfCategoryFilter(EntityCategories.Hero), CEntityIterator.OfPlayerFilter(player)) do
+			for id in CEntityIterator.Iterator(CEntityIterator.OfCategoryFilter(EntityCategories.Hero), CEntityIterator.OfPlayerFilter(_Player)) do
+
+				local health = Logic.GetEntityHealth(id)
+				local relativehealth = health / Logic.GetEntityMaxHealth(id)
+
 				CEntity.SetMaxHealth(id, maxhp)
-				Logic.HealEntity(id, 200)
+				Logic.HealEntity(id, relativehealth * maxhp - health)
 			end
 		end
+	end
+
+	for p = 1, CNetwork and 16 or 8 do
+		MPW.HeroSummonHandler.UpdatePlayerHeroMaxHealth(p)
 	end
 
 	-- setup handler for CNetwork.SendCommand

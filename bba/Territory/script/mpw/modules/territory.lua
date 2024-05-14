@@ -39,6 +39,29 @@ function MPW.Territory.Init()
 	for p = 1, (CNetwork and 16) or 8 do
 		MPW.Territory.BorderStones[p] = {}
 	end
+
+	-- set exploration to territory range or 0
+	function MPW.Territory.UpdateBuildingExploration(_Id)
+		local territorybuildingtype = MPW.Territory.TerritoryBuildingTypes[Logic.GetEntityType(_Id)]
+		local exploration = 0
+		if territorybuildingtype then
+			exploration = territorybuildingtype.Range / 100
+		end
+		CEntity.SetExploration(_Id, exploration)
+	end
+
+	function MPW.Territory.EventOnEntityCreated()
+		local id = Event.GetEntityID()
+		if Logic.IsBuilding(id) == 1 then
+			MPW.Territory.UpdateBuildingExploration(id)
+		end
+	end
+
+	for id in CEntityIterator.Iterator(CEntityIterator.IsBuildingFilter()) do
+		MPW.Territory.UpdateBuildingExploration(id)
+	end
+
+	Trigger.RequestTrigger(Events.LOGIC_EVENT_ENTITY_CREATED, nil, MPW.Territory.EventOnEntityCreated, 1, nil, nil)
 end
 --------------------------------------------------------------------------------
 function MPW.Territory.PostInit()
