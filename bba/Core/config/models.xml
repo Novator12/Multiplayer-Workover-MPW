@@ -424,7 +424,7 @@
  </Model>
  
   <Model id="CU_Barbarian_Hero">
-    <Effect>SettlerPlayerColorSpecular</Effect>
+    <Effect>SettlerPlayerColor</Effect>
     <OcclusionReceiver>True</OcclusionReceiver>
     <SelectionRadius>100</SelectionRadius>
     <SelectionTexture>Selection_hero</SelectionTexture>
@@ -3184,9 +3184,10 @@
 
 
 <Model id="CU_Evil_Queen">
-  <SelectionRadius>55</SelectionRadius>    
-  <SelectionTexture>Selection_Soldier</SelectionTexture>
+  <Effect>SettlerPlayerColor</Effect>
   <OcclusionReceiver>True</OcclusionReceiver>
+  <SelectionRadius>100</SelectionRadius>
+  <SelectionTexture>Selection_hero</SelectionTexture>
 </Model>
 
 <Model id="PU_Hero10">
@@ -3644,9 +3645,15 @@
 
   <!-- Added Model for LeaderWolf and SoldierWolf - MPW -->
 
-  <Model id="PU_Hero9_Leaderwolf">
+  <Model id="PU_Hero9_LeaderWolf">
     <Effect>SkinnedObject</Effect>
     <SelectionRadius>80</SelectionRadius>
+    <OcclusionReceiver>True</OcclusionReceiver>
+  </Model>
+  <Model id="PU_Hero9_SoldierWolf">
+    <SelectionRadius>55</SelectionRadius>
+    <Effect>SkinnedObject</Effect>
+    <SelectionTexture>Selection_Soldier</SelectionTexture>
     <OcclusionReceiver>True</OcclusionReceiver>
   </Model>
 
