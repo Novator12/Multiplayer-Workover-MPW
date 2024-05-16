@@ -1,6 +1,6 @@
 --------------------------------------------------------------------------------
 MPW = {}
-MPW.Version = "0.2"
+MPW.Version = "0.3"
 MPW.Log = LuaDebugger.Log or function() end
 --------------------------------------------------------------------------------
 -- call this function on first load of the map
@@ -127,6 +127,7 @@ end
 --------------------------------------------------------------------------------
 function MPW.Load()
 	
+	MPW.Log = LuaDebugger.Log or function() end
 	MPW.Log( "MPW.Load()" )
 
 	-- the safety check is now done by the hook itself
