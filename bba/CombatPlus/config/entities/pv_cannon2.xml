@@ -68,7 +68,7 @@
 			<Sulfur>220</Sulfur>
 		</Cost>
 		
-		<MaxHealth>800</MaxHealth>
+		<MaxHealth>500</MaxHealth>
 		<Exploration>25</Exploration>
 		
 		<ArmorClass>ArmorClassFortification</ArmorClass>
