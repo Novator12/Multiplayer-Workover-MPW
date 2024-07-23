@@ -65,7 +65,9 @@ function MPW.Init()
 	Script.Load("maps\\user\\EMS\\tools\\s5CommunityLib\\comfort\\other\\NextTick.lua")
 	
 	-- load scripts
-	Script.Load( "MP_SettlerServer\\WidgetHelper.lua" )
+	if not WidgetHelper then
+		Script.Load( "MP_SettlerServer\\WidgetHelper.lua" )
+	end
 	Script.Load( path .. "AttractionLimit.lua" )
 	Script.Load( path .. "Camera.lua" )
 	Script.Load( path .. "Defeat.lua" )

@@ -5,44 +5,47 @@ MPW.OSIReplacement.LastNumberOfWidgets = 0
 MPW.OSIReplacement.TimeOfLastGameTick = 0
 
 function MPW.OSIReplacement.Init()
-    WidgetHelper.AddPreCommitCallback(
-        function()
-            for i = 1, MPW.OSIReplacement.MaxNumberOfWidgets do
-                CWidget.Transaction_AddRawWidgets(
-                    [[<WidgetList classname="EGUIX::CStaticWidget" classid="0x213a8776">
-                        <Name>OSIReplacement]]..i..[[</Name>
-                        <Rectangle>
-                            <X>0</X>
-                            <Y>0</Y>
-                            <W>1</W>
-                            <H>1</H>
-                        </Rectangle>
-                        <IsShown>False</IsShown>
-                        <ZPriority>0</ZPriority>
-                        <MotherID>Root</MotherID>
-                        <Group></Group>
-                        <ForceToHandleMouseEventsFlag>False</ForceToHandleMouseEventsFlag>
-                        <ForceToNeverBeFoundFlag>False</ForceToNeverBeFoundFlag>
-                        <BackgroundMaterial>
-                            <Texture>data\graphics\textures\gui\dbg_arrow.png</Texture>
-                            <TextureCoordinates>
+    if not WidgetHelper then
+        Script.Load( "MP_SettlerServer\\WidgetHelper.lua" )
+    end
+        WidgetHelper.AddPreCommitCallback(
+            function()
+                for i = 1, MPW.OSIReplacement.MaxNumberOfWidgets do
+                    CWidget.Transaction_AddRawWidgets(
+                        [[<WidgetList classname="EGUIX::CStaticWidget" classid="0x213a8776">
+                            <Name>OSIReplacement]]..i..[[</Name>
+                            <Rectangle>
                                 <X>0</X>
                                 <Y>0</Y>
                                 <W>1</W>
                                 <H>1</H>
-                            </TextureCoordinates>
-                            <Color>
-                                <Red>255</Red>
-                                <Green>255</Green>
-                                <Blue>255</Blue>
-                                <Alpha>255</Alpha>
-                            </Color>
-                        </BackgroundMaterial>
-                    </WidgetList>]]
-                )
+                            </Rectangle>
+                            <IsShown>False</IsShown>
+                            <ZPriority>0</ZPriority>
+                            <MotherID>Root</MotherID>
+                            <Group></Group>
+                            <ForceToHandleMouseEventsFlag>False</ForceToHandleMouseEventsFlag>
+                            <ForceToNeverBeFoundFlag>False</ForceToNeverBeFoundFlag>
+                            <BackgroundMaterial>
+                                <Texture>data\graphics\textures\gui\dbg_arrow.png</Texture>
+                                <TextureCoordinates>
+                                    <X>0</X>
+                                    <Y>0</Y>
+                                    <W>1</W>
+                                    <H>1</H>
+                                </TextureCoordinates>
+                                <Color>
+                                    <Red>255</Red>
+                                    <Green>255</Green>
+                                    <Blue>255</Blue>
+                                    <Alpha>255</Alpha>
+                                </Color>
+                            </BackgroundMaterial>
+                        </WidgetList>]]
+                    )
+                end
             end
-        end
-    )
+        )
 end
 
 function MPW.OSIReplacement.Load()
