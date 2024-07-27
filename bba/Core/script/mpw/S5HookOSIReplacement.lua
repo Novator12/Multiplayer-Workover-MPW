@@ -5,47 +5,44 @@ MPW.OSIReplacement.LastNumberOfWidgets = 0
 MPW.OSIReplacement.TimeOfLastGameTick = 0
 
 function MPW.OSIReplacement.Init()
-    if not WidgetHelper then
-        Script.Load( "MP_SettlerServer\\WidgetHelper.lua" )
-    end
-        WidgetHelper.AddPreCommitCallback(
-            function()
-                for i = 1, MPW.OSIReplacement.MaxNumberOfWidgets do
-                    CWidget.Transaction_AddRawWidgets(
-                        [[<WidgetList classname="EGUIX::CStaticWidget" classid="0x213a8776">
-                            <Name>OSIReplacement]]..i..[[</Name>
-                            <Rectangle>
+    WidgetHelper.AddPreCommitCallback(
+        function()
+            for i = 1, MPW.OSIReplacement.MaxNumberOfWidgets do
+                CWidget.Transaction_AddRawWidgets(
+                    [[<WidgetList classname="EGUIX::CStaticWidget" classid="0x213a8776">
+                        <Name>OSIReplacement]]..i..[[</Name>
+                        <Rectangle>
+                            <X>0</X>
+                            <Y>0</Y>
+                            <W>1</W>
+                            <H>1</H>
+                        </Rectangle>
+                        <IsShown>False</IsShown>
+                        <ZPriority>0</ZPriority>
+                        <MotherID>Root</MotherID>
+                        <Group></Group>
+                        <ForceToHandleMouseEventsFlag>False</ForceToHandleMouseEventsFlag>
+                        <ForceToNeverBeFoundFlag>False</ForceToNeverBeFoundFlag>
+                        <BackgroundMaterial>
+                            <Texture>data\graphics\textures\gui\dbg_arrow.png</Texture>
+                            <TextureCoordinates>
                                 <X>0</X>
                                 <Y>0</Y>
                                 <W>1</W>
                                 <H>1</H>
-                            </Rectangle>
-                            <IsShown>False</IsShown>
-                            <ZPriority>0</ZPriority>
-                            <MotherID>Root</MotherID>
-                            <Group></Group>
-                            <ForceToHandleMouseEventsFlag>False</ForceToHandleMouseEventsFlag>
-                            <ForceToNeverBeFoundFlag>False</ForceToNeverBeFoundFlag>
-                            <BackgroundMaterial>
-                                <Texture>data\graphics\textures\gui\dbg_arrow.png</Texture>
-                                <TextureCoordinates>
-                                    <X>0</X>
-                                    <Y>0</Y>
-                                    <W>1</W>
-                                    <H>1</H>
-                                </TextureCoordinates>
-                                <Color>
-                                    <Red>255</Red>
-                                    <Green>255</Green>
-                                    <Blue>255</Blue>
-                                    <Alpha>255</Alpha>
-                                </Color>
-                            </BackgroundMaterial>
-                        </WidgetList>]]
-                    )
-                end
+                            </TextureCoordinates>
+                            <Color>
+                                <Red>255</Red>
+                                <Green>255</Green>
+                                <Blue>255</Blue>
+                                <Alpha>255</Alpha>
+                            </Color>
+                        </BackgroundMaterial>
+                    </WidgetList>]]
+                )
             end
-        )
+        end
+    )
 end
 
 function MPW.OSIReplacement.Load()
@@ -88,11 +85,13 @@ function MPW.OSIReplacement.PostInit()
             local sizex, sizey = GUI.GetScreenSize()
 
             for id in CEntityIterator.Iterator(CEntityIterator.InRangeFilter(camerax, cameray, range), CEntityIterator.IsNotSoldierFilter(), CEntityIterator.OfCategoryFilter(EntityCategories.Military)) do
-                local x, y = GetEntityOSIWidgetPosition(id)
+                if IsEntityExploredByPlayer(id, GUI.GetPlayerID()) then
+                    local x, y = GetEntityOSIWidgetPosition(id)
 
-                -- do all draw calls on screen
-                if x >= 0 and y >= 0 and x <= sizex and y <= sizey then
-                    MPW.OSIReplacement.Callback(id, IsEntityOSIWidgetActive(id), x, y)
+                    -- do all draw calls on screen
+                    if x >= 0 and y >= 0 and x <= sizex and y <= sizey then
+                        MPW.OSIReplacement.Callback(id, IsEntityOSIWidgetActive(id), x, y)
+                    end
                 end
             end
         
@@ -109,6 +108,14 @@ end
 
 function MPW.OSIReplacement.Job()
     MPW.OSIReplacement.TimeOfLastGameTick = XGUIEng.GetSystemTime()
+end
+
+---@param _EntityId number
+---@param _Player number
+---@return boolean
+function IsEntityExploredByPlayer(_EntityId, _Player)
+    local x, y = Logic.GetEntityPosition(_EntityId)
+    return Logic.IsMapPositionExplored(_Player, x, y) == 1
 end
 
 ---@param _EntityId number

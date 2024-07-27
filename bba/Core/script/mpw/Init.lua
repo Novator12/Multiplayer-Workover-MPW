@@ -1,12 +1,13 @@
 --------------------------------------------------------------------------------
 MPW = {}
-MPW.Version = "0.3"
+MPW.Version = "0.4"
 MPW.Log = LuaDebugger.Log or function() end
 --------------------------------------------------------------------------------
 -- call this function on first load of the map
 --------------------------------------------------------------------------------
 function MPW.Init()
 	
+	--MPW.DebugOSIReplacement = true
 	MPW.Log( "MPW.Init()" )
 
 	-- simis stuff is loaded in GameCallback_OnGameStart
@@ -55,7 +56,10 @@ function MPW.Init()
 	if not S5Hook then
 		Script.Load( path .. "S5Hook.lua" )
 	end
-	if CNetwork then --or MPW_Debug then
+	if not WidgetHelper then
+		Script.Load( "MP_SettlerServer\\WidgetHelper.lua" )
+	end
+	if CNetwork or MPW.DebugOSIReplacement then
 		Script.Load( path .. "S5HookOSIReplacement.lua" )
 		MPW.OSIReplacement.Init()
 	end
@@ -65,9 +69,6 @@ function MPW.Init()
 	Script.Load("maps\\user\\EMS\\tools\\s5CommunityLib\\comfort\\other\\NextTick.lua")
 	
 	-- load scripts
-	if not WidgetHelper then
-		Script.Load( "MP_SettlerServer\\WidgetHelper.lua" )
-	end
 	Script.Load( path .. "AttractionLimit.lua" )
 	Script.Load( path .. "Camera.lua" )
 	Script.Load( path .. "Defeat.lua" )
@@ -108,10 +109,10 @@ function MPW.Init()
 		Script.LoadFolder( path .. "modules\\" )
 	else
 		-- load modules manually here
-		Script.Load( "MP_SettlerServer\\Mods\\MPW\\Ingame\\aoe\\script\\mpw\\modules\\aoe.lua" )
-		Script.Load( "MP_SettlerServer\\Mods\\MPW\\Ingame\\aoe\\script\\mpw\\modules\\aoe_gui.lua" )
+		--Script.Load( "MP_SettlerServer\\Mods\\MPW\\Ingame\\aoe\\script\\mpw\\modules\\aoe.lua" )
+		--Script.Load( "MP_SettlerServer\\Mods\\MPW\\Ingame\\aoe\\script\\mpw\\modules\\aoe_gui.lua" )
 		Script.Load( "MP_SettlerServer\\Mods\\MPW\\Ingame\\CombatPlus\\script\\mpw\\modules\\CombatPlus.lua" )
-		Script.Load( "MP_SettlerServer\\Mods\\MPW\\Ingame\\Territory\\script\\mpw\\modules\\Territory.lua" )
+		--Script.Load( "MP_SettlerServer\\Mods\\MPW\\Ingame\\Territory\\script\\mpw\\modules\\Territory.lua" )
 		--Script.Load( "MP_SettlerServer\\Mods\\MPW\\Ingame\\unlimited\\script\\mpw\\modules\\unlimited.lua" )
 	end
 	
@@ -134,7 +135,7 @@ function MPW.Load()
 
 	-- the safety check is now done by the hook itself
 	InstallS5Hook()
-	if CNetwork then --or MPW_Debug then
+	if CNetwork or MPW.DebugOSIReplacement then
 		MPW.OSIReplacement.Load()
 	end
 
@@ -158,7 +159,7 @@ function MPW.PostInit()
 	
 	MPW.Log( "MPW.PostInit()" )
 
-	if CNetwork then --or MPW_Debug then
+	if CNetwork or MPW.DebugOSIReplacement then
 		MPW.OSIReplacement.PostInit()
 
 		function MPW.VersionCheck( _Name, _Version, _Player )
@@ -167,7 +168,8 @@ function MPW.PostInit()
 				GUI.AddStaticNote("@color:220,64,16,255 Different version of MPW detected for @color:" .. r .. "," .. g .. "," .. b .. ",255 " .. XNetwork.GameInformation_GetLogicPlayerUserName( _Player ) .. " @color:220,64,16,255 with Version @color:255,255,255,255 " .. _Version .. " @color:220,64,16,255 - Local version is @color:255,255,255,255 " .. MPW.Version )
 			end
 		end
-
+	end
+	if CNetwork then
 		CNetwork.SetNetworkHandler("MPWVersionCheck", MPW.VersionCheck)
 		CNetwork.SendCommand( "MPWVersionCheck", MPW.Version, GUI.GetPlayerID() )
 	end
