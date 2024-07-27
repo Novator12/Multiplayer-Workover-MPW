@@ -1,6 +1,6 @@
 --------------------------------------------------------------------------------
 MPW = {}
-MPW.Version = "0.4"
+MPW.Version = "0.5"
 MPW.Log = LuaDebugger.Log or function() end
 --------------------------------------------------------------------------------
 -- call this function on first load of the map
