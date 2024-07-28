@@ -1,6 +1,6 @@
 --------------------------------------------------------------------------------
 MPW = {}
-MPW.Version = "0.5"
+MPW.Version = "0.6"
 MPW.Log = LuaDebugger.Log or function() end
 --------------------------------------------------------------------------------
 -- call this function on first load of the map
@@ -79,6 +79,7 @@ function MPW.Init()
 	Script.Load( path .. "Memory.lua" )
 	Script.Load( path .. "Motivation.lua" )
 	Script.Load( path .. "QOL.lua" )
+	Script.Load( path .. "UnknownTaskHandler.lua" )
 	Script.Load( path .. "Weather.lua" )
 	Script.Load( path .. "Widgets.lua" )
 	
@@ -93,7 +94,6 @@ function MPW.Init()
 	MPW.Widgets_Init()
 
 	--Army implementation
-	Script.Load( path .. "Memory.lua" )
 	-- Script.Load( path .. "army\\army_init.lua")
 	-- Script.Load( path .. "army\\army_comforts.lua")
 	-- Script.Load( path .. "army\\army_chunk.lua" )
@@ -158,6 +158,8 @@ end
 function MPW.PostInit()
 	
 	MPW.Log( "MPW.PostInit()" )
+
+	TriggerFix.FixJobs()
 
 	if CNetwork or MPW.DebugOSIReplacement then
 		MPW.OSIReplacement.PostInit()

@@ -436,6 +436,15 @@ function TriggerFix.Init()
 		end
 		TriggerFix.RequestTrigger(event, nil, "TriggerFix_action", 1, nil, {event})
 	end
+	TriggerFix.FixJobs()
+	TriggerFix.AddScriptTrigger("SCRIPT_EVENT_ON_SAVEGAME_LOADED")
+	TriggerFix.AddScriptTrigger("SCRIPT_EVENT_ON_DO_INITIALIZATION")
+	if CEntity then
+		TriggerFix.CreateEventHurtIn = TriggerFix.CreateEventHurtInCEntity
+		TriggerFix.CreateEventHurtOut = TriggerFix.CreateEventHurtOutCEntity
+	end
+end
+function TriggerFix.FixJobs()
 	StartSimpleJob = function(f, ...)
 		return Trigger.RequestTrigger(Events.LOGIC_EVENT_EVERY_SECOND, nil, f, 1, nil, arg)
 	end
@@ -447,12 +456,6 @@ function TriggerFix.Init()
 	end
 	StartHiResJob = function(f, ...)
 		return Trigger.RequestTrigger(Events.LOGIC_EVENT_EVERY_TURN, "Condition_"..f, "Action_"..f, 1, arg, arg)
-	end
-	TriggerFix.AddScriptTrigger("SCRIPT_EVENT_ON_SAVEGAME_LOADED")
-	TriggerFix.AddScriptTrigger("SCRIPT_EVENT_ON_DO_INITIALIZATION")
-	if CEntity then
-		TriggerFix.CreateEventHurtIn = TriggerFix.CreateEventHurtInCEntity
-		TriggerFix.CreateEventHurtOut = TriggerFix.CreateEventHurtOutCEntity
 	end
 end
 TriggerFix.Init()
