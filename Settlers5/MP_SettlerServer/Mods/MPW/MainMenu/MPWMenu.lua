@@ -80,24 +80,26 @@ function MPW.UpdateModuleButtons()
 	-- allways update every button, due to denpendencies and Incompatibilities
 	for name, mod in pairs( MPW.Modules ) do
 		
-		-- check state of current module
-		local ButtonName = "MPM20_MPWMenu_" .. name
-		local HighLightFlag = 0
-		local DisableFlag = 0
-		
-		if MPW.IsModuleSetActive( name ) then
-			HighLightFlag = 1
+		for i = 2, 4, 2 do
+			-- check state of current module
+			local ButtonName = "MPM" .. i .. "0_MPWMenu_" .. name
+			local HighLightFlag = 0
+			local DisableFlag = 0
+			
+			if MPW.IsModuleSetActive( name ) then
+				HighLightFlag = 1
+			end
+			
+			XGUIEng.HighLightButton( ButtonName, HighLightFlag )
+			
+			-- check state of dependent and incompatible modules
+			if not MPW.CanModuleBeActive( name ) then
+				DisableFlag = 1
+			end
+			
+			-- set actual state of current module
+			XGUIEng.DisableButton( ButtonName, DisableFlag )
 		end
-		
-		XGUIEng.HighLightButton( ButtonName, HighLightFlag )
-		
-		-- check state of dependent and incompatible modules
-		if not MPW.CanModuleBeActive( name ) then
-			DisableFlag = 1
-		end
-		
-		-- set actual state of current module
-		XGUIEng.DisableButton( ButtonName, DisableFlag )
 	end
 end
 ----------------------------------------------------------------------------------------------------
@@ -124,93 +126,95 @@ function MPW.LoadModules()
 					index = index + 1
 				end
 				
-				-- create toggle button
-				CWidget.Transaction_AddTextButton(
-					{
-						Name = "MPM20_MPWMenu_" .. name,
-						MotherID = "MPM20_MPWMenu",
-						IsShown = true,
-						Rectangle = {
-							X = x + c * ( w + d ),
-							Y = y + r * ( h + d ),
-							W = w,
-							H = h,
-						},
-						ZPriority = 0,
-						ForceToHandleMouseEventsFlag = false,
-						ForceToNeverBeFoundFlag = false,
-						StringHelper = {
-							Font = {
-								FontName = "data\\menu\\fonts\\mainmenularge.met",
+				-- create MPM20_ toggle button and MPM40_ copy
+				for rulepagemode = 2, 4, 2 do
+					CWidget.Transaction_AddTextButton(
+						{
+							Name = "MPM" .. rulepagemode .. "0_MPWMenu_" .. name,
+							MotherID = "MPM" .. rulepagemode .. "0_MPWMenu",
+							IsShown = true,
+							Rectangle = {
+								X = x + c * ( w + d ),
+								Y = y + r * ( h + d ),
+								W = w,
+								H = h,
 							},
-							String = {
-								StringTableKey = "",
-								RawString = "@center " .. ( mod.Name or name ),
+							ZPriority = 0,
+							ForceToHandleMouseEventsFlag = false,
+							ForceToNeverBeFoundFlag = false,
+							StringHelper = {
+								Font = {
+									FontName = "data\\menu\\fonts\\mainmenularge.met",
+								},
+								String = {
+									StringTableKey = "",
+									RawString = "@center " .. ( mod.Name or name ),
+								},
+								StringFrameDistance = 3,
+								Color = {
+									Red = 255,
+									Green = 255,
+									Blue = 255,
+									Alpha = 255,
+								},
 							},
-							StringFrameDistance = 3,
-							Color = {
-								Red = 255,
-								Green = 255,
-								Blue = 255,
-								Alpha = 255,
-							},
-						},
-						UpdateFunction = {
-							LuaCommand = "",
-						},
-						UpdateManualFlag = true,
-						ButtonHelper = {
-							DisabledFlag = false,
-							HighLightedFlag = false,
-							ActionFunction = {
-								LuaCommand = "MPW.ToggleModule( \"" .. name .. "\" )"
-							},
-							ShortCutString = {
-								StringTableKey = "",
-								RawString = "",
-							},
-						},
-						Materials = {
-							{ 
-								Texture = "data\\graphics\\textures\\gui\\mainmenu\\sub.png",
-								TextureCoordinates = { X = 0, Y = 0, W = 1, H = 0.8510638 },
-								Color = { Red = 255, Green = 255, Blue = 255, Alpha = 255 },
-							}, -- normal
-							{ 
-								Texture = "data\\graphics\\textures\\gui\\mainmenu\\sub_hi.png",
-								TextureCoordinates = { X = 0, Y = 0, W = 1, H = 0.8510638 },
-								Color = { Red = 255, Green = 255, Blue = 255, Alpha = 255 },
-							}, -- hover
-							{ 
-								Texture = "data\\graphics\\textures\\gui\\mainmenu\\sub_sel.png",
-								TextureCoordinates = { X = 0, Y = 0, W = 1, H = 0.8510638 },
-								Color = { Red = 255, Green = 255, Blue = 255, Alpha = 255 },
-							}, -- pressed
-							{ 
-								Texture = "data\\graphics\\textures\\gui\\mainmenu\\sub_in.png",
-								TextureCoordinates = { X = 0, Y = 0, W = 1, H = 0.8510638 },
-								Color = { Red = 255, Green = 255, Blue = 255, Alpha = 255 },
-							}, -- disabled
-							{ 
-								Texture = "data\\graphics\\textures\\gui\\mainmenu\\sub_akt.png",
-								TextureCoordinates = { X = 0, Y = 0, W = 1, H = 0.8510638 },
-								Color = { Red = 255, Green = 255, Blue = 255, Alpha = 255 },
-							}, -- highlighted
-						},
-						ToolTipHelper = {
-							ToolTipEnabledFlag = true,
-							ToolTipString = {
-								StringTableKey = "",
-								RawString = mod.Description[lang],
-							},
-							TargetWidget = "StartMenu_TooltipText",
-							ControlTargetWidgetDisplayState = true,
 							UpdateFunction = {
 								LuaCommand = "",
 							},
-						},
-					}
-				)
+							UpdateManualFlag = true,
+							ButtonHelper = {
+								DisabledFlag = false,
+								HighLightedFlag = false,
+								ActionFunction = {
+									LuaCommand = rulepagemode == 2 and "MPW.ToggleModule( \"" .. name .. "\" )" or "",
+								},
+								ShortCutString = {
+									StringTableKey = "",
+									RawString = "",
+								},
+							},
+							Materials = {
+								{ 
+									Texture = "data\\graphics\\textures\\gui\\mainmenu\\sub.png",
+									TextureCoordinates = { X = 0, Y = 0, W = 1, H = 0.8510638 },
+									Color = { Red = 255, Green = 255, Blue = 255, Alpha = 255 },
+								}, -- normal
+								{ 
+									Texture = "data\\graphics\\textures\\gui\\mainmenu\\sub_hi.png",
+									TextureCoordinates = { X = 0, Y = 0, W = 1, H = 0.8510638 },
+									Color = { Red = 255, Green = 255, Blue = 255, Alpha = 255 },
+								}, -- hover
+								{ 
+									Texture = "data\\graphics\\textures\\gui\\mainmenu\\sub_sel.png",
+									TextureCoordinates = { X = 0, Y = 0, W = 1, H = 0.8510638 },
+									Color = { Red = 255, Green = 255, Blue = 255, Alpha = 255 },
+								}, -- pressed
+								{ 
+									Texture = "data\\graphics\\textures\\gui\\mainmenu\\sub_in.png",
+									TextureCoordinates = { X = 0, Y = 0, W = 1, H = 0.8510638 },
+									Color = { Red = 255, Green = 255, Blue = 255, Alpha = 255 },
+								}, -- disabled
+								{ 
+									Texture = "data\\graphics\\textures\\gui\\mainmenu\\sub_akt.png",
+									TextureCoordinates = { X = 0, Y = 0, W = 1, H = 0.8510638 },
+									Color = { Red = 255, Green = 255, Blue = 255, Alpha = 255 },
+								}, -- highlighted
+							},
+							ToolTipHelper = {
+								ToolTipEnabledFlag = true,
+								ToolTipString = {
+									StringTableKey = "",
+									RawString = mod.Description[lang],
+								},
+								TargetWidget = "StartMenu_TooltipText",
+								ControlTargetWidgetDisplayState = true,
+								UpdateFunction = {
+									LuaCommand = "",
+								},
+							},
+						}
+					)
+				end
 			end
 		end
 	end
